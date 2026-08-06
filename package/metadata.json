@@ -1,0 +1,47 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "teodorgross@users.noreply.github.com",
+                "Name": "Teodor Gross"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "OpenRouter credit, spending and model pricing in your panel",
+        "Description[de]": "OpenRouter-Guthaben, Verbrauch und Modellpreise in der Leiste",
+        "Description[es]": "Crédito, gasto y precios de modelos de OpenRouter en tu panel",
+        "Description[fr]": "Crédit, dépenses et tarifs des modèles OpenRouter dans votre tableau de bord",
+        "Description[it]": "Credito, spesa e prezzi dei modelli OpenRouter nel pannello",
+        "Description[ja]": "OpenRouter のクレジット・利用額・モデル料金をパネルに表示",
+        "Description[nl]": "OpenRouter-tegoed, verbruik en modelprijzen in je paneel",
+        "Description[pl]": "Środki, wydatki i ceny modeli OpenRouter na panelu",
+        "Description[pt_BR]": "Créditos, gastos e preços de modelos do OpenRouter no seu painel",
+        "Description[ru]": "Баланс, расходы и цены моделей OpenRouter на панели",
+        "Description[tr]": "OpenRouter bakiyesi, harcaması ve model fiyatları panelinizde",
+        "Description[zh_CN]": "在面板中显示 OpenRouter 余额、用量和模型价格",
+        "EnabledByDefault": true,
+        "Icon": "openrouter",
+        "Id": "com.github.teodorgross.openrouter",
+        "License": "MIT",
+        "Name": "OpenRouter Monitor",
+        "Name[de]": "OpenRouter-Monitor",
+        "Name[es]": "Monitor de OpenRouter",
+        "Name[fr]": "Moniteur OpenRouter",
+        "Name[it]": "Monitor OpenRouter",
+        "Name[ja]": "OpenRouter モニター",
+        "Name[nl]": "OpenRouter-monitor",
+        "Name[pl]": "Monitor OpenRouter",
+        "Name[pt_BR]": "Monitor do OpenRouter",
+        "Name[ru]": "Монитор OpenRouter",
+        "Name[tr]": "OpenRouter İzleyici",
+        "Name[zh_CN]": "OpenRouter 监视器",
+        "Version": "1.1.0",
+        "Website": "https://github.com/teodorgross/openrouter-plasmoid"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-NotificationArea": "true",
+    "X-Plasma-NotificationAreaCategory": "ApplicationStatus"
+}

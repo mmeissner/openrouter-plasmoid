@@ -1,0 +1,713 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: nl\n"
+"Language-Team: Dutch\n"
+"Last-Translator: Teodor Gross (@teodorgross)\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: openrouter-plasmoid\n"
+"Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
+
+msgctxt "@info:status %1 is the filtered count, %2 the total count"
+msgid "%1 / %2"
+msgstr "%1 / %2"
+
+msgctxt "@info %1 is a token count such as 128K"
+msgid "%1 context"
+msgstr "%1 context"
+
+msgid "%1 day ago"
+msgid_plural "%1 days ago"
+msgstr[0] "%1 dag geleden"
+msgstr[1] "%1 dagen geleden"
+
+msgid "%1 hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "%1 uur geleden"
+msgstr[1] "%1 uur geleden"
+
+msgctxt "@info:tooltip %1 is input tokens, %2 output tokens"
+msgid "%1 in / %2 out"
+msgstr "%1 in / %2 uit"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minuut"
+msgstr[1] "%1 minuten"
+
+msgid "%1 minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "%1 minuut geleden"
+msgstr[1] "%1 minuten geleden"
+
+msgctxt "@info %1 is the spent amount, %2 the purchased amount, %3 a percentage"
+msgid "%1 of %2 spent (%3%)"
+msgstr "%1 van %2 uitgegeven (%3 %)"
+
+msgctxt "@info:tooltip %1 is a request count"
+msgid "%1 requests"
+msgstr "%1 verzoeken"
+
+msgctxt "@item %1 is a request count, %2 an interval such as 10s"
+msgid "%1 requests / %2"
+msgstr "%1 verzoeken / %2"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 seconde"
+msgstr[1] "%1 seconden"
+
+msgid "%1 second ago"
+msgid_plural "%1 seconds ago"
+msgstr[0] "%1 seconde geleden"
+msgstr[1] "%1 seconden geleden"
+
+msgctxt "@item %1 is a token count"
+msgid "%1 tokens"
+msgstr "%1 tokens"
+
+msgctxt "@info nothing but the icon is shown"
+msgid "(icon only)"
+msgstr "(alleen pictogram)"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1 million tokens"
+msgstr "1 miljoen tokens"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1000 tokens"
+msgstr "1000 tokens"
+
+msgctxt "@label token pricing unit"
+msgid "1K tokens"
+msgstr "1K tokens"
+
+msgctxt "@label"
+msgid "30 days"
+msgstr "30 dagen"
+
+msgctxt "@info"
+msgid "A file takes precedence over the typed key and keeps it out of the\nPlasma configuration file. Recommended: chmod 600."
+msgstr "Een bestand gaat voor op de ingetypte sleutel en houdt die buiten het\nPlasma-configuratiebestand. Aanbevolen: chmod 600."
+
+msgctxt "@title:group"
+msgid "API key"
+msgstr "API-sleutel"
+
+msgid "API key is missing or invalid"
+msgstr "API-sleutel ontbreekt of is ongeldig"
+
+msgctxt "@label:textbox"
+msgid "API key:"
+msgstr "API-sleutel:"
+
+msgid "Access denied - this endpoint needs a management key"
+msgstr "Toegang geweigerd – dit eindpunt vereist een beheersleutel"
+
+msgctxt "@title:tab settings page"
+msgid "Account"
+msgstr "Account"
+
+msgctxt "@action:button"
+msgid "Add to favourites"
+msgstr "Aan favorieten toevoegen"
+
+msgctxt "@title:tab settings page"
+msgid "Appearance"
+msgstr "Weergave"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Available credit"
+msgstr "Beschikbaar tegoed"
+
+msgctxt "@label"
+msgid "Available credit"
+msgstr "Beschikbaar tegoed"
+
+msgctxt "@label bring-your-own-key usage"
+msgid "BYOK total"
+msgstr "BYOK totaal"
+
+msgctxt "@label very short panel caption for purchased credit"
+msgid "Bought"
+msgstr "Gekocht"
+
+msgctxt "@action"
+msgid "Buy credit"
+msgstr "Tegoed kopen"
+
+msgctxt "@action:button"
+msgid "Buy credit"
+msgstr "Opwaarderen"
+
+msgctxt "@title:group"
+msgid "By model"
+msgstr "Per model"
+
+msgctxt "@item:inlistbox sort order"
+msgid "By name"
+msgstr "Op naam"
+
+msgctxt "@label"
+msgid "Cache read"
+msgstr "Cache gelezen"
+
+msgctxt "@label"
+msgid "Cache write"
+msgstr "Cache geschreven"
+
+msgid "Cannot reach openrouter.ai"
+msgstr "Kan openrouter.ai niet bereiken"
+
+msgctxt "@info:status"
+msgid "Cannot reach openrouter.ai"
+msgstr "Kan openrouter.ai niet bereiken"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest input"
+msgstr "Goedkoopste invoer"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest output"
+msgstr "Goedkoopste uitvoer"
+
+msgctxt "@info:status"
+msgid "Checking…"
+msgstr "Bezig met controleren…"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the API key"
+msgstr "Kies het bestand met de API-sleutel"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the management key"
+msgstr "Kies het bestand met de beheersleutel"
+
+msgctxt "@option:check"
+msgid "Colour credit by the warning thresholds"
+msgstr "Tegoed kleuren volgens de waarschuwingsdrempels"
+
+msgctxt "@action:button"
+msgid "Configure"
+msgstr "Instellen"
+
+msgctxt "@info:status %1 is the key name, %2 an amount"
+msgid "Connected - key “%1”, %2 spent so far."
+msgstr "Verbonden – sleutel “%1”, %2 tot nu toe uitgegeven."
+
+msgctxt "@label"
+msgid "Context window"
+msgstr "Contextvenster"
+
+msgctxt "@title:group"
+msgid "Cost calculator"
+msgstr "Kostencalculator"
+
+msgctxt "@info"
+msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
+msgstr "Beheersleutels maak je aan op openrouter.ai/settings/provisioning-keys.\nSommige accounts hebben er een nodig voor /credits (saldo) en /activity (historie)."
+
+msgctxt "@title:group"
+msgid "Credentials"
+msgstr "Aanmeldgegevens"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Credit purchased"
+msgstr "Gekocht tegoed"
+
+msgctxt "@label:spinbox"
+msgid "Critical below:"
+msgstr "Kritiek onder:"
+
+msgctxt "@label:textbox"
+msgid "Currency symbol:"
+msgstr "Valutateken:"
+
+msgctxt "@title:group"
+msgid "Daily spending"
+msgstr "Dagelijkse uitgaven"
+
+msgctxt "@label:spinbox"
+msgid "Decimal places:"
+msgstr "Decimalen:"
+
+msgctxt "@action:button"
+msgid "Details"
+msgstr "Details"
+
+msgid "Endpoint not found"
+msgstr "Eindpunt niet gevonden"
+
+msgctxt "@info:status"
+msgid "Enter an API key first."
+msgstr "Voer eerst een API-sleutel in."
+
+msgctxt "@info:placeholder"
+msgid "Enter your OpenRouter key in the settings to see credit and usage."
+msgstr "Voer je OpenRouter-sleutel in bij de instellingen om tegoed en verbruik te zien."
+
+msgid "Error %1"
+msgstr "Fout %1"
+
+msgctxt "@info:status %1 is an HTTP status"
+msgid "Error %1"
+msgstr "Fout %1"
+
+msgid "Error %1: %2"
+msgstr "Fout %1: %2"
+
+msgctxt "@info:status %1 is an HTTP status, %2 the server message"
+msgid "Error %1: %2"
+msgstr "Fout %1: %2"
+
+msgctxt "@label"
+msgid "Estimated cost"
+msgstr "Geschatte kosten"
+
+msgctxt "@title:group"
+msgid "Favourites"
+msgstr "Favorieten"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Favourites - price per %1"
+msgstr "Favorieten – prijs per %1"
+
+msgctxt "@action:button"
+msgid "Favourites only"
+msgstr "Alleen favorieten"
+
+msgctxt "@label very short panel caption for available credit"
+msgid "Free"
+msgstr "Vrij"
+
+msgctxt "@option:check"
+msgid "Hide free models"
+msgstr "Gratis modellen verbergen"
+
+msgctxt "@title:tab"
+msgid "History"
+msgstr "Historie"
+
+msgctxt "@info:placeholder"
+msgid "History unavailable"
+msgstr "Historie niet beschikbaar"
+
+msgctxt "@label"
+msgid "Input"
+msgstr "Invoer"
+
+msgctxt "@info:tooltip"
+msgid "Input tokens"
+msgstr "Invoertokens"
+
+msgctxt "@label:spinbox"
+msgid "Input tokens:"
+msgstr "Invoertokens:"
+
+msgctxt "@label:spinbox"
+msgid "Interval:"
+msgstr "Interval:"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Largest context"
+msgstr "Grootste context"
+
+msgctxt "@label"
+msgid "Left of that"
+msgstr "Daarvan over"
+
+msgctxt "@label very short panel caption for the key limit"
+msgid "Limit"
+msgstr "Limiet"
+
+msgctxt "@label"
+msgid "Limit resets"
+msgstr "Limiet wordt hersteld"
+
+msgctxt "@info:placeholder"
+msgid "Loading model list…"
+msgstr "Modellijst wordt geladen…"
+
+msgctxt "@label:textbox"
+msgid "Management key:"
+msgstr "Beheersleutel:"
+
+msgctxt "@label"
+msgid "Metrics:"
+msgstr "Kengetallen:"
+
+msgctxt "@label"
+msgid "Modalities"
+msgstr "Modaliteiten"
+
+msgctxt "@label"
+msgid "Model id"
+msgstr "Model-id"
+
+msgctxt "@label:textbox"
+msgid "Model ids:"
+msgstr "Model-id’s:"
+
+msgctxt "@title:tab"
+msgid "Models"
+msgstr "Modellen"
+
+msgctxt "@title:tab settings page"
+msgid "Models"
+msgstr "Modellen"
+
+msgctxt "@label very short panel caption for this month"
+msgid "Month"
+msgstr "Maand"
+
+msgctxt "@info"
+msgid "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left."
+msgstr "Meerkeuze – alles wat is aangevinkt staat naast elkaar in de balk.\nZonder selectie blijft alleen het pictogram over."
+
+msgctxt "@label"
+msgid "Name"
+msgstr "Naam"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Newest first"
+msgstr "Nieuwste eerst"
+
+msgctxt "@info:placeholder"
+msgid "No API key configured"
+msgstr "Geen API-sleutel ingesteld"
+
+msgid "No API key configured - add one in the settings"
+msgstr "Geen API-sleutel ingesteld – voeg er een toe bij de instellingen"
+
+msgctxt "@info:tooltip"
+msgid "No API key configured.\nRight click → Configure"
+msgstr "Geen API-sleutel ingesteld.\nRechtsklik → Instellen"
+
+msgctxt "@info:status"
+msgid "No data fetched yet"
+msgstr "Nog geen gegevens opgehaald"
+
+msgctxt "@info:placeholder"
+msgid "No data yet"
+msgstr "Nog geen gegevens"
+
+msgctxt "@info:placeholder"
+msgid "No model matches"
+msgstr "Geen model gevonden"
+
+msgctxt "@option:check"
+msgid "Notify when credit drops below the warning threshold"
+msgstr "Melden wanneer het tegoed onder de waarschuwingsdrempel zakt"
+
+msgctxt "@info:status %1 is a formatted amount"
+msgid "Only %1 of OpenRouter credit left."
+msgstr "Nog maar %1 OpenRouter-tegoed over."
+
+msgctxt "@action"
+msgid "Open activity on openrouter.ai"
+msgstr "Activiteit openen op openrouter.ai"
+
+msgctxt "@action:button"
+msgid "Open on openrouter.ai"
+msgstr "Openen op openrouter.ai"
+
+msgctxt "@action:button"
+msgid "Open settings"
+msgstr "Instellingen openen"
+
+msgctxt "@info:tooltip"
+msgid "OpenRouter"
+msgstr "OpenRouter"
+
+msgctxt "@info:tooltip %1 is a formatted amount"
+msgid "OpenRouter - %1 available"
+msgstr "OpenRouter – %1 beschikbaar"
+
+msgctxt "@title:window notification"
+msgid "OpenRouter credit is low"
+msgstr "OpenRouter-tegoed is laag"
+
+msgid "OpenRouter reported a server error (%1)"
+msgstr "OpenRouter meldt een serverfout (%1)"
+
+msgctxt "@label"
+msgid "Output"
+msgstr "Uitvoer"
+
+msgctxt "@info:tooltip"
+msgid "Output tokens"
+msgstr "Uitvoertokens"
+
+msgctxt "@label:spinbox"
+msgid "Output tokens:"
+msgstr "Uitvoertokens:"
+
+msgctxt "@title:tab"
+msgid "Overview"
+msgstr "Overzicht"
+
+msgctxt "@label"
+msgid "Per image"
+msgstr "Per afbeelding"
+
+msgctxt "@label"
+msgid "Per request"
+msgstr "Per verzoek"
+
+msgctxt "@title:group"
+msgid "Presentation"
+msgstr "Presentatie"
+
+msgctxt "@label"
+msgid "Preview:"
+msgstr "Voorbeeld:"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Prices per %1"
+msgstr "Prijzen per %1"
+
+msgctxt "@info:tooltip %1 is purchased credit, %2 is spent credit"
+msgid "Purchased: %1   Spent: %2"
+msgstr "Gekocht: %1   Uitgegeven: %2"
+
+msgctxt "@label"
+msgid "Rate limit"
+msgstr "Verzoeklimiet"
+
+msgid "Rate limit reached - try again later"
+msgstr "Verzoeklimiet bereikt – probeer het later opnieuw"
+
+msgctxt "@label"
+msgid "Reasoning"
+msgstr "Redeneren"
+
+msgctxt "@action:button"
+msgid "Refresh"
+msgstr "Verversen"
+
+msgctxt "@action"
+msgid "Refresh now"
+msgstr "Nu verversen"
+
+msgctxt "@option:check"
+msgid "Refresh when the popup opens"
+msgstr "Verversen bij het openen van het venster"
+
+msgctxt "@title:group"
+msgid "Refreshing"
+msgstr "Verversen"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Remaining key limit"
+msgstr "Resterende sleutellimiet"
+
+msgctxt "@label"
+msgid "Remaining key limit"
+msgstr "Resterende sleutellimiet"
+
+msgctxt "@action:button"
+msgid "Remove favourite"
+msgstr "Favoriet verwijderen"
+
+msgctxt "@label very short panel caption for the request count"
+msgid "Req."
+msgstr "Verz."
+
+msgctxt "@label"
+msgid "Requests"
+msgstr "Verzoeken"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Requests (30 days)"
+msgstr "Verzoeken (30 dagen)"
+
+msgctxt "@info:placeholder"
+msgid "Requests made through your account will show up here."
+msgstr "Verzoeken via je account verschijnen hier."
+
+msgctxt "@info:placeholder"
+msgid "Search models…"
+msgstr "Modellen zoeken…"
+
+msgctxt "@info"
+msgid "Separated by commas or line breaks. The star in the widget's model\nlist is the more convenient way."
+msgstr "Gescheiden door komma’s of regeleinden. De ster in de modellijst van het\nwidget is handiger."
+
+msgctxt "@label:textbox"
+msgid "Separator:"
+msgstr "Scheidingsteken:"
+
+msgctxt "@option:check"
+msgid "Short caption before each value (Today, Month …)"
+msgstr "Kort opschrift voor elke waarde (Vandaag, Maand…)"
+
+msgctxt "@option:check"
+msgid "Show icon"
+msgstr "Pictogram tonen"
+
+msgctxt "@title:group"
+msgid "Show in the panel"
+msgstr "In het paneel tonen"
+
+msgctxt "@label:listbox"
+msgid "Show prices per:"
+msgstr "Prijzen tonen per:"
+
+msgctxt "@label"
+msgid "Spending limit"
+msgstr "Uitgavenlimiet"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent in total"
+msgstr "Totaal uitgegeven"
+
+msgctxt "@label spending period"
+msgid "Spent in total"
+msgstr "Totaal uitgegeven"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this month"
+msgstr "Deze maand uitgegeven"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this week"
+msgstr "Deze week uitgegeven"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent today"
+msgstr "Vandaag uitgegeven"
+
+msgctxt "@option:check"
+msgid "Stack values instead of placing them side by side"
+msgstr "Waarden onder elkaar in plaats van naast elkaar"
+
+msgctxt "@action:button"
+msgid "Test connection"
+msgstr "Verbinding testen"
+
+msgctxt "@label:textbox"
+msgid "Text in front:"
+msgstr "Tekst ervoor:"
+
+msgctxt "@info:placeholder"
+msgid "The 30 day history comes from /activity. If your account requires it, create a management key at openrouter.ai/settings/provisioning-keys and enter it in the settings."
+msgstr "De historie van 30 dagen komt uit /activity. Als je account dat vereist, maak dan een beheersleutel aan op openrouter.ai/settings/provisioning-keys en vul die in bij de instellingen."
+
+msgctxt "@info"
+msgid "The real account balance needs a management key (Settings → Account)."
+msgstr "Het echte accountsaldo vereist een beheersleutel (Instellingen → Account)."
+
+msgctxt "@label spending period"
+msgid "This month"
+msgstr "Deze maand"
+
+msgctxt "@label account tier"
+msgid "Tier"
+msgstr "Abonnement"
+
+msgctxt "@label spending period"
+msgid "Today"
+msgstr "Vandaag"
+
+msgctxt "@label very short panel caption for today"
+msgid "Today"
+msgstr "Vandaag"
+
+msgctxt "@info:tooltip spending summary, %1/%2/%3 are amounts"
+msgid "Today: %1   Week: %2   Month: %3"
+msgstr "Vandaag: %1   Week: %2   Maand: %3"
+
+msgctxt "@label very short panel caption for the total"
+msgid "Total"
+msgstr "Tot."
+
+msgctxt "@info:status %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "Bijgewerkt %1"
+
+msgctxt "@info:tooltip %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "Bijgewerkt %1"
+
+msgctxt "@label:spinbox"
+msgid "Warn below:"
+msgstr "Waarschuwen onder:"
+
+msgctxt "@title:group"
+msgid "Warning thresholds"
+msgstr "Waarschuwingsdrempels"
+
+msgctxt "@label"
+msgid "Web search"
+msgstr "Webzoeken"
+
+msgctxt "@label very short panel caption for this week"
+msgid "Week"
+msgstr "Week"
+
+msgctxt "@info:placeholder example prefix"
+msgid "e.g. OR"
+msgstr "bv. OR"
+
+msgctxt "@info model costs nothing"
+msgid "free"
+msgstr "gratis"
+
+msgctxt "@item price of a free model"
+msgid "free"
+msgstr "gratis"
+
+msgctxt "@item account tier"
+msgid "free tier"
+msgstr "gratis niveau"
+
+msgctxt "@info:status input price, %1 is an amount"
+msgid "in %1"
+msgstr "in %1"
+
+msgid "just now"
+msgstr "zojuist"
+
+msgctxt "@info:placeholder"
+msgid "optional - for balance and history"
+msgstr "optioneel – voor saldo en historie"
+
+msgctxt "@info:status output price, %1 is an amount"
+msgid "out %1"
+msgstr "uit %1"
+
+msgctxt "@item account tier"
+msgid "paid"
+msgstr "betaald"
+
+msgctxt "@info:whatsthis data scope"
+msgid "this key only"
+msgstr "alleen deze sleutel"
+
+msgctxt "@item model id that is not in the catalogue"
+msgid "unknown"
+msgstr "onbekend"
+
+msgctxt "@item no spending limit set"
+msgid "unlimited"
+msgstr "onbeperkt"
+
+msgctxt "@item key without a name"
+msgid "unnamed"
+msgstr "naamloos"
+
+msgctxt "@info:whatsthis data scope"
+msgid "whole account"
+msgstr "hele account"
+
+msgctxt "@label average per day"
+msgid "Ø per day"
+msgstr "Ø per dag"
+
+msgctxt "@label:textbox"
+msgid "…or from a file:"
+msgstr "…of uit een bestand:"

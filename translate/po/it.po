@@ -1,0 +1,713 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it\n"
+"Language-Team: Italian\n"
+"Last-Translator: Teodor Gross (@teodorgross)\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: openrouter-plasmoid\n"
+"Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
+
+msgctxt "@info:status %1 is the filtered count, %2 the total count"
+msgid "%1 / %2"
+msgstr "%1 / %2"
+
+msgctxt "@info %1 is a token count such as 128K"
+msgid "%1 context"
+msgstr "contesto %1"
+
+msgid "%1 day ago"
+msgid_plural "%1 days ago"
+msgstr[0] "%1 giorno fa"
+msgstr[1] "%1 giorni fa"
+
+msgid "%1 hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "%1 ora fa"
+msgstr[1] "%1 ore fa"
+
+msgctxt "@info:tooltip %1 is input tokens, %2 output tokens"
+msgid "%1 in / %2 out"
+msgstr "%1 in ingresso / %2 in uscita"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minuto"
+msgstr[1] "%1 minuti"
+
+msgid "%1 minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "%1 minuto fa"
+msgstr[1] "%1 minuti fa"
+
+msgctxt "@info %1 is the spent amount, %2 the purchased amount, %3 a percentage"
+msgid "%1 of %2 spent (%3%)"
+msgstr "%1 di %2 spesi (%3 %)"
+
+msgctxt "@info:tooltip %1 is a request count"
+msgid "%1 requests"
+msgstr "%1 richieste"
+
+msgctxt "@item %1 is a request count, %2 an interval such as 10s"
+msgid "%1 requests / %2"
+msgstr "%1 richieste / %2"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 secondo"
+msgstr[1] "%1 secondi"
+
+msgid "%1 second ago"
+msgid_plural "%1 seconds ago"
+msgstr[0] "%1 secondo fa"
+msgstr[1] "%1 secondi fa"
+
+msgctxt "@item %1 is a token count"
+msgid "%1 tokens"
+msgstr "%1 token"
+
+msgctxt "@info nothing but the icon is shown"
+msgid "(icon only)"
+msgstr "(solo icona)"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1 million tokens"
+msgstr "1 milione di token"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1000 tokens"
+msgstr "1000 token"
+
+msgctxt "@label token pricing unit"
+msgid "1K tokens"
+msgstr "1K token"
+
+msgctxt "@label"
+msgid "30 days"
+msgstr "30 giorni"
+
+msgctxt "@info"
+msgid "A file takes precedence over the typed key and keeps it out of the\nPlasma configuration file. Recommended: chmod 600."
+msgstr "Il file ha la precedenza sulla chiave digitata e la tiene fuori dal file\ndi configurazione di Plasma. Consigliato: chmod 600."
+
+msgctxt "@title:group"
+msgid "API key"
+msgstr "Chiave API"
+
+msgid "API key is missing or invalid"
+msgstr "Chiave API mancante o non valida"
+
+msgctxt "@label:textbox"
+msgid "API key:"
+msgstr "Chiave API:"
+
+msgid "Access denied - this endpoint needs a management key"
+msgstr "Accesso negato: questo endpoint richiede una chiave di gestione"
+
+msgctxt "@title:tab settings page"
+msgid "Account"
+msgstr "Account"
+
+msgctxt "@action:button"
+msgid "Add to favourites"
+msgstr "Aggiungi ai preferiti"
+
+msgctxt "@title:tab settings page"
+msgid "Appearance"
+msgstr "Aspetto"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Available credit"
+msgstr "Credito disponibile"
+
+msgctxt "@label"
+msgid "Available credit"
+msgstr "Credito disponibile"
+
+msgctxt "@label bring-your-own-key usage"
+msgid "BYOK total"
+msgstr "Totale BYOK"
+
+msgctxt "@label very short panel caption for purchased credit"
+msgid "Bought"
+msgstr "Acquistato"
+
+msgctxt "@action"
+msgid "Buy credit"
+msgstr "Acquista credito"
+
+msgctxt "@action:button"
+msgid "Buy credit"
+msgstr "Ricarica"
+
+msgctxt "@title:group"
+msgid "By model"
+msgstr "Per modello"
+
+msgctxt "@item:inlistbox sort order"
+msgid "By name"
+msgstr "Per nome"
+
+msgctxt "@label"
+msgid "Cache read"
+msgstr "Cache letta"
+
+msgctxt "@label"
+msgid "Cache write"
+msgstr "Cache scritta"
+
+msgid "Cannot reach openrouter.ai"
+msgstr "Impossibile raggiungere openrouter.ai"
+
+msgctxt "@info:status"
+msgid "Cannot reach openrouter.ai"
+msgstr "Impossibile raggiungere openrouter.ai"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest input"
+msgstr "Ingresso più economico"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest output"
+msgstr "Uscita più economica"
+
+msgctxt "@info:status"
+msgid "Checking…"
+msgstr "Verifica in corso…"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the API key"
+msgstr "Scegli il file con la chiave API"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the management key"
+msgstr "Scegli il file con la chiave di gestione"
+
+msgctxt "@option:check"
+msgid "Colour credit by the warning thresholds"
+msgstr "Colora il credito in base alle soglie di avviso"
+
+msgctxt "@action:button"
+msgid "Configure"
+msgstr "Configura"
+
+msgctxt "@info:status %1 is the key name, %2 an amount"
+msgid "Connected - key “%1”, %2 spent so far."
+msgstr "Connesso – chiave «%1», %2 spesi finora."
+
+msgctxt "@label"
+msgid "Context window"
+msgstr "Finestra di contesto"
+
+msgctxt "@title:group"
+msgid "Cost calculator"
+msgstr "Calcolatore di costi"
+
+msgctxt "@info"
+msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
+msgstr "Crea chiavi di gestione su openrouter.ai/settings/provisioning-keys.\nAlcuni account la richiedono per /credits (saldo) e /activity (cronologia)."
+
+msgctxt "@title:group"
+msgid "Credentials"
+msgstr "Credenziali"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Credit purchased"
+msgstr "Credito acquistato"
+
+msgctxt "@label:spinbox"
+msgid "Critical below:"
+msgstr "Critico sotto:"
+
+msgctxt "@label:textbox"
+msgid "Currency symbol:"
+msgstr "Simbolo di valuta:"
+
+msgctxt "@title:group"
+msgid "Daily spending"
+msgstr "Spesa giornaliera"
+
+msgctxt "@label:spinbox"
+msgid "Decimal places:"
+msgstr "Cifre decimali:"
+
+msgctxt "@action:button"
+msgid "Details"
+msgstr "Dettagli"
+
+msgid "Endpoint not found"
+msgstr "Endpoint non trovato"
+
+msgctxt "@info:status"
+msgid "Enter an API key first."
+msgstr "Inserisci prima una chiave API."
+
+msgctxt "@info:placeholder"
+msgid "Enter your OpenRouter key in the settings to see credit and usage."
+msgstr "Inserisci la tua chiave OpenRouter nelle impostazioni per vedere credito e consumo."
+
+msgid "Error %1"
+msgstr "Errore %1"
+
+msgctxt "@info:status %1 is an HTTP status"
+msgid "Error %1"
+msgstr "Errore %1"
+
+msgid "Error %1: %2"
+msgstr "Errore %1: %2"
+
+msgctxt "@info:status %1 is an HTTP status, %2 the server message"
+msgid "Error %1: %2"
+msgstr "Errore %1: %2"
+
+msgctxt "@label"
+msgid "Estimated cost"
+msgstr "Costo stimato"
+
+msgctxt "@title:group"
+msgid "Favourites"
+msgstr "Preferiti"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Favourites - price per %1"
+msgstr "Preferiti – prezzo per %1"
+
+msgctxt "@action:button"
+msgid "Favourites only"
+msgstr "Solo preferiti"
+
+msgctxt "@label very short panel caption for available credit"
+msgid "Free"
+msgstr "Libero"
+
+msgctxt "@option:check"
+msgid "Hide free models"
+msgstr "Nascondi i modelli gratuiti"
+
+msgctxt "@title:tab"
+msgid "History"
+msgstr "Cronologia"
+
+msgctxt "@info:placeholder"
+msgid "History unavailable"
+msgstr "Cronologia non disponibile"
+
+msgctxt "@label"
+msgid "Input"
+msgstr "Ingresso"
+
+msgctxt "@info:tooltip"
+msgid "Input tokens"
+msgstr "Token in ingresso"
+
+msgctxt "@label:spinbox"
+msgid "Input tokens:"
+msgstr "Token in ingresso:"
+
+msgctxt "@label:spinbox"
+msgid "Interval:"
+msgstr "Intervallo:"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Largest context"
+msgstr "Contesto più ampio"
+
+msgctxt "@label"
+msgid "Left of that"
+msgstr "Rimanente"
+
+msgctxt "@label very short panel caption for the key limit"
+msgid "Limit"
+msgstr "Limite"
+
+msgctxt "@label"
+msgid "Limit resets"
+msgstr "Il limite si azzera"
+
+msgctxt "@info:placeholder"
+msgid "Loading model list…"
+msgstr "Caricamento dell’elenco dei modelli…"
+
+msgctxt "@label:textbox"
+msgid "Management key:"
+msgstr "Chiave di gestione:"
+
+msgctxt "@label"
+msgid "Metrics:"
+msgstr "Metriche:"
+
+msgctxt "@label"
+msgid "Modalities"
+msgstr "Modalità"
+
+msgctxt "@label"
+msgid "Model id"
+msgstr "ID del modello"
+
+msgctxt "@label:textbox"
+msgid "Model ids:"
+msgstr "ID dei modelli:"
+
+msgctxt "@title:tab"
+msgid "Models"
+msgstr "Modelli"
+
+msgctxt "@title:tab settings page"
+msgid "Models"
+msgstr "Modelli"
+
+msgctxt "@label very short panel caption for this month"
+msgid "Month"
+msgstr "Mese"
+
+msgctxt "@info"
+msgid "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left."
+msgstr "Scelta multipla: tutto ciò che è spuntato compare affiancato nella barra.\nSenza selezione resta solo l’icona."
+
+msgctxt "@label"
+msgid "Name"
+msgstr "Nome"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Newest first"
+msgstr "Prima i più recenti"
+
+msgctxt "@info:placeholder"
+msgid "No API key configured"
+msgstr "Nessuna chiave API configurata"
+
+msgid "No API key configured - add one in the settings"
+msgstr "Nessuna chiave API configurata: aggiungine una nelle impostazioni"
+
+msgctxt "@info:tooltip"
+msgid "No API key configured.\nRight click → Configure"
+msgstr "Nessuna chiave API configurata.\nClic destro → Configura"
+
+msgctxt "@info:status"
+msgid "No data fetched yet"
+msgstr "Nessun dato ancora recuperato"
+
+msgctxt "@info:placeholder"
+msgid "No data yet"
+msgstr "Ancora nessun dato"
+
+msgctxt "@info:placeholder"
+msgid "No model matches"
+msgstr "Nessun modello corrispondente"
+
+msgctxt "@option:check"
+msgid "Notify when credit drops below the warning threshold"
+msgstr "Avvisa quando il credito scende sotto la soglia di avviso"
+
+msgctxt "@info:status %1 is a formatted amount"
+msgid "Only %1 of OpenRouter credit left."
+msgstr "Restano solo %1 di credito OpenRouter."
+
+msgctxt "@action"
+msgid "Open activity on openrouter.ai"
+msgstr "Apri l’attività su openrouter.ai"
+
+msgctxt "@action:button"
+msgid "Open on openrouter.ai"
+msgstr "Apri su openrouter.ai"
+
+msgctxt "@action:button"
+msgid "Open settings"
+msgstr "Apri le impostazioni"
+
+msgctxt "@info:tooltip"
+msgid "OpenRouter"
+msgstr "OpenRouter"
+
+msgctxt "@info:tooltip %1 is a formatted amount"
+msgid "OpenRouter - %1 available"
+msgstr "OpenRouter – %1 disponibili"
+
+msgctxt "@title:window notification"
+msgid "OpenRouter credit is low"
+msgstr "Credito OpenRouter in esaurimento"
+
+msgid "OpenRouter reported a server error (%1)"
+msgstr "OpenRouter segnala un errore del server (%1)"
+
+msgctxt "@label"
+msgid "Output"
+msgstr "Uscita"
+
+msgctxt "@info:tooltip"
+msgid "Output tokens"
+msgstr "Token in uscita"
+
+msgctxt "@label:spinbox"
+msgid "Output tokens:"
+msgstr "Token in uscita:"
+
+msgctxt "@title:tab"
+msgid "Overview"
+msgstr "Panoramica"
+
+msgctxt "@label"
+msgid "Per image"
+msgstr "Per immagine"
+
+msgctxt "@label"
+msgid "Per request"
+msgstr "Per richiesta"
+
+msgctxt "@title:group"
+msgid "Presentation"
+msgstr "Presentazione"
+
+msgctxt "@label"
+msgid "Preview:"
+msgstr "Anteprima:"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Prices per %1"
+msgstr "Prezzi per %1"
+
+msgctxt "@info:tooltip %1 is purchased credit, %2 is spent credit"
+msgid "Purchased: %1   Spent: %2"
+msgstr "Acquistato: %1   Speso: %2"
+
+msgctxt "@label"
+msgid "Rate limit"
+msgstr "Limite di frequenza"
+
+msgid "Rate limit reached - try again later"
+msgstr "Limite di frequenza raggiunto: riprova più tardi"
+
+msgctxt "@label"
+msgid "Reasoning"
+msgstr "Ragionamento"
+
+msgctxt "@action:button"
+msgid "Refresh"
+msgstr "Aggiorna"
+
+msgctxt "@action"
+msgid "Refresh now"
+msgstr "Aggiorna adesso"
+
+msgctxt "@option:check"
+msgid "Refresh when the popup opens"
+msgstr "Aggiorna all’apertura della finestra"
+
+msgctxt "@title:group"
+msgid "Refreshing"
+msgstr "Aggiornamento"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Remaining key limit"
+msgstr "Limite residuo della chiave"
+
+msgctxt "@label"
+msgid "Remaining key limit"
+msgstr "Limite residuo della chiave"
+
+msgctxt "@action:button"
+msgid "Remove favourite"
+msgstr "Rimuovi dai preferiti"
+
+msgctxt "@label very short panel caption for the request count"
+msgid "Req."
+msgstr "Rich."
+
+msgctxt "@label"
+msgid "Requests"
+msgstr "Richieste"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Requests (30 days)"
+msgstr "Richieste (30 giorni)"
+
+msgctxt "@info:placeholder"
+msgid "Requests made through your account will show up here."
+msgstr "Le richieste fatte con il tuo account compariranno qui."
+
+msgctxt "@info:placeholder"
+msgid "Search models…"
+msgstr "Cerca modelli…"
+
+msgctxt "@info"
+msgid "Separated by commas or line breaks. The star in the widget's model\nlist is the more convenient way."
+msgstr "Separati da virgole o a capo. La stella nell’elenco dei modelli del widget\nè più comoda."
+
+msgctxt "@label:textbox"
+msgid "Separator:"
+msgstr "Separatore:"
+
+msgctxt "@option:check"
+msgid "Short caption before each value (Today, Month …)"
+msgstr "Didascalia breve davanti a ogni valore (Oggi, Mese…)"
+
+msgctxt "@option:check"
+msgid "Show icon"
+msgstr "Mostra l’icona"
+
+msgctxt "@title:group"
+msgid "Show in the panel"
+msgstr "Mostra nel pannello"
+
+msgctxt "@label:listbox"
+msgid "Show prices per:"
+msgstr "Mostra i prezzi per:"
+
+msgctxt "@label"
+msgid "Spending limit"
+msgstr "Limite di spesa"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent in total"
+msgstr "Speso in totale"
+
+msgctxt "@label spending period"
+msgid "Spent in total"
+msgstr "Speso in totale"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this month"
+msgstr "Speso questo mese"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this week"
+msgstr "Speso questa settimana"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent today"
+msgstr "Speso oggi"
+
+msgctxt "@option:check"
+msgid "Stack values instead of placing them side by side"
+msgstr "Impila i valori invece di affiancarli"
+
+msgctxt "@action:button"
+msgid "Test connection"
+msgstr "Prova la connessione"
+
+msgctxt "@label:textbox"
+msgid "Text in front:"
+msgstr "Testo davanti:"
+
+msgctxt "@info:placeholder"
+msgid "The 30 day history comes from /activity. If your account requires it, create a management key at openrouter.ai/settings/provisioning-keys and enter it in the settings."
+msgstr "La cronologia di 30 giorni proviene da /activity. Se il tuo account lo richiede, crea una chiave di gestione su openrouter.ai/settings/provisioning-keys e inseriscila nelle impostazioni."
+
+msgctxt "@info"
+msgid "The real account balance needs a management key (Settings → Account)."
+msgstr "Il saldo reale dell’account richiede una chiave di gestione (Impostazioni → Account)."
+
+msgctxt "@label spending period"
+msgid "This month"
+msgstr "Questo mese"
+
+msgctxt "@label account tier"
+msgid "Tier"
+msgstr "Piano"
+
+msgctxt "@label spending period"
+msgid "Today"
+msgstr "Oggi"
+
+msgctxt "@label very short panel caption for today"
+msgid "Today"
+msgstr "Oggi"
+
+msgctxt "@info:tooltip spending summary, %1/%2/%3 are amounts"
+msgid "Today: %1   Week: %2   Month: %3"
+msgstr "Oggi: %1   Settimana: %2   Mese: %3"
+
+msgctxt "@label very short panel caption for the total"
+msgid "Total"
+msgstr "Tot."
+
+msgctxt "@info:status %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "Aggiornato %1"
+
+msgctxt "@info:tooltip %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "Aggiornato %1"
+
+msgctxt "@label:spinbox"
+msgid "Warn below:"
+msgstr "Avvisa sotto:"
+
+msgctxt "@title:group"
+msgid "Warning thresholds"
+msgstr "Soglie di avviso"
+
+msgctxt "@label"
+msgid "Web search"
+msgstr "Ricerca web"
+
+msgctxt "@label very short panel caption for this week"
+msgid "Week"
+msgstr "Sett."
+
+msgctxt "@info:placeholder example prefix"
+msgid "e.g. OR"
+msgstr "es. OR"
+
+msgctxt "@info model costs nothing"
+msgid "free"
+msgstr "gratuito"
+
+msgctxt "@item price of a free model"
+msgid "free"
+msgstr "gratuito"
+
+msgctxt "@item account tier"
+msgid "free tier"
+msgstr "piano gratuito"
+
+msgctxt "@info:status input price, %1 is an amount"
+msgid "in %1"
+msgstr "in %1"
+
+msgid "just now"
+msgstr "proprio ora"
+
+msgctxt "@info:placeholder"
+msgid "optional - for balance and history"
+msgstr "facoltativa – per saldo e cronologia"
+
+msgctxt "@info:status output price, %1 is an amount"
+msgid "out %1"
+msgstr "out %1"
+
+msgctxt "@item account tier"
+msgid "paid"
+msgstr "a pagamento"
+
+msgctxt "@info:whatsthis data scope"
+msgid "this key only"
+msgstr "solo questa chiave"
+
+msgctxt "@item model id that is not in the catalogue"
+msgid "unknown"
+msgstr "sconosciuto"
+
+msgctxt "@item no spending limit set"
+msgid "unlimited"
+msgstr "illimitato"
+
+msgctxt "@item key without a name"
+msgid "unnamed"
+msgstr "senza nome"
+
+msgctxt "@info:whatsthis data scope"
+msgid "whole account"
+msgstr "intero account"
+
+msgctxt "@label average per day"
+msgid "Ø per day"
+msgstr "Ø al giorno"
+
+msgctxt "@label:textbox"
+msgid "…or from a file:"
+msgstr "…oppure da un file:"

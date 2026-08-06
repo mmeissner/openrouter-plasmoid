@@ -1,0 +1,10 @@
+# Compiled gettext catalogues - generated from translate/po/*.po by install.sh
+package/contents/locale/
+
+# Python bytecode from the translation tooling and the QML bench
+__pycache__/
+*.pyc
+
+# Local scratch
+*.log
+*.orig

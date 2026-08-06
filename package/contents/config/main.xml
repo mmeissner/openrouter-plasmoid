@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+
+    <kcfgfile name=""/>
+
+    <group name="General">
+        <entry name="apiKey" type="String">
+            <label>OpenRouter API key (inference key, sk-or-v1-...)</label>
+            <default></default>
+        </entry>
+        <entry name="apiKeyFile" type="String">
+            <label>Path to a file containing the API key. Takes precedence over apiKey.</label>
+            <default></default>
+        </entry>
+        <entry name="managementKey" type="String">
+            <label>Optional management/provisioning key for /credits and /activity</label>
+            <default></default>
+        </entry>
+        <entry name="managementKeyFile" type="String">
+            <label>Path to a file containing the management key. Takes precedence.</label>
+            <default></default>
+        </entry>
+        <entry name="refreshInterval" type="Int">
+            <label>Refresh interval in seconds</label>
+            <default>300</default>
+            <min>30</min>
+        </entry>
+        <entry name="refreshOnOpen" type="Bool">
+            <label>Refresh when the popup is opened</label>
+            <default>true</default>
+        </entry>
+        <entry name="lowThreshold" type="Double">
+            <label>Balance below which the widget warns</label>
+            <default>5.0</default>
+        </entry>
+        <entry name="criticalThreshold" type="Double">
+            <label>Balance below which the widget shows a critical state</label>
+            <default>1.0</default>
+        </entry>
+        <entry name="notifyLow" type="Bool">
+            <label>Send a notification when the balance drops below the warning threshold</label>
+            <default>true</default>
+        </entry>
+    </group>
+
+    <group name="Appearance">
+        <entry name="compactItems" type="String">
+            <label>Comma separated metrics shown in the panel: balance, limit, today, week, month, total, credits, requests</label>
+            <default>balance</default>
+        </entry>
+        <entry name="compactLabels" type="Bool">
+            <label>Prefix every panel value with a short caption</label>
+            <default>false</default>
+        </entry>
+        <entry name="compactStacked" type="Bool">
+            <label>Stack the panel values vertically instead of side by side</label>
+            <default>false</default>
+        </entry>
+        <entry name="compactSeparator" type="String">
+            <label>Separator drawn between panel values</label>
+            <default>·</default>
+        </entry>
+        <entry name="showIcon" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="compactPrefix" type="String">
+            <label>Text shown in front of the value in the panel</label>
+            <default></default>
+        </entry>
+        <entry name="currencySymbol" type="String">
+            <default>$</default>
+        </entry>
+        <entry name="decimals" type="Int">
+            <default>2</default>
+            <min>0</min>
+            <max>6</max>
+        </entry>
+        <entry name="colorize" type="Bool">
+            <label>Colour the panel value according to the thresholds</label>
+            <default>true</default>
+        </entry>
+    </group>
+
+    <group name="Models">
+        <entry name="favoriteModels" type="String">
+            <label>Comma separated list of favourite model ids</label>
+            <default>anthropic/claude-sonnet-4.5,openai/gpt-4o-mini</default>
+        </entry>
+        <entry name="pricingUnit" type="Int">
+            <label>Token unit used to display model prices (1000 or 1000000)</label>
+            <default>1000000</default>
+        </entry>
+        <entry name="calcInputTokens" type="Int">
+            <label>Default input tokens for the cost calculator</label>
+            <default>1000000</default>
+        </entry>
+        <entry name="calcOutputTokens" type="Int">
+            <label>Default output tokens for the cost calculator</label>
+            <default>200000</default>
+        </entry>
+        <entry name="modelsSort" type="String">
+            <default>name</default>
+        </entry>
+        <entry name="hideFreeModels" type="Bool">
+            <default>false</default>
+        </entry>
+    </group>
+</kcfg>

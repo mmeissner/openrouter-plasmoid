@@ -1,0 +1,713 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
+"Language-Team: Japanese\n"
+"Last-Translator: Teodor Gross (@teodorgross)\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: openrouter-plasmoid\n"
+"Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
+
+msgctxt "@info:status %1 is the filtered count, %2 the total count"
+msgid "%1 / %2"
+msgstr "%1 / %2"
+
+msgctxt "@info %1 is a token count such as 128K"
+msgid "%1 context"
+msgstr "コンテキスト %1"
+
+msgid "%1 day ago"
+msgid_plural "%1 days ago"
+msgstr[0] "%1 日前"
+msgstr[1] ""
+
+msgid "%1 hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "%1 時間前"
+msgstr[1] ""
+
+msgctxt "@info:tooltip %1 is input tokens, %2 output tokens"
+msgid "%1 in / %2 out"
+msgstr "入力 %1 / 出力 %2"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 分"
+msgstr[1] ""
+
+msgid "%1 minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "%1 分前"
+msgstr[1] ""
+
+msgctxt "@info %1 is the spent amount, %2 the purchased amount, %3 a percentage"
+msgid "%1 of %2 spent (%3%)"
+msgstr "%2 のうち %1 を使用 (%3 %)"
+
+msgctxt "@info:tooltip %1 is a request count"
+msgid "%1 requests"
+msgstr "%1 リクエスト"
+
+msgctxt "@item %1 is a request count, %2 an interval such as 10s"
+msgid "%1 requests / %2"
+msgstr "%1 リクエスト / %2"
+
+msgctxt "@item:valuesuffix"
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 秒"
+msgstr[1] ""
+
+msgid "%1 second ago"
+msgid_plural "%1 seconds ago"
+msgstr[0] "%1 秒前"
+msgstr[1] ""
+
+msgctxt "@item %1 is a token count"
+msgid "%1 tokens"
+msgstr "%1 トークン"
+
+msgctxt "@info nothing but the icon is shown"
+msgid "(icon only)"
+msgstr "(アイコンのみ)"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1 million tokens"
+msgstr "100 万トークン"
+
+msgctxt "@item:inlistbox pricing unit"
+msgid "1000 tokens"
+msgstr "1000 トークン"
+
+msgctxt "@label token pricing unit"
+msgid "1K tokens"
+msgstr "1K トークン"
+
+msgctxt "@label"
+msgid "30 days"
+msgstr "30 日間"
+
+msgctxt "@info"
+msgid "A file takes precedence over the typed key and keeps it out of the\nPlasma configuration file. Recommended: chmod 600."
+msgstr "ファイルは入力したキーより優先され、キーを Plasma の設定ファイルの\n外に保てます。chmod 600 を推奨します。"
+
+msgctxt "@title:group"
+msgid "API key"
+msgstr "API キー"
+
+msgid "API key is missing or invalid"
+msgstr "API キーがないか無効です"
+
+msgctxt "@label:textbox"
+msgid "API key:"
+msgstr "API キー:"
+
+msgid "Access denied - this endpoint needs a management key"
+msgstr "アクセスが拒否されました — このエンドポイントには管理キーが必要です"
+
+msgctxt "@title:tab settings page"
+msgid "Account"
+msgstr "アカウント"
+
+msgctxt "@action:button"
+msgid "Add to favourites"
+msgstr "お気に入りに追加"
+
+msgctxt "@title:tab settings page"
+msgid "Appearance"
+msgstr "外観"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Available credit"
+msgstr "利用可能なクレジット"
+
+msgctxt "@label"
+msgid "Available credit"
+msgstr "利用可能なクレジット"
+
+msgctxt "@label bring-your-own-key usage"
+msgid "BYOK total"
+msgstr "BYOK 合計"
+
+msgctxt "@label very short panel caption for purchased credit"
+msgid "Bought"
+msgstr "購入済み"
+
+msgctxt "@action"
+msgid "Buy credit"
+msgstr "クレジットを購入"
+
+msgctxt "@action:button"
+msgid "Buy credit"
+msgstr "チャージ"
+
+msgctxt "@title:group"
+msgid "By model"
+msgstr "モデル別"
+
+msgctxt "@item:inlistbox sort order"
+msgid "By name"
+msgstr "名前順"
+
+msgctxt "@label"
+msgid "Cache read"
+msgstr "キャッシュ読み込み"
+
+msgctxt "@label"
+msgid "Cache write"
+msgstr "キャッシュ書き込み"
+
+msgid "Cannot reach openrouter.ai"
+msgstr "openrouter.ai に接続できません"
+
+msgctxt "@info:status"
+msgid "Cannot reach openrouter.ai"
+msgstr "openrouter.ai に接続できません"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest input"
+msgstr "入力が最安"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Cheapest output"
+msgstr "出力が最安"
+
+msgctxt "@info:status"
+msgid "Checking…"
+msgstr "確認中…"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the API key"
+msgstr "API キーが入ったファイルを選択"
+
+msgctxt "@title:window"
+msgid "Choose the file holding the management key"
+msgstr "管理キーが入ったファイルを選択"
+
+msgctxt "@option:check"
+msgid "Colour credit by the warning thresholds"
+msgstr "警告しきい値に応じてクレジットを色分けする"
+
+msgctxt "@action:button"
+msgid "Configure"
+msgstr "設定"
+
+msgctxt "@info:status %1 is the key name, %2 an amount"
+msgid "Connected - key “%1”, %2 spent so far."
+msgstr "接続しました — キー「%1」、これまでに %2 を使用。"
+
+msgctxt "@label"
+msgid "Context window"
+msgstr "コンテキストウィンドウ"
+
+msgctxt "@title:group"
+msgid "Cost calculator"
+msgstr "コスト計算機"
+
+msgctxt "@info"
+msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
+msgstr "管理キーは openrouter.ai/settings/provisioning-keys で作成します。\n一部のアカウントでは /credits (残高) と /activity (履歴) に必要です。"
+
+msgctxt "@title:group"
+msgid "Credentials"
+msgstr "認証情報"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Credit purchased"
+msgstr "購入したクレジット"
+
+msgctxt "@label:spinbox"
+msgid "Critical below:"
+msgstr "危険しきい値:"
+
+msgctxt "@label:textbox"
+msgid "Currency symbol:"
+msgstr "通貨記号:"
+
+msgctxt "@title:group"
+msgid "Daily spending"
+msgstr "日ごとの利用額"
+
+msgctxt "@label:spinbox"
+msgid "Decimal places:"
+msgstr "小数点以下の桁数:"
+
+msgctxt "@action:button"
+msgid "Details"
+msgstr "詳細"
+
+msgid "Endpoint not found"
+msgstr "エンドポイントが見つかりません"
+
+msgctxt "@info:status"
+msgid "Enter an API key first."
+msgstr "先に API キーを入力してください。"
+
+msgctxt "@info:placeholder"
+msgid "Enter your OpenRouter key in the settings to see credit and usage."
+msgstr "残高と利用状況を見るには、設定で OpenRouter のキーを入力してください。"
+
+msgid "Error %1"
+msgstr "エラー %1"
+
+msgctxt "@info:status %1 is an HTTP status"
+msgid "Error %1"
+msgstr "エラー %1"
+
+msgid "Error %1: %2"
+msgstr "エラー %1: %2"
+
+msgctxt "@info:status %1 is an HTTP status, %2 the server message"
+msgid "Error %1: %2"
+msgstr "エラー %1: %2"
+
+msgctxt "@label"
+msgid "Estimated cost"
+msgstr "推定コスト"
+
+msgctxt "@title:group"
+msgid "Favourites"
+msgstr "お気に入り"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Favourites - price per %1"
+msgstr "お気に入り — %1 あたりの料金"
+
+msgctxt "@action:button"
+msgid "Favourites only"
+msgstr "お気に入りのみ"
+
+msgctxt "@label very short panel caption for available credit"
+msgid "Free"
+msgstr "残高"
+
+msgctxt "@option:check"
+msgid "Hide free models"
+msgstr "無料モデルを隠す"
+
+msgctxt "@title:tab"
+msgid "History"
+msgstr "履歴"
+
+msgctxt "@info:placeholder"
+msgid "History unavailable"
+msgstr "履歴を取得できません"
+
+msgctxt "@label"
+msgid "Input"
+msgstr "入力"
+
+msgctxt "@info:tooltip"
+msgid "Input tokens"
+msgstr "入力トークン"
+
+msgctxt "@label:spinbox"
+msgid "Input tokens:"
+msgstr "入力トークン:"
+
+msgctxt "@label:spinbox"
+msgid "Interval:"
+msgstr "間隔:"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Largest context"
+msgstr "コンテキスト最大"
+
+msgctxt "@label"
+msgid "Left of that"
+msgstr "うち残り"
+
+msgctxt "@label very short panel caption for the key limit"
+msgid "Limit"
+msgstr "上限"
+
+msgctxt "@label"
+msgid "Limit resets"
+msgstr "上限のリセット"
+
+msgctxt "@info:placeholder"
+msgid "Loading model list…"
+msgstr "モデル一覧を読み込み中…"
+
+msgctxt "@label:textbox"
+msgid "Management key:"
+msgstr "管理キー:"
+
+msgctxt "@label"
+msgid "Metrics:"
+msgstr "指標:"
+
+msgctxt "@label"
+msgid "Modalities"
+msgstr "モダリティ"
+
+msgctxt "@label"
+msgid "Model id"
+msgstr "モデル ID"
+
+msgctxt "@label:textbox"
+msgid "Model ids:"
+msgstr "モデル ID:"
+
+msgctxt "@title:tab"
+msgid "Models"
+msgstr "モデル"
+
+msgctxt "@title:tab settings page"
+msgid "Models"
+msgstr "モデル"
+
+msgctxt "@label very short panel caption for this month"
+msgid "Month"
+msgstr "月"
+
+msgctxt "@info"
+msgid "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left."
+msgstr "複数選択 — チェックしたものがパネルに横並びで表示されます。\n何も選ばなければアイコンだけになります。"
+
+msgctxt "@label"
+msgid "Name"
+msgstr "名前"
+
+msgctxt "@item:inlistbox sort order"
+msgid "Newest first"
+msgstr "新しい順"
+
+msgctxt "@info:placeholder"
+msgid "No API key configured"
+msgstr "API キーが設定されていません"
+
+msgid "No API key configured - add one in the settings"
+msgstr "API キーが設定されていません — 設定で追加してください"
+
+msgctxt "@info:tooltip"
+msgid "No API key configured.\nRight click → Configure"
+msgstr "API キーが設定されていません。\n右クリック → 設定"
+
+msgctxt "@info:status"
+msgid "No data fetched yet"
+msgstr "まだデータを取得していません"
+
+msgctxt "@info:placeholder"
+msgid "No data yet"
+msgstr "データはまだありません"
+
+msgctxt "@info:placeholder"
+msgid "No model matches"
+msgstr "該当するモデルがありません"
+
+msgctxt "@option:check"
+msgid "Notify when credit drops below the warning threshold"
+msgstr "クレジットが警告しきい値を下回ったら通知する"
+
+msgctxt "@info:status %1 is a formatted amount"
+msgid "Only %1 of OpenRouter credit left."
+msgstr "OpenRouter のクレジットは残り %1 です。"
+
+msgctxt "@action"
+msgid "Open activity on openrouter.ai"
+msgstr "openrouter.ai でアクティビティを開く"
+
+msgctxt "@action:button"
+msgid "Open on openrouter.ai"
+msgstr "openrouter.ai で開く"
+
+msgctxt "@action:button"
+msgid "Open settings"
+msgstr "設定を開く"
+
+msgctxt "@info:tooltip"
+msgid "OpenRouter"
+msgstr "OpenRouter"
+
+msgctxt "@info:tooltip %1 is a formatted amount"
+msgid "OpenRouter - %1 available"
+msgstr "OpenRouter — %1 利用可能"
+
+msgctxt "@title:window notification"
+msgid "OpenRouter credit is low"
+msgstr "OpenRouter のクレジットが残りわずかです"
+
+msgid "OpenRouter reported a server error (%1)"
+msgstr "OpenRouter がサーバーエラーを報告しました (%1)"
+
+msgctxt "@label"
+msgid "Output"
+msgstr "出力"
+
+msgctxt "@info:tooltip"
+msgid "Output tokens"
+msgstr "出力トークン"
+
+msgctxt "@label:spinbox"
+msgid "Output tokens:"
+msgstr "出力トークン:"
+
+msgctxt "@title:tab"
+msgid "Overview"
+msgstr "概要"
+
+msgctxt "@label"
+msgid "Per image"
+msgstr "画像あたり"
+
+msgctxt "@label"
+msgid "Per request"
+msgstr "リクエストあたり"
+
+msgctxt "@title:group"
+msgid "Presentation"
+msgstr "表示方法"
+
+msgctxt "@label"
+msgid "Preview:"
+msgstr "プレビュー:"
+
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Prices per %1"
+msgstr "%1 あたりの料金"
+
+msgctxt "@info:tooltip %1 is purchased credit, %2 is spent credit"
+msgid "Purchased: %1   Spent: %2"
+msgstr "購入: %1   使用: %2"
+
+msgctxt "@label"
+msgid "Rate limit"
+msgstr "レート制限"
+
+msgid "Rate limit reached - try again later"
+msgstr "レート制限に達しました — 後でやり直してください"
+
+msgctxt "@label"
+msgid "Reasoning"
+msgstr "推論"
+
+msgctxt "@action:button"
+msgid "Refresh"
+msgstr "更新"
+
+msgctxt "@action"
+msgid "Refresh now"
+msgstr "今すぐ更新"
+
+msgctxt "@option:check"
+msgid "Refresh when the popup opens"
+msgstr "ポップアップを開いたときに更新する"
+
+msgctxt "@title:group"
+msgid "Refreshing"
+msgstr "更新"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Remaining key limit"
+msgstr "キーの残り上限"
+
+msgctxt "@label"
+msgid "Remaining key limit"
+msgstr "キーの残り上限"
+
+msgctxt "@action:button"
+msgid "Remove favourite"
+msgstr "お気に入りから削除"
+
+msgctxt "@label very short panel caption for the request count"
+msgid "Req."
+msgstr "req"
+
+msgctxt "@label"
+msgid "Requests"
+msgstr "リクエスト数"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Requests (30 days)"
+msgstr "リクエスト数 (30 日)"
+
+msgctxt "@info:placeholder"
+msgid "Requests made through your account will show up here."
+msgstr "アカウント経由のリクエストがここに表示されます。"
+
+msgctxt "@info:placeholder"
+msgid "Search models…"
+msgstr "モデルを検索…"
+
+msgctxt "@info"
+msgid "Separated by commas or line breaks. The star in the widget's model\nlist is the more convenient way."
+msgstr "カンマまたは改行で区切ります。ウィジェットのモデル一覧にある星印のほうが\n手軽です。"
+
+msgctxt "@label:textbox"
+msgid "Separator:"
+msgstr "区切り記号:"
+
+msgctxt "@option:check"
+msgid "Short caption before each value (Today, Month …)"
+msgstr "各値の前に短い見出しを付ける (今日、今月…)"
+
+msgctxt "@option:check"
+msgid "Show icon"
+msgstr "アイコンを表示する"
+
+msgctxt "@title:group"
+msgid "Show in the panel"
+msgstr "パネルに表示"
+
+msgctxt "@label:listbox"
+msgid "Show prices per:"
+msgstr "料金の表示単位:"
+
+msgctxt "@label"
+msgid "Spending limit"
+msgstr "利用上限"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent in total"
+msgstr "累計使用額"
+
+msgctxt "@label spending period"
+msgid "Spent in total"
+msgstr "累計使用額"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this month"
+msgstr "今月の使用額"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent this week"
+msgstr "今週の使用額"
+
+msgctxt "@item:inlistbox panel metric"
+msgid "Spent today"
+msgstr "今日の使用額"
+
+msgctxt "@option:check"
+msgid "Stack values instead of placing them side by side"
+msgstr "値を横並びではなく縦に並べる"
+
+msgctxt "@action:button"
+msgid "Test connection"
+msgstr "接続をテスト"
+
+msgctxt "@label:textbox"
+msgid "Text in front:"
+msgstr "先頭のテキスト:"
+
+msgctxt "@info:placeholder"
+msgid "The 30 day history comes from /activity. If your account requires it, create a management key at openrouter.ai/settings/provisioning-keys and enter it in the settings."
+msgstr "30 日間の履歴は /activity から取得します。アカウントで必要な場合は openrouter.ai/settings/provisioning-keys で管理キーを作成し、設定に入力してください。"
+
+msgctxt "@info"
+msgid "The real account balance needs a management key (Settings → Account)."
+msgstr "実際の残高には管理キーが必要です (設定 → アカウント)。"
+
+msgctxt "@label spending period"
+msgid "This month"
+msgstr "今月"
+
+msgctxt "@label account tier"
+msgid "Tier"
+msgstr "プラン"
+
+msgctxt "@label spending period"
+msgid "Today"
+msgstr "今日"
+
+msgctxt "@label very short panel caption for today"
+msgid "Today"
+msgstr "今日"
+
+msgctxt "@info:tooltip spending summary, %1/%2/%3 are amounts"
+msgid "Today: %1   Week: %2   Month: %3"
+msgstr "今日: %1   今週: %2   今月: %3"
+
+msgctxt "@label very short panel caption for the total"
+msgid "Total"
+msgstr "合計"
+
+msgctxt "@info:status %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "%1 に更新"
+
+msgctxt "@info:tooltip %1 is a relative time such as '5 minutes ago'"
+msgid "Updated %1"
+msgstr "%1 に更新"
+
+msgctxt "@label:spinbox"
+msgid "Warn below:"
+msgstr "警告しきい値:"
+
+msgctxt "@title:group"
+msgid "Warning thresholds"
+msgstr "警告しきい値"
+
+msgctxt "@label"
+msgid "Web search"
+msgstr "ウェブ検索"
+
+msgctxt "@label very short panel caption for this week"
+msgid "Week"
+msgstr "今週"
+
+msgctxt "@info:placeholder example prefix"
+msgid "e.g. OR"
+msgstr "例: OR"
+
+msgctxt "@info model costs nothing"
+msgid "free"
+msgstr "無料"
+
+msgctxt "@item price of a free model"
+msgid "free"
+msgstr "無料"
+
+msgctxt "@item account tier"
+msgid "free tier"
+msgstr "無料プラン"
+
+msgctxt "@info:status input price, %1 is an amount"
+msgid "in %1"
+msgstr "入 %1"
+
+msgid "just now"
+msgstr "たった今"
+
+msgctxt "@info:placeholder"
+msgid "optional - for balance and history"
+msgstr "任意 — 残高と履歴用"
+
+msgctxt "@info:status output price, %1 is an amount"
+msgid "out %1"
+msgstr "出 %1"
+
+msgctxt "@item account tier"
+msgid "paid"
+msgstr "有料"
+
+msgctxt "@info:whatsthis data scope"
+msgid "this key only"
+msgstr "このキーのみ"
+
+msgctxt "@item model id that is not in the catalogue"
+msgid "unknown"
+msgstr "不明"
+
+msgctxt "@item no spending limit set"
+msgid "unlimited"
+msgstr "無制限"
+
+msgctxt "@item key without a name"
+msgid "unnamed"
+msgstr "名前なし"
+
+msgctxt "@info:whatsthis data scope"
+msgid "whole account"
+msgstr "アカウント全体"
+
+msgctxt "@label average per day"
+msgid "Ø per day"
+msgstr "1 日平均"
+
+msgctxt "@label:textbox"
+msgid "…or from a file:"
+msgstr "…またはファイルから:"
