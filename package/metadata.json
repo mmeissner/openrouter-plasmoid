@@ -20,7 +20,7 @@
         "Description[ru]": "Баланс, расходы и цены моделей OpenRouter на панели",
         "Description[tr]": "OpenRouter bakiyesi, harcaması ve model fiyatları panelinizde",
         "Description[zh_CN]": "在面板中显示 OpenRouter 余额、用量和模型价格",
-        "EnabledByDefault": true,
+        "EnabledByDefault": false,
         "Icon": "openrouter",
         "Id": "com.github.teodorgross.openrouter",
         "License": "MIT",
@@ -41,7 +41,5 @@
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-API-Minimum-Version": "6.0",
-    "X-Plasma-MainScript": "ui/main.qml",
-    "X-Plasma-NotificationArea": "true",
-    "X-Plasma-NotificationAreaCategory": "ApplicationStatus"
+    "X-Plasma-MainScript": "ui/main.qml"
 }

@@ -87,6 +87,22 @@ Window {
         }
     }
 
+    /*
+     * Regression check for the in-widget language switch: the stub starts in
+     * one language and this flips it at runtime, so the screenshot proves the
+     * bindings re-evaluate without a reload.
+     */
+    property string switchLanguageTo: "en"
+
+    Timer {
+        interval: 5000
+        running: win.switchLanguageTo.length > 0
+        onTriggered: {
+            Plasmoid.configuration.language = win.switchLanguageTo;
+            console.warn("BENCH language switched to " + win.switchLanguageTo);
+        }
+    }
+
     // Synthetic account data - never touches a real key
     Timer {
         interval: 2500

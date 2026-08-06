@@ -13,7 +13,7 @@ QtObject {
         property real lowThreshold: 5.0
         property real criticalThreshold: 1.0
         property bool notifyLow: true
-        property string language: ""
+        property string language: "de"
         property string compactItems: "balance,today,month,requests"
         property bool compactLabels: true
         property bool compactStacked: false

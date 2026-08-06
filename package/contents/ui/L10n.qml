@@ -34,36 +34,48 @@ QtObject {
      */
     readonly property var catalog: language.length > 0 ? Catalogs.catalog(language) : null
 
+    /*
+     * The source strings are already English, so no catalogue is shipped for
+     * it. Without this, picking English would find nothing and fall back to
+     * KI18n - which serves the desktop locale and thus the wrong language.
+     */
+    readonly property string sourceLanguage: "en"
+    readonly property bool useSource: language === sourceLanguage
+
     readonly property string effectiveLanguage: language.length > 0
         ? language : String(Qt.locale().name).split("_")[0]
 
     // Number separators follow the chosen language, falling back to the locale
-    readonly property string groupSeparator: catalog && catalog.groupSeparator
-        ? catalog.groupSeparator : Qt.locale().groupSeparator
-    readonly property string decimalPoint: catalog && catalog.decimalPoint
-        ? catalog.decimalPoint : Qt.locale().decimalPoint
+    readonly property string groupSeparator: useSource ? ","
+        : (catalog && catalog.groupSeparator ? catalog.groupSeparator : Qt.locale().groupSeparator)
+    readonly property string decimalPoint: useSource ? "."
+        : (catalog && catalog.decimalPoint ? catalog.decimalPoint : Qt.locale().decimalPoint)
 
     // ------------------------------------------------------------------
     // Translation wrappers
     // ------------------------------------------------------------------
     function tr(msgid) {
-        return format(lookup(null, msgid, null, 1) || i18n(msgid),
-                      arguments, 1);
+        var text = useSource ? msgid : (lookup(null, msgid, null, 1) || i18n(msgid));
+        return format(text, arguments, 1);
     }
 
     function trc(context, msgid) {
-        return format(lookup(context, msgid, null, 1) || i18nc(context, msgid),
-                      arguments, 2);
+        var text = useSource ? msgid : (lookup(context, msgid, null, 1) || i18nc(context, msgid));
+        return format(text, arguments, 2);
     }
 
     function trp(singular, plural, n) {
-        var hit = lookup(null, singular, plural, n);
-        return format(hit || i18np(singular, plural, n), arguments, 2);
+        var text = useSource
+            ? (Number(n) === 1 ? singular : plural)
+            : (lookup(null, singular, plural, n) || i18np(singular, plural, n));
+        return format(text, arguments, 2);
     }
 
     function trcp(context, singular, plural, n) {
-        var hit = lookup(context, singular, plural, n);
-        return format(hit || i18ncp(context, singular, plural, n), arguments, 3);
+        var text = useSource
+            ? (Number(n) === 1 ? singular : plural)
+            : (lookup(context, singular, plural, n) || i18ncp(context, singular, plural, n));
+        return format(text, arguments, 3);
     }
 
     /* Replace %1…%9 with the trailing arguments, like KLocalizedString does. */

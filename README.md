@@ -44,7 +44,8 @@ Middle-click refreshes; the tooltip carries a summary.
 
 A drop-down in **Settings → Appearance** switches the widget's language independently of
 the rest of Plasma, and it applies immediately without a restart. Leave it on *System
-language* to follow the desktop locale.
+language* to follow the desktop locale; English needs no catalogue because the source
+strings already are English.
 
 ### In the popup — three tabs
 
@@ -72,7 +73,7 @@ single day; the breakdown below then lists only the models used that day.</td>
 
 - Notification when credit drops below your warning threshold, with a one-click top-up action
 - Context menu shortcuts to openrouter.ai activity and billing
-- Works as a panel widget **and** as a system tray entry
+- Nothing is placed automatically: the widget only appears where you add it
 
 ---
 
