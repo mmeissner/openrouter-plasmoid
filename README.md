@@ -253,7 +253,7 @@ journalctl --user -f -t plasmashell
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE). The OpenRouter mark is from
+MIT — see [LICENSE](LICENSE). Third-party attribution is in [NOTICE](NOTICE): the OpenRouter mark comes from
 [simple-icons](https://simpleicons.org) (CC0) and is used only to identify the service.
 This project is not affiliated with OpenRouter.
 
