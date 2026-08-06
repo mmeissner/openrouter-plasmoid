@@ -12,10 +12,7 @@
 
 </div>
 
-![The widget: panel strip, overview, model catalogue and usage history](docs/overview.png)
-
-<sub>Screenshots are rendered by `tools/qml-bench.py` with synthetic account data, so no
-real balance is shown. Replace the files in `docs/` with your own if you prefer.</sub>
+![The three tabs: overview, model catalogue and usage history](docs/tabs.png)
 
 ---
 
@@ -42,10 +39,15 @@ Middle-click refreshes; the tooltip carries a summary.
 
 ### Interface language
 
+![Language selector and panel metrics](docs/settings-appearance.png)
+
 A drop-down in **Settings → Appearance** switches the widget's language independently of
 the rest of Plasma, and it applies immediately without a restart. Leave it on *System
 language* to follow the desktop locale; English needs no catalogue because the source
 strings already are English.
+
+The same page carries the panel metrics as a checklist, with a live preview of the
+resulting bar.
 
 ### In the popup — three tabs
 
@@ -53,7 +55,7 @@ strings already are English.
 <tr>
 <td width="33%" valign="top"><img src="docs/tab-overview.png" alt="Overview tab"></td>
 <td width="33%" valign="top"><img src="docs/tab-models.png" alt="Models tab"></td>
-<td width="33%" valign="top"><img src="docs/tab-activity.png" alt="History tab"></td>
+<td width="33%" valign="top"><img src="docs/tab-history.png" alt="History tab"></td>
 </tr>
 <tr>
 <td valign="top"><b>Overview</b><br>Credit card with a spend bar, four period tiles that
@@ -112,6 +114,8 @@ Right-click the widget → **Configure OpenRouter Monitor** → **Account**.
   Officially required for `/credits` (balance) and `/activity` (history), though many
   accounts serve both for a plain key. The widget tries the management key first and
   falls back to the API key.
+
+![Account settings](docs/settings-account.png)
 
 **Test connection** verifies the key without leaving the dialog.
 

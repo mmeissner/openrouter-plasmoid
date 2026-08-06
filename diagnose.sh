@@ -29,7 +29,10 @@ probe() {
         return
     fi
     local body status
-    body=$(curl -s -w $'\n%{http_code}' -H "Authorization: Bearer ${key}" \
+    # The key is passed through a config on a file descriptor rather than as an
+    # argument: command lines are world readable through /proc.
+    body=$(curl -s -w $'\n%{http_code}' \
+        --config <(printf 'header = "Authorization: Bearer %s"\n' "$key") \
         "https://openrouter.ai/api/v1${path}")
     status=$(printf '%s' "$body" | tail -n1)
     body=$(printf '%s' "$body" | sed '$d')

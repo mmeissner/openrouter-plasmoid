@@ -4,7 +4,7 @@ import QtQuick
 // Stand-in for the Plasmoid attached object, which only exists inside plasmashell
 QtObject {
     property QtObject configuration: QtObject {
-        property string apiKey: "sk-or-v1-testbench"
+        property string apiKey: "bench-placeholder-not-a-real-key"
         property string apiKeyFile: ""
         property string managementKey: ""
         property string managementKeyFile: ""
