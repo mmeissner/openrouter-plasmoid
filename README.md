@@ -233,6 +233,21 @@ Three decisions worth knowing:
 ## Development
 
 ```bash
+tools/check.py
+```
+
+The preflight check — run it before committing. It parses every QML file with
+`qmllint`, verifies `metadata.json`, makes sure every config key the QML reads is
+declared in `config/main.xml`, and confirms that `template.pot`, the `.po` files and
+the generated `catalogs.js` still agree with the sources. None of those failures are
+visible at runtime: Plasma renders an empty binding and says nothing. The same check
+runs on every push and pull request via [`.github/workflows/preflight.yml`](.github/workflows/preflight.yml).
+
+Everything is standard library except the QML pass, which needs `qmllint` from
+`qt6-qtdeclarative-devel` (Fedora) or `qt6-declarative-dev-tools` (Debian). Without it
+that one check is skipped instead of failing.
+
+```bash
 tools/qml-bench.py --shot /tmp/bench.png
 ```
 

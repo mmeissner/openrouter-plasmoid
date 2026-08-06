@@ -1,0 +1,29 @@
+# Runs tools/check.py on every push and pull request. The QML pass needs a
+# qmllint binary; the PySide6 wheel ships one, which is a much smaller download
+# than the Qt declarative dev tools from apt.
+name: preflight
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install qmllint
+        run: pip install --disable-pip-version-check PySide6-Essentials
+
+      - name: Check the package
+        run: python3 tools/check.py --require-qmllint
