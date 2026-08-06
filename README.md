@@ -198,6 +198,7 @@ package/
     ├── config/main.xml            configuration schema
     ├── config/config.qml          settings dialog pages
     ├── code/utils.js              pure maths and formatting, no wording
+    ├── code/catalogs.js           all translations (generated, imported by L10n)
     ├── icons/openrouter.svg       official mark (simple-icons, CC0)
     ├── locale/<lang>/…            compiled catalogues (generated)
     └── ui/
@@ -211,6 +212,7 @@ package/
         └── Config*.qml            settings pages
 translate/    i18n.py + template.pot + po/<lang>.po
 tools/        qml-bench.py + TestMain.qml + Plasmoid.qml (test harness)
+docs/         screenshots and the architecture diagram
 ```
 
 Three decisions worth knowing:
