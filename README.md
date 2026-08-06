@@ -6,9 +6,11 @@
 
 **Your OpenRouter credit, spending and model pricing — right in the Plasma panel.**
 
-[![Plasma 6](https://img.shields.io/badge/Plasma-6-1d99f3)](https://kde.org/plasma-desktop/)
+[![GitHub](https://img.shields.io/badge/GitHub-teodorgross%2Fopenrouter--plasmoid-181717?logo=github&logoColor=white)](https://github.com/teodorgross/openrouter-plasmoid)
+[![Plasma 6](https://img.shields.io/badge/Plasma-6-1d99f3?logo=kde&logoColor=white)](https://kde.org/plasma-desktop/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Languages](https://img.shields.io/badge/languages-12-blueviolet)](translate/po)
+[![Stars](https://img.shields.io/github/stars/teodorgross/openrouter-plasmoid?style=flat&logo=github&logoColor=white&color=eac54f)](https://github.com/teodorgross/openrouter-plasmoid/stargazers)
 
 </div>
 
@@ -254,3 +256,13 @@ journalctl --user -f -t plasmashell
 MIT — see [LICENSE](LICENSE). The OpenRouter mark is from
 [simple-icons](https://simpleicons.org) (CC0) and is used only to identify the service.
 This project is not affiliated with OpenRouter.
+
+---
+
+<div align="center">
+
+Built by [**@teodorgross**](https://github.com/teodorgross) ·
+[Report an issue](https://github.com/teodorgross/openrouter-plasmoid/issues) ·
+[Contribute a translation](translate/po)
+
+</div>
