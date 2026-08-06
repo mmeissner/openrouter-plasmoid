@@ -247,15 +247,6 @@ Plasma's own QML messages go to the journal:
 journalctl --user -f -t plasmashell
 ```
 
-### Checking the API against your account
-
-```bash
-./diagnose.sh
-```
-
-Queries all four endpoints with the keys stored in the widget and prints status codes
-and returned fields — without printing the keys.
-
 ---
 
 ## Licence
