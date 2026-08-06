@@ -10,6 +10,10 @@ msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
 
+msgctxt "@title:group %1 is a date, %2 an amount"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
 msgctxt "@info:status %1 is the filtered count, %2 the total count"
 msgid "%1 / %2"
 msgstr "%1 / %2"
@@ -86,6 +90,10 @@ msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr "1K jeton"
 
+msgctxt "@label token pricing unit"
+msgid "1M tokens"
+msgstr "1M jeton"
+
 msgctxt "@label"
 msgid "30 days"
 msgstr "30 gün"
@@ -116,9 +124,17 @@ msgctxt "@action:button"
 msgid "Add to favourites"
 msgstr "Sık kullanılanlara ekle"
 
+msgctxt "@action:button"
+msgid "All 30 days"
+msgstr "30 günün tamamı"
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "Görünüm"
+
+msgctxt "@info"
+msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
+msgstr "Yalnızca bu araç takımı için geçerlidir ve hemen etkinleşir.\nPlasma’nın geri kalanı kendi dilini korur."
 
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
@@ -186,6 +202,10 @@ msgstr "API anahtarını içeren dosyayı seçin"
 msgctxt "@title:window"
 msgid "Choose the file holding the management key"
 msgstr "Yönetim anahtarını içeren dosyayı seçin"
+
+msgctxt "@info:usagetip"
+msgid "Click a bar to see that day on its own."
+msgstr "Yalnızca o günü görmek için bir çubuğa tıklayın."
 
 msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
@@ -308,9 +328,17 @@ msgctxt "@label:spinbox"
 msgid "Input tokens:"
 msgstr "Giriş jetonları:"
 
+msgctxt "@label:listbox"
+msgid "Interface language:"
+msgstr "Arayüz dili:"
+
 msgctxt "@label:spinbox"
 msgid "Interval:"
 msgstr "Aralık:"
+
+msgctxt "@title:group"
+msgid "Language"
+msgstr "Dil"
 
 msgctxt "@item:inlistbox sort order"
 msgid "Largest context"
@@ -585,6 +613,10 @@ msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr "Değerleri yan yana yerine alt alta diz"
 
+msgctxt "@item:inlistbox"
+msgid "System language"
+msgstr "Sistem dili"
+
 msgctxt "@action:button"
 msgid "Test connection"
 msgstr "Bağlantıyı sına"
@@ -604,6 +636,10 @@ msgstr "Gerçek hesap bakiyesi bir yönetim anahtarı ister (Ayarlar → Hesap).
 msgctxt "@label spending period"
 msgid "This month"
 msgstr "Bu ay"
+
+msgctxt "@label spending period"
+msgid "This week"
+msgstr "Bu hafta"
 
 msgctxt "@label account tier"
 msgid "Tier"

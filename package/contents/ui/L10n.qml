@@ -1,23 +1,148 @@
 /*
- * Every translatable helper lives here.
+ * Every translatable helper, plus the widget's own language override.
  *
- * utils.js cannot call i18n() because it is a `.pragma library` without a QML
- * context, so all wording is produced by this object. It is cheap and stateless
- * - instantiate one wherever you need it rather than sharing a singleton.
+ * Two reasons this exists:
+ *
+ *  - utils.js cannot call i18n(): it is a `.pragma library` and therefore has
+ *    no QML context. All wording lives here instead.
+ *  - Plasma resolves i18n() against the desktop locale, which cannot be
+ *    changed per widget. When the user picks a language in the settings, the
+ *    wrappers below look the message up in code/catalogs.js and only fall back
+ *    to i18n() for the system default. That module is imported statically
+ *    because Qt refuses XMLHttpRequest on local files inside plasmashell.
+ *
+ * Call sites therefore use l10n.tr / trc / trp / trcp rather than the global
+ * i18n functions. The extractor in translate/i18n.py knows both spellings.
  *
  * SPDX-License-Identifier: MIT
  */
 import QtQuick
 
 import "../code/utils.js" as Utils
+import "../code/catalogs.js" as Catalogs
 
 QtObject {
     id: l10n
 
-    // Number separators follow the user's locale, not the source language
-    readonly property string groupSeparator: Qt.locale().groupSeparator
-    readonly property string decimalPoint: Qt.locale().decimalPoint
+    /* Empty string means "follow the Plasma locale". */
+    property string language: ""
 
+    /*
+     * Reading this inside every wrapper is deliberate: QML then records it as a
+     * binding dependency, so switching the language re-evaluates every string
+     * in the interface without a restart.
+     */
+    readonly property var catalog: language.length > 0 ? Catalogs.catalog(language) : null
+
+    readonly property string effectiveLanguage: language.length > 0
+        ? language : String(Qt.locale().name).split("_")[0]
+
+    // Number separators follow the chosen language, falling back to the locale
+    readonly property string groupSeparator: catalog && catalog.groupSeparator
+        ? catalog.groupSeparator : Qt.locale().groupSeparator
+    readonly property string decimalPoint: catalog && catalog.decimalPoint
+        ? catalog.decimalPoint : Qt.locale().decimalPoint
+
+    // ------------------------------------------------------------------
+    // Translation wrappers
+    // ------------------------------------------------------------------
+    function tr(msgid) {
+        return format(lookup(null, msgid, null, 1) || i18n(msgid),
+                      arguments, 1);
+    }
+
+    function trc(context, msgid) {
+        return format(lookup(context, msgid, null, 1) || i18nc(context, msgid),
+                      arguments, 2);
+    }
+
+    function trp(singular, plural, n) {
+        var hit = lookup(null, singular, plural, n);
+        return format(hit || i18np(singular, plural, n), arguments, 2);
+    }
+
+    function trcp(context, singular, plural, n) {
+        var hit = lookup(context, singular, plural, n);
+        return format(hit || i18ncp(context, singular, plural, n), arguments, 3);
+    }
+
+    /* Replace %1…%9 with the trailing arguments, like KLocalizedString does. */
+    function format(text, args, offset) {
+        var out = String(text);
+        for (var i = offset; i < args.length; ++i) {
+            out = out.split("%" + (i - offset + 1)).join(String(args[i]));
+        }
+        return out;
+    }
+
+    /* gettext joins context and message id with EOT, same as msgctxt does. */
+    readonly property string contextGlue: "\u0004"
+
+    /* Catalogue lookup; returns null so callers can fall back to KI18n. */
+    function lookup(context, msgid, plural, n) {
+        var cat = catalog;
+        if (!cat) {
+            return null;
+        }
+        var key = context ? context + contextGlue + msgid : msgid;
+        if (plural !== null && plural !== undefined) {
+            var forms = cat.plurals ? cat.plurals[key] : undefined;
+            if (!forms) {
+                return null;
+            }
+            var idx = pluralIndex(cat.pluralRule, Number(n));
+            return forms[Math.min(idx, forms.length - 1)] || null;
+        }
+        var hit = cat.messages ? cat.messages[key] : undefined;
+        return hit ? hit : null;
+    }
+
+    /*
+     * Plural selection. The rule name is written into the catalogue by
+     * translate/i18n.py, derived from the PO header, so no expression has to be
+     * evaluated at runtime.
+     */
+    function pluralIndex(rule, n) {
+        switch (rule) {
+        case "single":
+            return 0;
+        case "gt1":
+            return n > 1 ? 1 : 0;
+        case "slavic":
+            if (n % 10 === 1 && n % 100 !== 11) {
+                return 0;
+            }
+            if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) {
+                return 1;
+            }
+            return 2;
+        default:
+            return n !== 1 ? 1 : 0;
+        }
+    }
+
+    /* Languages the widget ships, for the settings drop-down. */
+    function availableLanguages() {
+        return [
+            { code: "", label: trc("@item:inlistbox", "System language") },
+            { code: "en", label: "English" },
+            { code: "de", label: "Deutsch" },
+            { code: "es", label: "Español" },
+            { code: "fr", label: "Français" },
+            { code: "it", label: "Italiano" },
+            { code: "nl", label: "Nederlands" },
+            { code: "pl", label: "Polski" },
+            { code: "pt_BR", label: "Português (BR)" },
+            { code: "ru", label: "Русский" },
+            { code: "tr", label: "Türkçe" },
+            { code: "zh_CN", label: "中文 (简体)" },
+            { code: "ja", label: "日本語" }
+        ];
+    }
+
+    // ------------------------------------------------------------------
+    // Formatting helpers
+    // ------------------------------------------------------------------
     function money(value, decimals, symbol) {
         return Utils.money(value, decimals, symbol, groupSeparator, decimalPoint);
     }
@@ -29,13 +154,13 @@ QtObject {
     /* Formatted price, or the word for "no charge" when the model is free */
     function price(value, symbol) {
         var text = Utils.price(value, symbol, groupSeparator, decimalPoint);
-        return text === null ? i18nc("@item price of a free model", "free") : text;
+        return text === null ? trc("@item price of a free model", "free") : text;
     }
 
     function unitLabel(unit) {
         return unit >= 1000000
-            ? i18nc("@label token pricing unit", "1M tokens")
-            : i18nc("@label token pricing unit", "1K tokens");
+            ? trc("@label token pricing unit", "1M tokens")
+            : trc("@label token pricing unit", "1K tokens");
     }
 
     /*
@@ -46,50 +171,50 @@ QtObject {
         return [
             {
                 key: "balance",
-                label: i18nc("@item:inlistbox panel metric", "Available credit"),
-                short: i18nc("@label very short panel caption for available credit", "Free"),
+                label: trc("@item:inlistbox panel metric", "Available credit"),
+                short: trc("@label very short panel caption for available credit", "Free"),
                 money: true
             },
             {
                 key: "limit",
-                label: i18nc("@item:inlistbox panel metric", "Remaining key limit"),
-                short: i18nc("@label very short panel caption for the key limit", "Limit"),
+                label: trc("@item:inlistbox panel metric", "Remaining key limit"),
+                short: trc("@label very short panel caption for the key limit", "Limit"),
                 money: true
             },
             {
                 key: "today",
-                label: i18nc("@item:inlistbox panel metric", "Spent today"),
-                short: i18nc("@label very short panel caption for today", "Today"),
+                label: trc("@item:inlistbox panel metric", "Spent today"),
+                short: trc("@label very short panel caption for today", "Today"),
                 money: true
             },
             {
                 key: "week",
-                label: i18nc("@item:inlistbox panel metric", "Spent this week"),
-                short: i18nc("@label very short panel caption for this week", "Week"),
+                label: trc("@item:inlistbox panel metric", "Spent this week"),
+                short: trc("@label very short panel caption for this week", "Week"),
                 money: true
             },
             {
                 key: "month",
-                label: i18nc("@item:inlistbox panel metric", "Spent this month"),
-                short: i18nc("@label very short panel caption for this month", "Month"),
+                label: trc("@item:inlistbox panel metric", "Spent this month"),
+                short: trc("@label very short panel caption for this month", "Month"),
                 money: true
             },
             {
                 key: "total",
-                label: i18nc("@item:inlistbox panel metric", "Spent in total"),
-                short: i18nc("@label very short panel caption for the total", "Total"),
+                label: trc("@item:inlistbox panel metric", "Spent in total"),
+                short: trc("@label very short panel caption for the total", "Total"),
                 money: true
             },
             {
                 key: "credits",
-                label: i18nc("@item:inlistbox panel metric", "Credit purchased"),
-                short: i18nc("@label very short panel caption for purchased credit", "Bought"),
+                label: trc("@item:inlistbox panel metric", "Credit purchased"),
+                short: trc("@label very short panel caption for purchased credit", "Bought"),
                 money: true
             },
             {
                 key: "requests",
-                label: i18nc("@item:inlistbox panel metric", "Requests (30 days)"),
-                short: i18nc("@label very short panel caption for the request count", "Req."),
+                label: trc("@item:inlistbox panel metric", "Requests (30 days)"),
+                short: trc("@label very short panel caption for the request count", "Req."),
                 money: false
             }
         ];
@@ -108,51 +233,51 @@ QtObject {
     /* Turn an HTTP status into something a user can act on */
     function errorText(status, message) {
         if (status === 0) {
-            return i18n("Cannot reach openrouter.ai");
+            return tr("Cannot reach openrouter.ai");
         }
         if (status === 401) {
-            return i18n("API key is missing or invalid");
+            return tr("API key is missing or invalid");
         }
         if (status === 403) {
             return message && message.length > 0
                 ? message
-                : i18n("Access denied - this endpoint needs a management key");
+                : tr("Access denied - this endpoint needs a management key");
         }
         if (status === 404) {
-            return i18n("Endpoint not found");
+            return tr("Endpoint not found");
         }
         if (status === 429) {
-            return i18n("Rate limit reached - try again later");
+            return tr("Rate limit reached - try again later");
         }
         if (status >= 500) {
-            return i18n("OpenRouter reported a server error (%1)", status);
+            return tr("OpenRouter reported a server error (%1)", status);
         }
         return message && message.length > 0
-            ? i18n("Error %1: %2", status, message)
-            : i18n("Error %1", status);
+            ? tr("Error %1: %2", status, message)
+            : tr("Error %1", status);
     }
 
     /* Relative time for the "last updated" line */
     function ago(msDiff) {
         var s = Math.max(0, Math.round(msDiff / 1000));
         if (s < 10) {
-            return i18n("just now");
+            return tr("just now");
         }
         if (s < 60) {
-            return i18np("%1 second ago", "%1 seconds ago", s);
+            return trp("%1 second ago", "%1 seconds ago", s);
         }
         var m = Math.round(s / 60);
         if (m < 60) {
-            return i18np("%1 minute ago", "%1 minutes ago", m);
+            return trp("%1 minute ago", "%1 minutes ago", m);
         }
         var h = Math.round(m / 60);
         if (h < 24) {
-            return i18np("%1 hour ago", "%1 hours ago", h);
+            return trp("%1 hour ago", "%1 hours ago", h);
         }
-        return i18np("%1 day ago", "%1 days ago", Math.round(h / 24));
+        return trp("%1 day ago", "%1 days ago", Math.round(h / 24));
     }
 
-    /* "2026-08-06" -> short date in the user's locale */
+    /* "2026-08-06" -> short date in the active locale */
     function shortDate(iso) {
         var parts = String(iso).split("-");
         if (parts.length < 3) {

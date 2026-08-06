@@ -14,6 +14,14 @@ import org.kde.kcmutils as KCM
 KCM.SimpleKCM {
     id: page
 
+    // Declared so this page can honour the language override too
+    property string cfg_language: ""
+
+    L10n {
+        id: l10n
+        language: page.cfg_language
+    }
+
     property alias cfg_apiKey: apiKeyField.text
     property alias cfg_apiKeyFile: apiKeyFileField.text
     property alias cfg_managementKey: mgmtKeyField.text
@@ -48,10 +56,10 @@ KCM.SimpleKCM {
         var key = apiKeyField.text.trim();
         if (key.length === 0 && apiKeyFileField.text.trim().length === 0) {
             page.testOk = false;
-            page.testResult = i18nc("@info:status", "Enter an API key first.");
+            page.testResult = l10n.trc("@info:status", "Enter an API key first.");
             return;
         }
-        page.testResult = i18nc("@info:status", "Checking…");
+        page.testResult = l10n.trc("@info:status", "Checking…");
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
             if (xhr.readyState !== XMLHttpRequest.DONE) {
@@ -65,20 +73,20 @@ KCM.SimpleKCM {
             }
             if (xhr.status === 200 && body && body.data) {
                 page.testOk = true;
-                page.testResult = i18nc("@info:status %1 is the key name, %2 an amount",
+                page.testResult = l10n.trc("@info:status %1 is the key name, %2 an amount",
                                         "Connected - key “%1”, %2 spent so far.",
                                         body.data.label ? body.data.label
-                                                        : i18nc("@item key without a name", "unnamed"),
+                                                        : l10n.trc("@item key without a name", "unnamed"),
                                         "$" + Number(body.data.usage || 0).toFixed(2));
             } else {
                 page.testOk = false;
                 var msg = (body && body.error && body.error.message) ? body.error.message : "";
                 page.testResult = xhr.status === 0
-                    ? i18nc("@info:status", "Cannot reach openrouter.ai")
+                    ? l10n.trc("@info:status", "Cannot reach openrouter.ai")
                     : (msg.length > 0
-                        ? i18nc("@info:status %1 is an HTTP status, %2 the server message",
+                        ? l10n.trc("@info:status %1 is an HTTP status, %2 the server message",
                                 "Error %1: %2", xhr.status, msg)
-                        : i18nc("@info:status %1 is an HTTP status", "Error %1", xhr.status));
+                        : l10n.trc("@info:status %1 is an HTTP status", "Error %1", xhr.status));
             }
         };
         xhr.open("GET", "https://openrouter.ai/api/v1/key");
@@ -92,19 +100,19 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18nc("@title:group", "Credentials")
+            Kirigami.FormData.label: l10n.trc("@title:group", "Credentials")
         }
 
         PlasmaExtras.PasswordField {
             id: apiKeyField
-            Kirigami.FormData.label: i18nc("@label:textbox", "API key:")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "API key:")
             placeholderText: "sk-or-v1-…"
             Layout.fillWidth: true
             Layout.minimumWidth: Kirigami.Units.gridUnit * 20
         }
 
         RowLayout {
-            Kirigami.FormData.label: i18nc("@label:textbox", "…or from a file:")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "…or from a file:")
 
             PlasmaComponents3.TextField {
                 id: apiKeyFileField
@@ -120,7 +128,7 @@ KCM.SimpleKCM {
         }
 
         PlasmaComponents3.Label {
-            text: i18nc("@info",
+            text: l10n.trc("@info",
                 "A file takes precedence over the typed key and keeps it out of the\nPlasma configuration file. Recommended: chmod 600.")
             font: Kirigami.Theme.smallFont
             opacity: 0.7
@@ -128,14 +136,14 @@ KCM.SimpleKCM {
 
         PlasmaExtras.PasswordField {
             id: mgmtKeyField
-            Kirigami.FormData.label: i18nc("@label:textbox", "Management key:")
-            placeholderText: i18nc("@info:placeholder", "optional - for balance and history")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "Management key:")
+            placeholderText: l10n.trc("@info:placeholder", "optional - for balance and history")
             Layout.fillWidth: true
             Layout.minimumWidth: Kirigami.Units.gridUnit * 20
         }
 
         RowLayout {
-            Kirigami.FormData.label: i18nc("@label:textbox", "…or from a file:")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "…or from a file:")
 
             PlasmaComponents3.TextField {
                 id: mgmtKeyFileField
@@ -151,7 +159,7 @@ KCM.SimpleKCM {
         }
 
         PlasmaComponents3.Label {
-            text: i18nc("@info",
+            text: l10n.trc("@info",
                 "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history).")
             font: Kirigami.Theme.smallFont
             opacity: 0.7
@@ -159,7 +167,7 @@ KCM.SimpleKCM {
 
         RowLayout {
             PlasmaComponents3.Button {
-                text: i18nc("@action:button", "Test connection")
+                text: l10n.trc("@action:button", "Test connection")
                 icon.name: "network-connect"
                 onClicked: page.testConnection()
             }
@@ -176,19 +184,19 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18nc("@title:group", "Refreshing")
+            Kirigami.FormData.label: l10n.trc("@title:group", "Refreshing")
         }
 
         PlasmaComponents3.SpinBox {
             id: intervalSpin
-            Kirigami.FormData.label: i18nc("@label:spinbox", "Interval:")
+            Kirigami.FormData.label: l10n.trc("@label:spinbox", "Interval:")
             from: 30
             to: 3600
             stepSize: 30
             textFromValue: function (value, locale) {
                 return value < 60
-                    ? i18ncp("@item:valuesuffix", "%1 second", "%1 seconds", value)
-                    : i18ncp("@item:valuesuffix", "%1 minute", "%1 minutes", Math.round(value / 60));
+                    ? l10n.trcp("@item:valuesuffix", "%1 second", "%1 seconds", value)
+                    : l10n.trcp("@item:valuesuffix", "%1 minute", "%1 minutes", Math.round(value / 60));
             }
             valueFromText: function (text, locale) {
                 var n = parseInt(String(text).replace(/[^0-9]/g, ""), 10);
@@ -202,17 +210,17 @@ KCM.SimpleKCM {
 
         PlasmaComponents3.CheckBox {
             id: refreshOnOpenBox
-            text: i18nc("@option:check", "Refresh when the popup opens")
+            text: l10n.trc("@option:check", "Refresh when the popup opens")
         }
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18nc("@title:group", "Warning thresholds")
+            Kirigami.FormData.label: l10n.trc("@title:group", "Warning thresholds")
         }
 
         PlasmaComponents3.SpinBox {
             id: lowSpin
-            Kirigami.FormData.label: i18nc("@label:spinbox", "Warn below:")
+            Kirigami.FormData.label: l10n.trc("@label:spinbox", "Warn below:")
             from: 0
             to: 1000000
             stepSize: 50
@@ -229,7 +237,7 @@ KCM.SimpleKCM {
 
         PlasmaComponents3.SpinBox {
             id: criticalSpin
-            Kirigami.FormData.label: i18nc("@label:spinbox", "Critical below:")
+            Kirigami.FormData.label: l10n.trc("@label:spinbox", "Critical below:")
             from: 0
             to: 1000000
             stepSize: 25
@@ -246,19 +254,19 @@ KCM.SimpleKCM {
 
         PlasmaComponents3.CheckBox {
             id: notifyBox
-            text: i18nc("@option:check", "Notify when credit drops below the warning threshold")
+            text: l10n.trc("@option:check", "Notify when credit drops below the warning threshold")
         }
     }
 
     QtDialogs.FileDialog {
         id: keyFileDialog
-        title: i18nc("@title:window", "Choose the file holding the API key")
+        title: l10n.trc("@title:window", "Choose the file holding the API key")
         onAccepted: apiKeyFileField.text = String(selectedFile).replace("file://", "")
     }
 
     QtDialogs.FileDialog {
         id: mgmtFileDialog
-        title: i18nc("@title:window", "Choose the file holding the management key")
+        title: l10n.trc("@title:window", "Choose the file holding the management key")
         onAccepted: mgmtKeyFileField.text = String(selectedFile).replace("file://", "")
     }
 }

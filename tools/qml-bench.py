@@ -29,6 +29,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UI = os.path.join(ROOT, "package", "contents", "ui")
 CODE = os.path.join(ROOT, "package", "contents", "code")
 ICONS = os.path.join(ROOT, "package", "contents", "icons")
+LOCALE = os.path.join(ROOT, "package", "contents", "locale")
 TOOLS = os.path.join(ROOT, "tools")
 
 
@@ -37,6 +38,9 @@ def build_tree(tmp):
     os.makedirs(os.path.join(tmp, "ui"))
     shutil.copytree(CODE, os.path.join(tmp, "code"))
     shutil.copytree(ICONS, os.path.join(tmp, "icons"))
+    # Needed so the widget's own language override can be exercised
+    if os.path.isdir(LOCALE):
+        shutil.copytree(LOCALE, os.path.join(tmp, "locale"))
     for name in os.listdir(UI):
         if not name.endswith(".qml") or name == "main.qml":
             continue

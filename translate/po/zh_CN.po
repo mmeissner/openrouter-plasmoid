@@ -10,6 +10,10 @@ msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
 
+msgctxt "@title:group %1 is a date, %2 an amount"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
 msgctxt "@info:status %1 is the filtered count, %2 the total count"
 msgid "%1 / %2"
 msgstr "%1 / %2"
@@ -86,6 +90,10 @@ msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr "1K 令牌"
 
+msgctxt "@label token pricing unit"
+msgid "1M tokens"
+msgstr "100 万令牌"
+
 msgctxt "@label"
 msgid "30 days"
 msgstr "30 天"
@@ -116,9 +124,17 @@ msgctxt "@action:button"
 msgid "Add to favourites"
 msgstr "加入收藏"
 
+msgctxt "@action:button"
+msgid "All 30 days"
+msgstr "全部 30 天"
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "外观"
+
+msgctxt "@info"
+msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
+msgstr "仅对此组件生效，且立即应用。\nPlasma 的其余部分保持原有语言。"
 
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
@@ -186,6 +202,10 @@ msgstr "选择保存 API 密钥的文件"
 msgctxt "@title:window"
 msgid "Choose the file holding the management key"
 msgstr "选择保存管理密钥的文件"
+
+msgctxt "@info:usagetip"
+msgid "Click a bar to see that day on its own."
+msgstr "点击某个柱形可只查看当天。"
 
 msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
@@ -308,9 +328,17 @@ msgctxt "@label:spinbox"
 msgid "Input tokens:"
 msgstr "输入令牌："
 
+msgctxt "@label:listbox"
+msgid "Interface language:"
+msgstr "界面语言："
+
 msgctxt "@label:spinbox"
 msgid "Interval:"
 msgstr "间隔："
+
+msgctxt "@title:group"
+msgid "Language"
+msgstr "语言"
 
 msgctxt "@item:inlistbox sort order"
 msgid "Largest context"
@@ -585,6 +613,10 @@ msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr "数值上下排列而非并排"
 
+msgctxt "@item:inlistbox"
+msgid "System language"
+msgstr "系统语言"
+
 msgctxt "@action:button"
 msgid "Test connection"
 msgstr "测试连接"
@@ -604,6 +636,10 @@ msgstr "查看真实账户余额需要管理密钥（设置 → 账户）。"
 msgctxt "@label spending period"
 msgid "This month"
 msgstr "本月"
+
+msgctxt "@label spending period"
+msgid "This week"
+msgstr "本周"
 
 msgctxt "@label account tier"
 msgid "Tier"

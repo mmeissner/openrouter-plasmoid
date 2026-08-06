@@ -10,6 +10,10 @@ msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
 
+msgctxt "@title:group %1 is a date, %2 an amount"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
 msgctxt "@info:status %1 is the filtered count, %2 the total count"
 msgid "%1 / %2"
 msgstr "%1 / %2"
@@ -86,6 +90,10 @@ msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr "1K トークン"
 
+msgctxt "@label token pricing unit"
+msgid "1M tokens"
+msgstr "100万トークン"
+
 msgctxt "@label"
 msgid "30 days"
 msgstr "30 日間"
@@ -116,9 +124,17 @@ msgctxt "@action:button"
 msgid "Add to favourites"
 msgstr "お気に入りに追加"
 
+msgctxt "@action:button"
+msgid "All 30 days"
+msgstr "30 日すべて"
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "外観"
+
+msgctxt "@info"
+msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
+msgstr "このウィジェットのみに適用され、すぐに反映されます。\nPlasma の他の部分は元の言語のままです。"
 
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
@@ -186,6 +202,10 @@ msgstr "API キーが入ったファイルを選択"
 msgctxt "@title:window"
 msgid "Choose the file holding the management key"
 msgstr "管理キーが入ったファイルを選択"
+
+msgctxt "@info:usagetip"
+msgid "Click a bar to see that day on its own."
+msgstr "棒をクリックするとその日だけを表示します。"
 
 msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
@@ -308,9 +328,17 @@ msgctxt "@label:spinbox"
 msgid "Input tokens:"
 msgstr "入力トークン:"
 
+msgctxt "@label:listbox"
+msgid "Interface language:"
+msgstr "インターフェースの言語:"
+
 msgctxt "@label:spinbox"
 msgid "Interval:"
 msgstr "間隔:"
+
+msgctxt "@title:group"
+msgid "Language"
+msgstr "言語"
 
 msgctxt "@item:inlistbox sort order"
 msgid "Largest context"
@@ -585,6 +613,10 @@ msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr "値を横並びではなく縦に並べる"
 
+msgctxt "@item:inlistbox"
+msgid "System language"
+msgstr "システムの言語"
+
 msgctxt "@action:button"
 msgid "Test connection"
 msgstr "接続をテスト"
@@ -604,6 +636,10 @@ msgstr "実際の残高には管理キーが必要です (設定 → アカウ�
 msgctxt "@label spending period"
 msgid "This month"
 msgstr "今月"
+
+msgctxt "@label spending period"
+msgid "This week"
+msgstr "今週"
 
 msgctxt "@label account tier"
 msgid "Tier"

@@ -14,6 +14,9 @@
 
 ![The widget: panel strip, overview, model catalogue and usage history](docs/overview.png)
 
+<sub>Screenshots are rendered by `tools/qml-bench.py` with synthetic account data, so no
+real balance is shown. Replace the files in `docs/` with your own if you prefer.</sub>
+
 ---
 
 ## What it does
@@ -37,6 +40,12 @@ Plus: the official OpenRouter mark tinted to your theme colour, optional short c
 a free separator, side-by-side or stacked, and automatic stacking in vertical panels.
 Middle-click refreshes; the tooltip carries a summary.
 
+### Interface language
+
+A drop-down in **Settings → Appearance** switches the widget's language independently of
+the rest of Plasma, and it applies immediately without a restart. Leave it on *System
+language* to follow the desktop locale.
+
 ### In the popup — three tabs
 
 <table>
@@ -54,8 +63,8 @@ cheapest input/output, largest context or newest. Expand one for the full price 
 (input, output, cache read/write, reasoning, image, request, web search), a
 <b>cost calculator</b>, and a favourite star.</td>
 <td valign="top"><b>History</b><br>Daily spending for the last 30 days as a bar chart
-with per-day tooltips, totals, average per day, and a breakdown by model with share
-bars.</td>
+with per-day tooltips, totals and average per day. <b>Click a bar</b> to drill into that
+single day; the breakdown below then lists only the models used that day.</td>
 </tr>
 </table>
 
@@ -121,14 +130,24 @@ key; lines starting with `#` are ignored.
 
 ---
 
-## Why does "spent" show 0.00?
+## How "spent today" is worked out
 
-`/key` only counts what **that one key** spent. If you use several keys — or just
-created a fresh one — it reports zero everywhere.
+Three sources, none of which is sufficient alone:
 
-The widget therefore prefers `/activity`, which is account-wide, and prints under every
-tile whether the number covers the whole account or just this key. `/activity` ends at
-the last completed UTC day, so today's figure is topped up from `/key`.
+| Source | Covers | Problem |
+|---|---|---|
+| `/key` | one key | reports zero if you use several keys |
+| `/activity` | whole account | **stops at the last completed UTC day** — today is missing |
+| `/credits` | whole account, live | only a running total, not per day |
+
+So the widget combines them. Week and month come from `/activity`. **Today** is derived
+from `/credits`: on the first poll of each UTC day it remembers `total_usage`, and
+today's spending is the difference since then. Every tile states whether its number
+covers the whole account or just the configured key.
+
+One consequence worth knowing: spending that happened earlier today, before the widget's
+first poll of that day, cannot be recovered — no endpoint exposes it. Today's figure
+therefore starts counting from the moment the widget first sees the new day.
 
 ---
 
@@ -140,6 +159,11 @@ English · Deutsch · Español · Français · Italiano · Nederlands · Polski 
 Português (BR) · Русский · Türkçe · 中文（简体） · 日本語
 
 Numbers follow your locale too — `$1,234.56` or `$1.234,56` as appropriate.
+
+Language selection lives in the widget, not in the desktop: `KLocalizedString` always
+follows the Plasma locale, so the translations are also compiled into
+`contents/code/catalogs.js`, which `L10n.qml` imports statically and consults first.
+(Statically, because Qt refuses `XMLHttpRequest` on local files inside plasmashell.)
 
 ### Adding or fixing a translation
 
@@ -184,13 +208,16 @@ translate/    i18n.py + template.pot + po/<lang>.po
 tools/        qml-bench.py + TestMain.qml + Plasmoid.qml (test harness)
 ```
 
-Two decisions worth knowing:
+Three decisions worth knowing:
 
 - **One data object.** `OpenRouterApi` is created once in `main.qml` and passed to both
   representations as a property. The popup is destroyed whenever it closes, so keeping
   state there would restart polling on every open.
 - **No words in `utils.js`.** It is a `.pragma library` and therefore has no QML context
   and no `i18n()`. Anything a user reads lives in `L10n.qml`.
+- **No local file reads via XHR.** Qt blocks them inside plasmashell, silently. Key files
+  are read through a short-lived process via `Plasma5Support.DataSource`, and translation
+  catalogues are a statically imported JS module rather than data loaded at runtime.
 
 ---
 

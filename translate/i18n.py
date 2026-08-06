@@ -13,6 +13,7 @@ can be built on a machine without gettext installed.
 SPDX-License-Identifier: MIT
 """
 
+import json
 import os
 import re
 import struct
@@ -28,12 +29,12 @@ TEMPLATE = os.path.join(HERE, "template.pot")
 # Must match the plasmoid id, that is where KPackage looks for the catalogue
 DOMAIN = "plasma_applet_com.github.teodorgross.openrouter"
 
-# i18n(msgid), i18nc(context, msgid), i18np(singular, plural),
-# i18ncp(context, singular, plural)
-CALL_RE = re.compile(
-    r"\bi18n(?P<flags>c?p?)\s*\(\s*(?P<args>.*?)\)\s*(?=[,;)\]}\n]|$)",
-    re.DOTALL,
-)
+# Start of i18n(msgid), i18nc(context, msgid), i18np(singular, plural),
+# i18ncp(context, singular, plural) and the L10n wrappers tr/trc/trp/trcp that
+# route the same messages through the widget's own language override.
+# The closing parenthesis is found by counting, not by a lookahead: a call
+# sitting in front of a ternary colon used to swallow the following one.
+CALL_START_RE = re.compile(r"\b(?:i18n|tr)(?P<flags>c?p?)\s*\(")
 STRING_RE = re.compile(r'"((?:[^"\\]|\\.)*)"' r"|'((?:[^'\\]|\\.)*)'")
 
 
@@ -89,6 +90,38 @@ def strip_comments(text):
         out.append(c)
         i += 1
     return "".join(out)
+
+
+def call_arguments(text, open_paren):
+    """Return the argument text of a call whose "(" sits at open_paren.
+
+    Walks forward counting parentheses and skipping string literals, so nested
+    calls and parentheses inside messages cannot end the match early.
+    """
+    depth = 0
+    i = open_paren
+    n = len(text)
+    quote = None
+    while i < n:
+        c = text[i]
+        if quote:
+            if c == "\\":
+                i += 2
+                continue
+            if c == quote:
+                quote = None
+            i += 1
+            continue
+        if c in "\"'`":
+            quote = c
+        elif c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                return text[open_paren + 1:i]
+        i += 1
+    return None
 
 
 def leading_strings(args, count):
@@ -149,12 +182,15 @@ def extract():
     for path in source_files():
         rel = os.path.relpath(path, ROOT)
         text = strip_comments(open(path, encoding="utf-8").read())
-        for m in CALL_RE.finditer(text):
+        for m in CALL_START_RE.finditer(text):
             flags = m.group("flags")
             has_ctx = "c" in flags
             has_plural = "p" in flags
             wanted = 1 + (1 if has_ctx else 0) + (1 if has_plural else 0)
-            parts = leading_strings(m.group("args"), wanted)
+            args = call_arguments(text, m.end() - 1)
+            if args is None:
+                continue
+            parts = leading_strings(args, wanted)
             if parts is None:
                 continue
             i = 0
@@ -389,7 +425,59 @@ def write_po(path, header, entries):
     open(path, "w", encoding="utf-8").write("\n".join(out))
 
 
+def plural_rule(header):
+    """Classify the PO plural rule into a name the QML side understands."""
+    forms = header.get("Plural-Forms", "")
+    nplurals = 2
+    m = re.search(r"nplurals\s*=\s*(\d+)", forms)
+    if m:
+        nplurals = int(m.group(1))
+    if nplurals == 1:
+        return "single"
+    if nplurals >= 3:
+        return "slavic"
+    return "gt1" if "n > 1" in forms.replace(" ", " ") else "ne1"
+
+
+# Number formatting per language, so a chosen language also changes separators
+SEPARATORS = {
+    "de": (".", ","), "es": (".", ","), "fr": (" ", ","), "it": (".", ","),
+    "nl": (".", ","), "pl": (" ", ","), "pt_BR": (".", ","), "ru": (" ", ","),
+    "tr": (".", ","), "en": (",", "."), "zh_CN": (",", "."), "ja": (",", "."),
+}
+
+
+def catalog_payload(lang, header, entries):
+    """Runtime catalogue for the widget's own language override.
+
+    KLocalizedString always follows the desktop locale, so the widget cannot
+    switch languages through it. L10n.qml reads this data instead.
+    """
+    messages, plurals = {}, {}
+    for (ctx, msgid), entry in entries.items():
+        key = (ctx + "\u0004" + msgid) if ctx else msgid
+        strs = entry["msgstr"]
+        if entry["plural"]:
+            forms = [strs.get(i, "") for i in sorted(strs)]
+            if any(forms):
+                plurals[key] = forms
+        elif strs.get(0):
+            messages[key] = strs[0]
+
+    group, point = SEPARATORS.get(lang, (",", "."))
+    payload = {
+        "language": lang,
+        "pluralRule": plural_rule(header),
+        "groupSeparator": group,
+        "decimalPoint": point,
+        "messages": messages,
+        "plurals": plurals,
+    }
+    return payload
+
+
 def cmd_build():
+    catalogs = {}
     total = 0
     for name in sorted(os.listdir(PO_DIR)):
         if not name.endswith(".po"):
@@ -400,9 +488,39 @@ def cmd_build():
             PACKAGE, "contents", "locale", lang, "LC_MESSAGES", DOMAIN + ".mo"
         )
         count = write_mo(target, header, entries)
+        catalogs[lang] = catalog_payload(lang, header, entries)
         total += 1
         print("%-8s %3d translated -> contents/locale/%s/…" % (lang, count, lang))
-    print("built %d catalogues" % total)
+    write_catalog_module(catalogs)
+    print("built %d catalogues + contents/code/catalogs.js" % total)
+
+
+def write_catalog_module(catalogs):
+    """Emit the JS module L10n.qml imports for the in-widget language switch.
+
+    A static import is the only reliable option: Qt refuses XMLHttpRequest on
+    local files inside plasmashell, so the data cannot be loaded at runtime.
+    """
+    path = os.path.join(PACKAGE, "contents", "code", "catalogs.js")
+    body = json.dumps(catalogs, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("/*\n")
+        fh.write(" * Generated by translate/i18n.py - do not edit by hand.\n")
+        fh.write(" *\n")
+        fh.write(" * Holds every shipped translation so the widget can switch language on\n")
+        fh.write(" * its own. Plasma resolves i18n() against the desktop locale only.\n")
+        fh.write(" *\n")
+        fh.write(" * SPDX-License-Identifier: MIT\n")
+        fh.write(" */\n")
+        fh.write(".pragma library\n\n")
+        fh.write("var CATALOGS = %s;\n\n" % body)
+        fh.write("function catalog(lang) {\n")
+        fh.write("    return Object.prototype.hasOwnProperty.call(CATALOGS, lang)\n")
+        fh.write("        ? CATALOGS[lang] : null;\n")
+        fh.write("}\n")
+        fh.write("\nfunction languages() {\n")
+        fh.write("    return Object.keys(CATALOGS).sort();\n")
+        fh.write("}\n")
 
 
 def cmd_stats():

@@ -78,6 +78,7 @@ Window {
             }
 
             ActivityTab {
+                id: activityTab
                 api: api
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -129,6 +130,10 @@ Window {
 
             if (api.models.length > 0) {
                 modelsTab.expandedId = api.models[0].id;
+            }
+            // Exercise the drill-down into a single day
+            if (api.activityDays.length > 0) {
+                activityTab.selectedDate = api.activityDays[api.activityDays.length - 2].date;
             }
             console.warn("BENCH models=" + api.models.length
                        + " days=" + api.activityDays.length

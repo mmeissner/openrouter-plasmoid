@@ -1,4 +1,6 @@
-# Compiled gettext catalogues - generated from translate/po/*.po by install.sh
+# Compiled gettext catalogues - generated from translate/po/*.po by install.sh.
+# package/contents/code/catalogs.js is generated too but stays tracked: QML
+# imports it statically, so a fresh clone must not be missing it.
 package/contents/locale/
 
 # Python bytecode from the translation tooling and the QML bench

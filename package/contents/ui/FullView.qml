@@ -18,6 +18,11 @@ PlasmaExtras.Representation {
 
     readonly property var cfg: Plasmoid.configuration
 
+    L10n {
+        id: l10n
+        language: full.cfg.language
+    }
+
     Layout.minimumWidth: Kirigami.Units.gridUnit * 22
     Layout.minimumHeight: Kirigami.Units.gridUnit * 20
     Layout.preferredWidth: Kirigami.Units.gridUnit * 28
@@ -56,7 +61,7 @@ PlasmaExtras.Representation {
                 PlasmaComponents3.ToolButton {
                     icon.name: "view-refresh"
                     display: PlasmaComponents3.AbstractButton.IconOnly
-                    text: i18nc("@action:button", "Refresh")
+                    text: l10n.trc("@action:button", "Refresh")
                     onClicked: full.api.refreshAll()
 
                     PlasmaComponents3.ToolTip {
@@ -67,7 +72,7 @@ PlasmaExtras.Representation {
                 PlasmaComponents3.ToolButton {
                     icon.name: "internet-services"
                     display: PlasmaComponents3.AbstractButton.IconOnly
-                    text: i18nc("@action:button", "Open on openrouter.ai")
+                    text: l10n.trc("@action:button", "Open on openrouter.ai")
                     onClicked: Qt.openUrlExternally("https://openrouter.ai/activity")
 
                     PlasmaComponents3.ToolTip {
@@ -78,7 +83,7 @@ PlasmaExtras.Representation {
                 PlasmaComponents3.ToolButton {
                     icon.name: "configure"
                     display: PlasmaComponents3.AbstractButton.IconOnly
-                    text: i18nc("@action:button", "Configure")
+                    text: l10n.trc("@action:button", "Configure")
                     onClicked: Plasmoid.internalAction("configure").trigger()
 
                     PlasmaComponents3.ToolTip {
@@ -95,15 +100,15 @@ PlasmaExtras.Representation {
 
                 PlasmaComponents3.TabButton {
                     icon.name: "wallet-open"
-                    text: i18nc("@title:tab", "Overview")
+                    text: l10n.trc("@title:tab", "Overview")
                 }
                 PlasmaComponents3.TabButton {
                     icon.name: "view-list-details"
-                    text: i18nc("@title:tab", "Models")
+                    text: l10n.trc("@title:tab", "Models")
                 }
                 PlasmaComponents3.TabButton {
                     icon.name: "office-chart-bar"
-                    text: i18nc("@title:tab", "History")
+                    text: l10n.trc("@title:tab", "History")
                 }
             }
         }

@@ -6,130 +6,140 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
-"POT-Creation-Date: 2026-08-06 14:24+0000\n"
+"POT-Creation-Date: 2026-08-06 15:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: package/contents/ui/ModelsTab.qml:166
+#: package/contents/ui/ActivityTab.qml:225
+msgctxt "@title:group %1 is a date, %2 an amount"
+msgid "%1 - %2"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:167
 msgctxt "@info:status %1 is the filtered count, %2 the total count"
 msgid "%1 / %2"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:235
+#: package/contents/ui/ModelsTab.qml:236
 msgctxt "@info %1 is a token count such as 128K"
 msgid "%1 context"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:152
+#: package/contents/ui/L10n.qml:277
 msgid "%1 day ago"
 msgid_plural "%1 days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:150
+#: package/contents/ui/L10n.qml:275
 msgid "%1 hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/ActivityTab.qml:169
+#: package/contents/ui/ActivityTab.qml:191
 msgctxt "@info:tooltip %1 is input tokens, %2 output tokens"
 msgid "%1 in / %2 out"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:191
+#: package/contents/ui/ConfigGeneral.qml:199
 msgctxt "@item:valuesuffix"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:146
+#: package/contents/ui/L10n.qml:271
 msgid "%1 minute ago"
 msgid_plural "%1 minutes ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/OverviewTab.qml:140
+#: package/contents/ui/OverviewTab.qml:141
 msgctxt "@info %1 is the spent amount, %2 the purchased amount, %3 a percentage"
 msgid "%1 of %2 spent (%3%)"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:166
+#: package/contents/ui/ActivityTab.qml:188
 msgctxt "@info:tooltip %1 is a request count"
 msgid "%1 requests"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:252
+#: package/contents/ui/OverviewTab.qml:254
 msgctxt "@item %1 is a request count, %2 an interval such as 10s"
 msgid "%1 requests / %2"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:190
+#: package/contents/ui/ConfigGeneral.qml:198
 msgctxt "@item:valuesuffix"
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:142
+#: package/contents/ui/L10n.qml:267
 msgid "%1 second ago"
 msgid_plural "%1 seconds ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/ModelsTab.qml:301
+#: package/contents/ui/ModelsTab.qml:302
 msgctxt "@item %1 is a token count"
 msgid "%1 tokens"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:90
+#: package/contents/ui/ConfigAppearance.qml:133
 msgctxt "@info nothing but the icon is shown"
 msgid "(icon only)"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:40
+#: package/contents/ui/ConfigModels.qml:48
 msgctxt "@item:inlistbox pricing unit"
 msgid "1 million tokens"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:41
+#: package/contents/ui/ConfigModels.qml:49
 msgctxt "@item:inlistbox pricing unit"
 msgid "1000 tokens"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:38
+#: package/contents/ui/L10n.qml:163
 msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:92
+#: package/contents/ui/L10n.qml:162
+msgctxt "@label token pricing unit"
+msgid "1M tokens"
+msgstr ""
+
+#: package/contents/ui/ActivityTab.qml:105
 msgctxt "@label"
 msgid "30 days"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:123
+#: package/contents/ui/ConfigGeneral.qml:131
 msgctxt "@info"
 msgid "A file takes precedence over the typed key and keeps it out of the\nPlasma configuration file. Recommended: chmod 600."
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:206
+#: package/contents/ui/OverviewTab.qml:208
 msgctxt "@title:group"
 msgid "API key"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:114
+#: package/contents/ui/L10n.qml:239
 msgid "API key is missing or invalid"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:100
+#: package/contents/ui/ConfigGeneral.qml:108
 msgctxt "@label:textbox"
 msgid "API key:"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:119
+#: package/contents/ui/L10n.qml:244
 msgid "Access denied - this endpoint needs a management key"
 msgstr ""
 
@@ -138,9 +148,14 @@ msgctxt "@title:tab settings page"
 msgid "Account"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:422
+#: package/contents/ui/ModelsTab.qml:423
 msgctxt "@action:button"
 msgid "Add to favourites"
+msgstr ""
+
+#: package/contents/ui/ActivityTab.qml:237
+msgctxt "@action:button"
+msgid "All 30 days"
 msgstr ""
 
 #: package/contents/config/config.qml:12
@@ -148,300 +163,320 @@ msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:49
+#: package/contents/ui/ConfigAppearance.qml:95
+msgctxt "@info"
+msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
+msgstr ""
+
+#: package/contents/ui/L10n.qml:174
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:104
+#: package/contents/ui/OverviewTab.qml:105
 msgctxt "@label"
 msgid "Available credit"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:259
+#: package/contents/ui/OverviewTab.qml:261
 msgctxt "@label bring-your-own-key usage"
 msgid "BYOK total"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:86
+#: package/contents/ui/L10n.qml:211
 msgctxt "@label very short panel caption for purchased credit"
 msgid "Bought"
 msgstr ""
 
-#: package/contents/ui/main.qml:108
+#: package/contents/ui/main.qml:119
 msgctxt "@action"
 msgid "Buy credit"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:123
-#: package/contents/ui/main.qml:159
+#: package/contents/ui/OverviewTab.qml:124
+#: package/contents/ui/main.qml:170
 msgctxt "@action:button"
 msgid "Buy credit"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:198
+#: package/contents/ui/ActivityTab.qml:229
 msgctxt "@title:group"
 msgid "By model"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:151
+#: package/contents/ui/ModelsTab.qml:152
 msgctxt "@item:inlistbox sort order"
 msgid "By name"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:330
+#: package/contents/ui/ModelsTab.qml:331
 msgctxt "@label"
 msgid "Cache read"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:335
+#: package/contents/ui/ModelsTab.qml:336
 msgctxt "@label"
 msgid "Cache write"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:111
+#: package/contents/ui/L10n.qml:236
 msgid "Cannot reach openrouter.ai"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:77
+#: package/contents/ui/ConfigGeneral.qml:85
 msgctxt "@info:status"
 msgid "Cannot reach openrouter.ai"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:152
-msgctxt "@item:inlistbox sort order"
-msgid "Cheapest input"
 msgstr ""
 
 #: package/contents/ui/ModelsTab.qml:153
 msgctxt "@item:inlistbox sort order"
-msgid "Cheapest output"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:54
-msgctxt "@info:status"
-msgid "Checking…"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:255
-msgctxt "@title:window"
-msgid "Choose the file holding the API key"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:261
-msgctxt "@title:window"
-msgid "Choose the file holding the management key"
-msgstr ""
-
-#: package/contents/ui/ConfigAppearance.qml:133
-msgctxt "@option:check"
-msgid "Colour credit by the warning thresholds"
-msgstr ""
-
-#: package/contents/ui/FullView.qml:81
-msgctxt "@action:button"
-msgid "Configure"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:68
-msgctxt "@info:status %1 is the key name, %2 an amount"
-msgid "Connected - key “%1”, %2 spent so far."
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:300
-msgctxt "@label"
-msgid "Context window"
-msgstr ""
-
-#: package/contents/ui/ConfigModels.qml:54
-#: package/contents/ui/ModelsTab.qml:361
-msgctxt "@title:group"
-msgid "Cost calculator"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:154
-msgctxt "@info"
-msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:95
-msgctxt "@title:group"
-msgid "Credentials"
-msgstr ""
-
-#: package/contents/ui/L10n.qml:85
-msgctxt "@item:inlistbox panel metric"
-msgid "Credit purchased"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:232
-msgctxt "@label:spinbox"
-msgid "Critical below:"
-msgstr ""
-
-#: package/contents/ui/ConfigAppearance.qml:155
-msgctxt "@label:textbox"
-msgid "Currency symbol:"
-msgstr ""
-
-#: package/contents/ui/ActivityTab.qml:109
-msgctxt "@title:group"
-msgid "Daily spending"
-msgstr ""
-
-#: package/contents/ui/ConfigAppearance.qml:161
-msgctxt "@label:spinbox"
-msgid "Decimal places:"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:432
-msgctxt "@action:button"
-msgid "Details"
-msgstr ""
-
-#: package/contents/ui/L10n.qml:122
-msgid "Endpoint not found"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:51
-msgctxt "@info:status"
-msgid "Enter an API key first."
-msgstr ""
-
-#: package/contents/ui/OverviewTab.qml:72
-msgctxt "@info:placeholder"
-msgid "Enter your OpenRouter key in the settings to see credit and usage."
-msgstr ""
-
-#: package/contents/ui/L10n.qml:132
-msgid "Error %1"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:81
-msgctxt "@info:status %1 is an HTTP status"
-msgid "Error %1"
-msgstr ""
-
-#: package/contents/ui/L10n.qml:131
-msgid "Error %1: %2"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:79
-msgctxt "@info:status %1 is an HTTP status, %2 the server message"
-msgid "Error %1: %2"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:407
-msgctxt "@label"
-msgid "Estimated cost"
-msgstr ""
-
-#: package/contents/ui/ConfigModels.qml:77
-msgctxt "@title:group"
-msgid "Favourites"
-msgstr ""
-
-#: package/contents/ui/OverviewTab.qml:269
-msgctxt "@title:group %1 is a token unit such as '1M tokens'"
-msgid "Favourites - price per %1"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:133
-msgctxt "@action:button"
-msgid "Favourites only"
-msgstr ""
-
-#: package/contents/ui/L10n.qml:50
-msgctxt "@label very short panel caption for available credit"
-msgid "Free"
-msgstr ""
-
-#: package/contents/ui/ConfigModels.qml:49
-msgctxt "@option:check"
-msgid "Hide free models"
-msgstr ""
-
-#: package/contents/ui/FullView.qml:106
-msgctxt "@title:tab"
-msgid "History"
-msgstr ""
-
-#: package/contents/ui/ActivityTab.qml:50
-msgctxt "@info:placeholder"
-msgid "History unavailable"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:321
-msgctxt "@label"
-msgid "Input"
-msgstr ""
-
-#: package/contents/ui/ModelsTab.qml:382
-msgctxt "@info:tooltip"
-msgid "Input tokens"
-msgstr ""
-
-#: package/contents/ui/ConfigModels.qml:59
-msgctxt "@label:spinbox"
-msgid "Input tokens:"
-msgstr ""
-
-#: package/contents/ui/ConfigGeneral.qml:184
-msgctxt "@label:spinbox"
-msgid "Interval:"
+msgid "Cheapest input"
 msgstr ""
 
 #: package/contents/ui/ModelsTab.qml:154
 msgctxt "@item:inlistbox sort order"
+msgid "Cheapest output"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:62
+msgctxt "@info:status"
+msgid "Checking…"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:263
+msgctxt "@title:window"
+msgid "Choose the file holding the API key"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:269
+msgctxt "@title:window"
+msgid "Choose the file holding the management key"
+msgstr ""
+
+#: package/contents/ui/ActivityTab.qml:247
+msgctxt "@info:usagetip"
+msgid "Click a bar to see that day on its own."
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:176
+msgctxt "@option:check"
+msgid "Colour credit by the warning thresholds"
+msgstr ""
+
+#: package/contents/ui/FullView.qml:86
+msgctxt "@action:button"
+msgid "Configure"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:76
+msgctxt "@info:status %1 is the key name, %2 an amount"
+msgid "Connected - key “%1”, %2 spent so far."
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:301
+msgctxt "@label"
+msgid "Context window"
+msgstr ""
+
+#: package/contents/ui/ConfigModels.qml:62
+#: package/contents/ui/ModelsTab.qml:362
+msgctxt "@title:group"
+msgid "Cost calculator"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:162
+msgctxt "@info"
+msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:103
+msgctxt "@title:group"
+msgid "Credentials"
+msgstr ""
+
+#: package/contents/ui/L10n.qml:210
+msgctxt "@item:inlistbox panel metric"
+msgid "Credit purchased"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:240
+msgctxt "@label:spinbox"
+msgid "Critical below:"
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:198
+msgctxt "@label:textbox"
+msgid "Currency symbol:"
+msgstr ""
+
+#: package/contents/ui/ActivityTab.qml:122
+msgctxt "@title:group"
+msgid "Daily spending"
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:204
+msgctxt "@label:spinbox"
+msgid "Decimal places:"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:433
+msgctxt "@action:button"
+msgid "Details"
+msgstr ""
+
+#: package/contents/ui/L10n.qml:247
+msgid "Endpoint not found"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:59
+msgctxt "@info:status"
+msgid "Enter an API key first."
+msgstr ""
+
+#: package/contents/ui/OverviewTab.qml:73
+msgctxt "@info:placeholder"
+msgid "Enter your OpenRouter key in the settings to see credit and usage."
+msgstr ""
+
+#: package/contents/ui/L10n.qml:257
+msgid "Error %1"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:89
+msgctxt "@info:status %1 is an HTTP status"
+msgid "Error %1"
+msgstr ""
+
+#: package/contents/ui/L10n.qml:256
+msgid "Error %1: %2"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:87
+msgctxt "@info:status %1 is an HTTP status, %2 the server message"
+msgid "Error %1: %2"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:408
+msgctxt "@label"
+msgid "Estimated cost"
+msgstr ""
+
+#: package/contents/ui/ConfigModels.qml:85
+msgctxt "@title:group"
+msgid "Favourites"
+msgstr ""
+
+#: package/contents/ui/OverviewTab.qml:271
+msgctxt "@title:group %1 is a token unit such as '1M tokens'"
+msgid "Favourites - price per %1"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:134
+msgctxt "@action:button"
+msgid "Favourites only"
+msgstr ""
+
+#: package/contents/ui/L10n.qml:175
+msgctxt "@label very short panel caption for available credit"
+msgid "Free"
+msgstr ""
+
+#: package/contents/ui/ConfigModels.qml:57
+msgctxt "@option:check"
+msgid "Hide free models"
+msgstr ""
+
+#: package/contents/ui/FullView.qml:111
+msgctxt "@title:tab"
+msgid "History"
+msgstr ""
+
+#: package/contents/ui/ActivityTab.qml:63
+msgctxt "@info:placeholder"
+msgid "History unavailable"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:322
+msgctxt "@label"
+msgid "Input"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:383
+msgctxt "@info:tooltip"
+msgid "Input tokens"
+msgstr ""
+
+#: package/contents/ui/ConfigModels.qml:67
+msgctxt "@label:spinbox"
+msgid "Input tokens:"
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:73
+msgctxt "@label:listbox"
+msgid "Interface language:"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:192
+msgctxt "@label:spinbox"
+msgid "Interval:"
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:67
+msgctxt "@title:group"
+msgid "Language"
+msgstr ""
+
+#: package/contents/ui/ModelsTab.qml:155
+msgctxt "@item:inlistbox sort order"
 msgid "Largest context"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:230
+#: package/contents/ui/OverviewTab.qml:232
 msgctxt "@label"
 msgid "Left of that"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:56
+#: package/contents/ui/L10n.qml:181
 msgctxt "@label very short panel caption for the key limit"
 msgid "Limit"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:236
+#: package/contents/ui/OverviewTab.qml:238
 msgctxt "@label"
 msgid "Limit resets"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:188
+#: package/contents/ui/ModelsTab.qml:189
 msgctxt "@info:placeholder"
 msgid "Loading model list…"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:131
+#: package/contents/ui/ConfigGeneral.qml:139
 msgctxt "@label:textbox"
 msgid "Management key:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:70
+#: package/contents/ui/ConfigAppearance.qml:113
 msgctxt "@label"
 msgid "Metrics:"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:307
+#: package/contents/ui/ModelsTab.qml:308
 msgctxt "@label"
 msgid "Modalities"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:296
+#: package/contents/ui/ModelsTab.qml:297
 msgctxt "@label"
 msgid "Model id"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:82
+#: package/contents/ui/ConfigModels.qml:90
 msgctxt "@label:textbox"
 msgid "Model ids:"
 msgstr ""
 
-#: package/contents/ui/FullView.qml:102
+#: package/contents/ui/FullView.qml:107
 msgctxt "@title:tab"
 msgid "Models"
 msgstr ""
@@ -451,449 +486,461 @@ msgctxt "@title:tab settings page"
 msgid "Models"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:74
+#: package/contents/ui/L10n.qml:199
 msgctxt "@label very short panel caption for this month"
 msgid "Month"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:78
+#: package/contents/ui/ConfigAppearance.qml:121
 msgctxt "@info"
 msgid "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left."
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:218
+#: package/contents/ui/OverviewTab.qml:220
 msgctxt "@label"
 msgid "Name"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:155
+#: package/contents/ui/ModelsTab.qml:156
 msgctxt "@item:inlistbox sort order"
 msgid "Newest first"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:71
+#: package/contents/ui/OverviewTab.qml:72
 msgctxt "@info:placeholder"
 msgid "No API key configured"
 msgstr ""
 
-#: package/contents/ui/OpenRouterApi.qml:138
-#: package/contents/ui/OpenRouterApi.qml:441
+#: package/contents/ui/OpenRouterApi.qml:168
+#: package/contents/ui/OpenRouterApi.qml:522
 msgid "No API key configured - add one in the settings"
 msgstr ""
 
-#: package/contents/ui/main.qml:57
+#: package/contents/ui/main.qml:68
 msgctxt "@info:tooltip"
 msgid "No API key configured.\nRight click → Configure"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:317
+#: package/contents/ui/OverviewTab.qml:319
 msgctxt "@info:status"
 msgid "No data fetched yet"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:51
+#: package/contents/ui/ActivityTab.qml:64
 msgctxt "@info:placeholder"
 msgid "No data yet"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:187
+#: package/contents/ui/ModelsTab.qml:188
 msgctxt "@info:placeholder"
 msgid "No model matches"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:249
+#: package/contents/ui/ConfigGeneral.qml:257
 msgctxt "@option:check"
 msgid "Notify when credit drops below the warning threshold"
 msgstr ""
 
-#: package/contents/ui/main.qml:139
+#: package/contents/ui/main.qml:150
 msgctxt "@info:status %1 is a formatted amount"
 msgid "Only %1 of OpenRouter credit left."
 msgstr ""
 
-#: package/contents/ui/main.qml:103
+#: package/contents/ui/main.qml:114
 msgctxt "@action"
 msgid "Open activity on openrouter.ai"
 msgstr ""
 
-#: package/contents/ui/FullView.qml:70
+#: package/contents/ui/FullView.qml:75
 msgctxt "@action:button"
 msgid "Open on openrouter.ai"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:60
-#: package/contents/ui/OverviewTab.qml:77
+#: package/contents/ui/ActivityTab.qml:73
+#: package/contents/ui/OverviewTab.qml:78
 msgctxt "@action:button"
 msgid "Open settings"
 msgstr ""
 
-#: package/contents/ui/main.qml:53
+#: package/contents/ui/main.qml:64
 msgctxt "@info:tooltip"
 msgid "OpenRouter"
 msgstr ""
 
-#: package/contents/ui/main.qml:50
+#: package/contents/ui/main.qml:61
 msgctxt "@info:tooltip %1 is a formatted amount"
 msgid "OpenRouter - %1 available"
 msgstr ""
 
-#: package/contents/ui/main.qml:153
+#: package/contents/ui/main.qml:164
 msgctxt "@title:window notification"
 msgid "OpenRouter credit is low"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:128
+#: package/contents/ui/L10n.qml:253
 msgid "OpenRouter reported a server error (%1)"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:325
+#: package/contents/ui/ModelsTab.qml:326
 msgctxt "@label"
 msgid "Output"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:401
+#: package/contents/ui/ModelsTab.qml:402
 msgctxt "@info:tooltip"
 msgid "Output tokens"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:68
+#: package/contents/ui/ConfigModels.qml:76
 msgctxt "@label:spinbox"
 msgid "Output tokens:"
 msgstr ""
 
-#: package/contents/ui/FullView.qml:98
+#: package/contents/ui/FullView.qml:103
 msgctxt "@title:tab"
 msgid "Overview"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:345
+#: package/contents/ui/ModelsTab.qml:346
 msgctxt "@label"
 msgid "Per image"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:350
+#: package/contents/ui/ModelsTab.qml:351
 msgctxt "@label"
 msgid "Per request"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:113
+#: package/contents/ui/ConfigAppearance.qml:156
 msgctxt "@title:group"
 msgid "Presentation"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:86
+#: package/contents/ui/ConfigAppearance.qml:129
 msgctxt "@label"
 msgid "Preview:"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:313
+#: package/contents/ui/ModelsTab.qml:314
 msgctxt "@title:group %1 is a token unit such as '1M tokens'"
 msgid "Prices per %1"
 msgstr ""
 
-#: package/contents/ui/main.qml:71
+#: package/contents/ui/main.qml:82
 msgctxt "@info:tooltip %1 is purchased credit, %2 is spent credit"
 msgid "Purchased: %1   Spent: %2"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:250
+#: package/contents/ui/OverviewTab.qml:252
 msgctxt "@label"
 msgid "Rate limit"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:125
+#: package/contents/ui/L10n.qml:250
 msgid "Rate limit reached - try again later"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:340
+#: package/contents/ui/ModelsTab.qml:341
 msgctxt "@label"
 msgid "Reasoning"
 msgstr ""
 
-#: package/contents/ui/FullView.qml:59
+#: package/contents/ui/FullView.qml:64
 msgctxt "@action:button"
 msgid "Refresh"
 msgstr ""
 
-#: package/contents/ui/main.qml:98
+#: package/contents/ui/main.qml:109
 msgctxt "@action"
 msgid "Refresh now"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:205
+#: package/contents/ui/ConfigGeneral.qml:213
 msgctxt "@option:check"
 msgid "Refresh when the popup opens"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:179
+#: package/contents/ui/ConfigGeneral.qml:187
 msgctxt "@title:group"
 msgid "Refreshing"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:55
+#: package/contents/ui/L10n.qml:180
 msgctxt "@item:inlistbox panel metric"
 msgid "Remaining key limit"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:105
+#: package/contents/ui/OverviewTab.qml:106
 msgctxt "@label"
 msgid "Remaining key limit"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:421
+#: package/contents/ui/ModelsTab.qml:422
 msgctxt "@action:button"
 msgid "Remove favourite"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:92
+#: package/contents/ui/L10n.qml:217
 msgctxt "@label very short panel caption for the request count"
 msgid "Req."
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:96
+#: package/contents/ui/ActivityTab.qml:109
 msgctxt "@label"
 msgid "Requests"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:91
+#: package/contents/ui/L10n.qml:216
 msgctxt "@item:inlistbox panel metric"
 msgid "Requests (30 days)"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:56
+#: package/contents/ui/ActivityTab.qml:69
 msgctxt "@info:placeholder"
 msgid "Requests made through your account will show up here."
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:125
+#: package/contents/ui/ModelsTab.qml:126
 msgctxt "@info:placeholder"
 msgid "Search models…"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:90
+#: package/contents/ui/ConfigModels.qml:98
 msgctxt "@info"
 msgid "Separated by commas or line breaks. The star in the widget's model\nlist is the more convenient way."
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:149
+#: package/contents/ui/ConfigAppearance.qml:192
 msgctxt "@label:textbox"
 msgid "Separator:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:123
+#: package/contents/ui/ConfigAppearance.qml:166
 msgctxt "@option:check"
 msgid "Short caption before each value (Today, Month …)"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:118
+#: package/contents/ui/ConfigAppearance.qml:161
 msgctxt "@option:check"
 msgid "Show icon"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:60
+#: package/contents/ui/ConfigAppearance.qml:103
 msgctxt "@title:group"
 msgid "Show in the panel"
 msgstr ""
 
-#: package/contents/ui/ConfigModels.qml:35
+#: package/contents/ui/ConfigModels.qml:43
 msgctxt "@label:listbox"
 msgid "Show prices per:"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:223
+#: package/contents/ui/OverviewTab.qml:225
 msgctxt "@label"
 msgid "Spending limit"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:79
+#: package/contents/ui/L10n.qml:204
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent in total"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:193
+#: package/contents/ui/OverviewTab.qml:195
 msgctxt "@label spending period"
 msgid "Spent in total"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:73
+#: package/contents/ui/L10n.qml:198
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent this month"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:67
+#: package/contents/ui/L10n.qml:192
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent this week"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:61
+#: package/contents/ui/L10n.qml:186
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent today"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:128
+#: package/contents/ui/ConfigAppearance.qml:171
 msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:162
+#: package/contents/ui/L10n.qml:127
+msgctxt "@item:inlistbox"
+msgid "System language"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:170
 msgctxt "@action:button"
 msgid "Test connection"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:142
+#: package/contents/ui/ConfigAppearance.qml:185
 msgctxt "@label:textbox"
 msgid "Text in front:"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:54
+#: package/contents/ui/ActivityTab.qml:67
 msgctxt "@info:placeholder"
 msgid "The 30 day history comes from /activity. If your account requires it, create a management key at openrouter.ai/settings/provisioning-keys and enter it in the settings."
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:153
+#: package/contents/ui/OverviewTab.qml:154
 msgctxt "@info"
 msgid "The real account balance needs a management key (Settings → Account)."
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:188
+#: package/contents/ui/OverviewTab.qml:190
 msgctxt "@label spending period"
 msgid "This month"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:240
+#: package/contents/ui/OverviewTab.qml:185
+msgctxt "@label spending period"
+msgid "This week"
+msgstr ""
+
+#: package/contents/ui/OverviewTab.qml:242
 msgctxt "@label account tier"
 msgid "Tier"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:177
+#: package/contents/ui/OverviewTab.qml:178
 msgctxt "@label spending period"
 msgid "Today"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:62
+#: package/contents/ui/L10n.qml:187
 msgctxt "@label very short panel caption for today"
 msgid "Today"
 msgstr ""
 
-#: package/contents/ui/main.qml:64
+#: package/contents/ui/main.qml:75
 msgctxt "@info:tooltip spending summary, %1/%2/%3 are amounts"
 msgid "Today: %1   Week: %2   Month: %3"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:80
+#: package/contents/ui/L10n.qml:205
 msgctxt "@label very short panel caption for the total"
 msgid "Total"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:319
+#: package/contents/ui/OverviewTab.qml:321
 msgctxt "@info:status %1 is a relative time such as '5 minutes ago'"
 msgid "Updated %1"
 msgstr ""
 
-#: package/contents/ui/main.qml:77
+#: package/contents/ui/main.qml:88
 msgctxt "@info:tooltip %1 is a relative time such as '5 minutes ago'"
 msgid "Updated %1"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:215
+#: package/contents/ui/ConfigGeneral.qml:223
 msgctxt "@label:spinbox"
 msgid "Warn below:"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:210
+#: package/contents/ui/ConfigGeneral.qml:218
 msgctxt "@title:group"
 msgid "Warning thresholds"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:355
+#: package/contents/ui/ModelsTab.qml:356
 msgctxt "@label"
 msgid "Web search"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:68
+#: package/contents/ui/L10n.qml:193
 msgctxt "@label very short panel caption for this week"
 msgid "Week"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:143
+#: package/contents/ui/ConfigAppearance.qml:186
 msgctxt "@info:placeholder example prefix"
 msgid "e.g. OR"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:238
+#: package/contents/ui/ModelsTab.qml:239
 msgctxt "@info model costs nothing"
 msgid "free"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:32
+#: package/contents/ui/L10n.qml:157
 msgctxt "@item price of a free model"
 msgid "free"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:242
+#: package/contents/ui/OverviewTab.qml:244
 msgctxt "@item account tier"
 msgid "free tier"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:252
+#: package/contents/ui/ModelsTab.qml:253
 msgctxt "@info:status input price, %1 is an amount"
 msgid "in %1"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:139
+#: package/contents/ui/L10n.qml:264
 msgid "just now"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:132
+#: package/contents/ui/ConfigGeneral.qml:140
 msgctxt "@info:placeholder"
 msgid "optional - for balance and history"
 msgstr ""
 
-#: package/contents/ui/ModelsTab.qml:259
+#: package/contents/ui/ModelsTab.qml:260
 msgctxt "@info:status output price, %1 is an amount"
 msgid "out %1"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:243
+#: package/contents/ui/OverviewTab.qml:245
 msgctxt "@item account tier"
 msgid "paid"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:174
-#: package/contents/ui/OverviewTab.qml:180
-#: package/contents/ui/OverviewTab.qml:197
+#: package/contents/ui/OverviewTab.qml:175
+#: package/contents/ui/OverviewTab.qml:182
+#: package/contents/ui/OverviewTab.qml:199
 msgctxt "@info:whatsthis data scope"
 msgid "this key only"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:291
+#: package/contents/ui/OverviewTab.qml:293
 msgctxt "@item model id that is not in the catalogue"
 msgid "unknown"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:225
+#: package/contents/ui/OverviewTab.qml:227
 msgctxt "@item no spending limit set"
 msgid "unlimited"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:220
+#: package/contents/ui/ConfigGeneral.qml:79
+#: package/contents/ui/OverviewTab.qml:222
 msgctxt "@item key without a name"
 msgid "unnamed"
 msgstr ""
 
-#: package/contents/ui/OverviewTab.qml:173
-#: package/contents/ui/OverviewTab.qml:196
+#: package/contents/ui/OverviewTab.qml:174
+#: package/contents/ui/OverviewTab.qml:181
+#: package/contents/ui/OverviewTab.qml:198
 msgctxt "@info:whatsthis data scope"
 msgid "whole account"
 msgstr ""
 
-#: package/contents/ui/ActivityTab.qml:100
+#: package/contents/ui/ActivityTab.qml:113
 msgctxt "@label average per day"
 msgid "Ø per day"
 msgstr ""
 
-#: package/contents/ui/ConfigGeneral.qml:107
-#: package/contents/ui/ConfigGeneral.qml:138
+#: package/contents/ui/ConfigGeneral.qml:115
+#: package/contents/ui/ConfigGeneral.qml:146
 msgctxt "@label:textbox"
 msgid "…or from a file:"
 msgstr ""

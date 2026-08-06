@@ -9,6 +9,8 @@
 import QtQuick
 import QtCore
 
+import org.kde.plasma.plasma5support as P5Support
+
 import "../code/utils.js" as Utils
 
 Item {
@@ -34,11 +36,19 @@ Item {
         return u.indexOf("file://") === 0 ? u.substring(7) : u;
     }
 
-    // A key file wins over a key typed into the settings dialog
+    /*
+     * A key file wins over a key typed into the settings dialog. Reading it
+     * goes through a short-lived process rather than XMLHttpRequest: Qt blocks
+     * XHR on local files inside plasmashell, so the obvious approach silently
+     * returns nothing. The contents therefore arrive asynchronously.
+     */
+    property string fileApiKey: ""
+    property string fileManagementKey: ""
+
     readonly property string inferenceKey: apiKeyFile.length > 0
-        ? readKeyFile(apiKeyFile) : rawApiKey.trim()
+        ? fileApiKey : rawApiKey.trim()
     readonly property string managementKey: managementKeyFile.length > 0
-        ? readKeyFile(managementKeyFile) : rawManagementKey.trim()
+        ? fileManagementKey : rawManagementKey.trim()
 
     // /credits and /activity officially require a management key, but many
     // accounts serve them for a plain inference key too - so fall back to it.
@@ -114,10 +124,18 @@ Item {
      * zeroes there. /activity is account-wide but stops at the last completed
      * UTC day. So: prefer the account-wide sums and top up today from /key.
      */
+    readonly property string todayStr: Utils.isoDate(new Date())
+
+    // Spending seen through /credits since the baseline was taken today
+    readonly property real creditsToday: (creditsValid && usageBaselineDate === todayStr)
+        ? Math.max(0, totalUsage - usageBaseline) : Number.NaN
+
+    readonly property bool todayFromCredits: !activityHasToday && isFinite(creditsToday)
+
     readonly property bool accountWide: activityLoaded
-    readonly property real usageTodayEff: activityLoaded
-        ? (activityHasToday ? activityToday : usageDaily)
-        : usageDaily
+    readonly property real usageTodayEff: activityHasToday
+        ? activityToday
+        : (isFinite(creditsToday) ? Math.max(creditsToday, usageDaily) : usageDaily)
     readonly property real usageWeekEff: activityLoaded
         ? activityWeek + (activityHasToday ? 0 : usageDaily)
         : usageWeekly
@@ -128,17 +146,31 @@ Item {
 
     signal balanceUpdated(real value)
 
-    property L10n l10n: L10n {}
+    /* Interface language, forwarded from the configuration */
+    property string language: ""
+
+    /*
+     * /activity only covers completed UTC days and /key only counts one key,
+     * so today's account-wide spending is invisible to both. total_usage from
+     * /credits is live and account-wide, so remember what it was at the first
+     * poll of the day and take the difference. main.qml persists these.
+     */
+    property real usageBaseline: 0
+    property string usageBaselineDate: ""
+    signal baselineRequested(real total, string date)
+    property L10n l10n: L10n { language: api.language }
 
     // ------------------------------------------------------------------
     // Public actions
     // ------------------------------------------------------------------
     function refresh() {
         if (!configured) {
-            errorMessage = i18n("No API key configured - add one in the settings");
+            errorMessage = l10n.tr("No API key configured - add one in the settings");
             return;
         }
         errorMessage = "";
+        // Pick up a key file that changed on disk since the last poll
+        reloadKeyFiles();
         fetchKeyInfo();
         fetchCredits();
         fetchActivity();
@@ -161,7 +193,8 @@ Item {
     // ------------------------------------------------------------------
     // Internal helpers
     // ------------------------------------------------------------------
-    function readKeyFile(path) {
+    /* Expand a leading ~ and wrap the path so the shell cannot reinterpret it */
+    function catCommand(path) {
         var p = String(path || "").trim();
         if (p.length === 0) {
             return "";
@@ -169,25 +202,31 @@ Item {
         if (p.indexOf("~/") === 0) {
             p = api.homeDir + p.substring(1);
         }
-        var url = p.indexOf("file://") === 0 ? p : "file://" + p;
-        try {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, false);
-            xhr.send();
-            if (xhr.status === 200 || xhr.status === 0) {
-                // First non-empty, non-comment line wins
-                var lines = String(xhr.responseText || "").split("\n");
-                for (var i = 0; i < lines.length; ++i) {
-                    var l = lines[i].trim();
-                    if (l.length > 0 && l.indexOf("#") !== 0) {
-                        return l;
-                    }
-                }
+        return "cat -- '" + p.split("'").join("'\\''") + "'";
+    }
+
+    readonly property string apiKeyCommand: catCommand(apiKeyFile)
+    readonly property string managementKeyCommand: catCommand(managementKeyFile)
+
+    /* First non-empty, non-comment line wins, so files may carry comments */
+    function firstKeyLine(text) {
+        var lines = String(text || "").split("\n");
+        for (var i = 0; i < lines.length; ++i) {
+            var l = lines[i].trim();
+            if (l.length > 0 && l.indexOf("#") !== 0) {
+                return l;
             }
-        } catch (e) {
-            // Unreadable file is treated the same as "no key"
         }
         return "";
+    }
+
+    function reloadKeyFiles() {
+        if (apiKeyCommand.length > 0) {
+            fileReader.connectSource(apiKeyCommand);
+        }
+        if (managementKeyCommand.length > 0) {
+            fileReader.connectSource(managementKeyCommand);
+        }
     }
 
     function request(path, key, onOk, onErr) {
@@ -237,6 +276,10 @@ Item {
             api.totalCredits = Utils.num(d.total_credits);
             api.totalUsage = Utils.num(d.total_usage);
             api.creditsValid = true;
+            // Start a fresh baseline whenever the UTC day rolls over
+            if (api.usageBaselineDate !== api.todayStr) {
+                api.baselineRequested(api.totalUsage, api.todayStr);
+            }
             api.stamp();
             api.balanceUpdated(api.balance);
         }, function (status, msg) {
@@ -334,12 +377,19 @@ Item {
 
             if (date.length > 0) {
                 if (!byDate[date]) {
-                    byDate[date] = { date: date, usage: 0, requests: 0, prompt: 0, completion: 0 };
+                    byDate[date] = { date: date, usage: 0, requests: 0, prompt: 0,
+                                     completion: 0, perModel: {}, models: [] };
                 }
                 byDate[date].usage += spend;
                 byDate[date].requests += reqs;
                 byDate[date].prompt += pt;
                 byDate[date].completion += ct;
+                // Kept per day as well so a clicked bar can show its own split
+                if (!byDate[date].perModel[name]) {
+                    byDate[date].perModel[name] = { model: name, usage: 0, requests: 0 };
+                }
+                byDate[date].perModel[name].usage += spend;
+                byDate[date].perModel[name].requests += reqs;
             }
 
             if (!byModel[name]) {
@@ -356,6 +406,16 @@ Item {
             days.push(byDate[d]);
         }
         days.sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+
+        // Flatten each day's model map into a sorted list for the UI
+        for (var j = 0; j < days.length; ++j) {
+            var list = [];
+            for (var key in days[j].perModel) {
+                list.push(days[j].perModel[key]);
+            }
+            list.sort(function (a, b) { return b.usage - a.usage; });
+            days[j].models = list;
+        }
 
         var mods = [];
         for (var m in byModel) {
@@ -401,6 +461,26 @@ Item {
     // ------------------------------------------------------------------
     // Scheduling
     // ------------------------------------------------------------------
+    P5Support.DataSource {
+        id: fileReader
+
+        engine: "executable"
+        connectedSources: []
+
+        onNewData: (source, data) => {
+            var value = api.firstKeyLine(data["stdout"]);
+            if (source === api.apiKeyCommand) {
+                api.fileApiKey = value;
+            } else if (source === api.managementKeyCommand) {
+                api.fileManagementKey = value;
+            }
+            // One shot per read, otherwise the process would be respawned
+            disconnectSource(source);
+        }
+    }
+
+    onApiKeyCommandChanged: reloadKeyFiles()
+    onManagementKeyCommandChanged: reloadKeyFiles()
     Timer {
         interval: Math.max(30, api.refreshInterval) * 1000
         repeat: true
@@ -434,11 +514,12 @@ Item {
     onManagementKeyChanged: keyDebounce.restart()
 
     Component.onCompleted: {
+        reloadKeyFiles();
         fetchModels();
         if (configured) {
             refresh();
         } else {
-            errorMessage = i18n("No API key configured - add one in the settings");
+            errorMessage = l10n.tr("No API key configured - add one in the settings");
         }
     }
 }

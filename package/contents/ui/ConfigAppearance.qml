@@ -26,11 +26,18 @@ KCM.SimpleKCM {
     // Multiple choice, stored as a comma separated list
     property string cfg_compactItems: "balance"
 
+    // Empty means "follow the Plasma locale"
+    property string cfg_language: ""
+
     L10n {
         id: l10n
+        language: page.cfg_language
     }
 
     readonly property var metrics: l10n.metricDefs()
+
+    // The dialog fills cfg_* after the page is built, so re-sync then
+    onCfg_languageChanged: languageBox.syncFromConfig()
 
     function isSelected(key) {
         return Utils.splitList(cfg_compactItems).indexOf(key) >= 0;
@@ -57,7 +64,43 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18nc("@title:group", "Show in the panel")
+            Kirigami.FormData.label: l10n.trc("@title:group", "Language")
+        }
+
+        PlasmaComponents3.ComboBox {
+            id: languageBox
+
+            Kirigami.FormData.label: l10n.trc("@label:listbox", "Interface language:")
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 12
+            textRole: "label"
+            valueRole: "code"
+            model: l10n.availableLanguages()
+            onActivated: page.cfg_language = currentValue
+
+            function syncFromConfig() {
+                var list = l10n.availableLanguages();
+                for (var i = 0; i < list.length; ++i) {
+                    if (list[i].code === page.cfg_language) {
+                        currentIndex = i;
+                        return;
+                    }
+                }
+                currentIndex = 0;
+            }
+
+            Component.onCompleted: syncFromConfig()
+        }
+
+        PlasmaComponents3.Label {
+            text: l10n.trc("@info",
+                "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language.")
+            font: Kirigami.Theme.smallFont
+            opacity: 0.7
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: l10n.trc("@title:group", "Show in the panel")
         }
 
         Repeater {
@@ -67,7 +110,7 @@ KCM.SimpleKCM {
                 required property var modelData
                 required property int index
 
-                Kirigami.FormData.label: index === 0 ? i18nc("@label", "Metrics:") : ""
+                Kirigami.FormData.label: index === 0 ? l10n.trc("@label", "Metrics:") : ""
                 text: modelData.label
                 checked: page.isSelected(modelData.key)
                 onToggled: page.setSelected(modelData.key, checked)
@@ -75,7 +118,7 @@ KCM.SimpleKCM {
         }
 
         PlasmaComponents3.Label {
-            text: i18nc("@info",
+            text: l10n.trc("@info",
                 "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left.")
             font: Kirigami.Theme.smallFont
             opacity: 0.7
@@ -83,11 +126,11 @@ KCM.SimpleKCM {
 
         // Preview of the assembled panel text
         PlasmaComponents3.Label {
-            Kirigami.FormData.label: i18nc("@label", "Preview:")
+            Kirigami.FormData.label: l10n.trc("@label", "Preview:")
             text: {
                 var keys = Utils.splitList(page.cfg_compactItems);
                 if (keys.length === 0) {
-                    return i18nc("@info nothing but the icon is shown", "(icon only)");
+                    return l10n.trc("@info nothing but the icon is shown", "(icon only)");
                 }
                 var parts = [];
                 var demo = { balance: 3.5, limit: 8.5, today: 0.42, week: 3.1,
@@ -110,27 +153,27 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18nc("@title:group", "Presentation")
+            Kirigami.FormData.label: l10n.trc("@title:group", "Presentation")
         }
 
         PlasmaComponents3.CheckBox {
             id: iconBox
-            text: i18nc("@option:check", "Show icon")
+            text: l10n.trc("@option:check", "Show icon")
         }
 
         PlasmaComponents3.CheckBox {
             id: labelBox
-            text: i18nc("@option:check", "Short caption before each value (Today, Month …)")
+            text: l10n.trc("@option:check", "Short caption before each value (Today, Month …)")
         }
 
         PlasmaComponents3.CheckBox {
             id: stackedBox
-            text: i18nc("@option:check", "Stack values instead of placing them side by side")
+            text: l10n.trc("@option:check", "Stack values instead of placing them side by side")
         }
 
         PlasmaComponents3.CheckBox {
             id: colorBox
-            text: i18nc("@option:check", "Colour credit by the warning thresholds")
+            text: l10n.trc("@option:check", "Colour credit by the warning thresholds")
         }
 
         Item {
@@ -139,26 +182,26 @@ KCM.SimpleKCM {
 
         PlasmaComponents3.TextField {
             id: prefixField
-            Kirigami.FormData.label: i18nc("@label:textbox", "Text in front:")
-            placeholderText: i18nc("@info:placeholder example prefix", "e.g. OR")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "Text in front:")
+            placeholderText: l10n.trc("@info:placeholder example prefix", "e.g. OR")
             Layout.minimumWidth: Kirigami.Units.gridUnit * 10
         }
 
         PlasmaComponents3.TextField {
             id: separatorField
-            Kirigami.FormData.label: i18nc("@label:textbox", "Separator:")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "Separator:")
             Layout.maximumWidth: Kirigami.Units.gridUnit * 5
         }
 
         PlasmaComponents3.TextField {
             id: symbolField
-            Kirigami.FormData.label: i18nc("@label:textbox", "Currency symbol:")
+            Kirigami.FormData.label: l10n.trc("@label:textbox", "Currency symbol:")
             Layout.maximumWidth: Kirigami.Units.gridUnit * 5
         }
 
         PlasmaComponents3.SpinBox {
             id: decimalsSpin
-            Kirigami.FormData.label: i18nc("@label:spinbox", "Decimal places:")
+            Kirigami.FormData.label: l10n.trc("@label:spinbox", "Decimal places:")
             from: 0
             to: 6
         }

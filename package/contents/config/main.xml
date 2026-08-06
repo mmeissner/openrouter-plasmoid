@@ -40,6 +40,14 @@
             <label>Balance below which the widget shows a critical state</label>
             <default>1.0</default>
         </entry>
+        <entry name="usageBaseline" type="Double">
+            <label>total_usage as it was at the first poll of the current UTC day</label>
+            <default>0</default>
+        </entry>
+        <entry name="usageBaselineDate" type="String">
+            <label>UTC day the baseline above belongs to</label>
+            <default></default>
+        </entry>
         <entry name="notifyLow" type="Bool">
             <label>Send a notification when the balance drops below the warning threshold</label>
             <default>true</default>
@@ -47,6 +55,10 @@
     </group>
 
     <group name="Appearance">
+        <entry name="language" type="String">
+            <label>Interface language; empty means follow the Plasma locale</label>
+            <default></default>
+        </entry>
         <entry name="compactItems" type="String">
             <label>Comma separated metrics shown in the panel: balance, limit, today, week, month, total, credits, requests</label>
             <default>balance</default>

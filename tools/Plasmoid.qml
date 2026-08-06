@@ -13,6 +13,7 @@ QtObject {
         property real lowThreshold: 5.0
         property real criticalThreshold: 1.0
         property bool notifyLow: true
+        property string language: ""
         property string compactItems: "balance,today,month,requests"
         property bool compactLabels: true
         property bool compactStacked: false
@@ -26,6 +27,8 @@ QtObject {
         property int pricingUnit: 1000000
         property int calcInputTokens: 1000000
         property int calcOutputTokens: 200000
+        property real usageBaseline: 0
+        property string usageBaselineDate: ""
         property string modelsSort: "name"
         property bool hideFreeModels: false
     }

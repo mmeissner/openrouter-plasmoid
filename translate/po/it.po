@@ -10,6 +10,10 @@ msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
 
+msgctxt "@title:group %1 is a date, %2 an amount"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
 msgctxt "@info:status %1 is the filtered count, %2 the total count"
 msgid "%1 / %2"
 msgstr "%1 / %2"
@@ -86,6 +90,10 @@ msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr "1K token"
 
+msgctxt "@label token pricing unit"
+msgid "1M tokens"
+msgstr "1M token"
+
 msgctxt "@label"
 msgid "30 days"
 msgstr "30 giorni"
@@ -116,9 +124,17 @@ msgctxt "@action:button"
 msgid "Add to favourites"
 msgstr "Aggiungi ai preferiti"
 
+msgctxt "@action:button"
+msgid "All 30 days"
+msgstr "Tutti i 30 giorni"
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "Aspetto"
+
+msgctxt "@info"
+msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
+msgstr "Vale solo per questo oggetto e ha effetto subito.\nIl resto di Plasma mantiene la sua lingua."
 
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
@@ -186,6 +202,10 @@ msgstr "Scegli il file con la chiave API"
 msgctxt "@title:window"
 msgid "Choose the file holding the management key"
 msgstr "Scegli il file con la chiave di gestione"
+
+msgctxt "@info:usagetip"
+msgid "Click a bar to see that day on its own."
+msgstr "Fai clic su una barra per vedere solo quel giorno."
 
 msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
@@ -308,9 +328,17 @@ msgctxt "@label:spinbox"
 msgid "Input tokens:"
 msgstr "Token in ingresso:"
 
+msgctxt "@label:listbox"
+msgid "Interface language:"
+msgstr "Lingua dell’interfaccia:"
+
 msgctxt "@label:spinbox"
 msgid "Interval:"
 msgstr "Intervallo:"
+
+msgctxt "@title:group"
+msgid "Language"
+msgstr "Lingua"
 
 msgctxt "@item:inlistbox sort order"
 msgid "Largest context"
@@ -585,6 +613,10 @@ msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr "Impila i valori invece di affiancarli"
 
+msgctxt "@item:inlistbox"
+msgid "System language"
+msgstr "Lingua di sistema"
+
 msgctxt "@action:button"
 msgid "Test connection"
 msgstr "Prova la connessione"
@@ -604,6 +636,10 @@ msgstr "Il saldo reale dell’account richiede una chiave di gestione (Impostazi
 msgctxt "@label spending period"
 msgid "This month"
 msgstr "Questo mese"
+
+msgctxt "@label spending period"
+msgid "This week"
+msgstr "Questa settimana"
 
 msgctxt "@label account tier"
 msgid "Tier"

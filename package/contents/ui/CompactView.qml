@@ -26,6 +26,7 @@ MouseArea {
 
     L10n {
         id: l10n
+        language: compact.cfg.language
     }
 
     // ------------------------------------------------------------------

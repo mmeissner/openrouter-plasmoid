@@ -32,6 +32,7 @@ ColumnLayout {
 
     L10n {
         id: l10n
+        language: modelsTab.cfg.language
     }
 
     function isFavorite(id) {
@@ -122,7 +123,7 @@ ColumnLayout {
         PlasmaExtras.SearchField {
             id: searchField
             Layout.fillWidth: true
-            placeholderText: i18nc("@info:placeholder", "Search models…")
+            placeholderText: l10n.trc("@info:placeholder", "Search models…")
         }
 
         PlasmaComponents3.ToolButton {
@@ -130,7 +131,7 @@ ColumnLayout {
             icon.name: "emblem-favorite"
             checkable: true
             display: PlasmaComponents3.AbstractButton.IconOnly
-            text: i18nc("@action:button", "Favourites only")
+            text: l10n.trc("@action:button", "Favourites only")
 
             PlasmaComponents3.ToolTip {
                 text: parent.text
@@ -148,11 +149,11 @@ ColumnLayout {
             textRole: "label"
             valueRole: "key"
             model: [
-                { key: "name", label: i18nc("@item:inlistbox sort order", "By name") },
-                { key: "input", label: i18nc("@item:inlistbox sort order", "Cheapest input") },
-                { key: "output", label: i18nc("@item:inlistbox sort order", "Cheapest output") },
-                { key: "context", label: i18nc("@item:inlistbox sort order", "Largest context") },
-                { key: "new", label: i18nc("@item:inlistbox sort order", "Newest first") }
+                { key: "name", label: l10n.trc("@item:inlistbox sort order", "By name") },
+                { key: "input", label: l10n.trc("@item:inlistbox sort order", "Cheapest input") },
+                { key: "output", label: l10n.trc("@item:inlistbox sort order", "Cheapest output") },
+                { key: "context", label: l10n.trc("@item:inlistbox sort order", "Largest context") },
+                { key: "new", label: l10n.trc("@item:inlistbox sort order", "Newest first") }
             ]
             currentIndex: {
                 var keys = ["name", "input", "output", "context", "new"];
@@ -163,7 +164,7 @@ ColumnLayout {
         }
 
         PlasmaComponents3.Label {
-            text: i18nc("@info:status %1 is the filtered count, %2 the total count",
+            text: l10n.trc("@info:status %1 is the filtered count, %2 the total count",
                         "%1 / %2", modelsTab.filtered.length, modelsTab.api.models.length)
             color: Kirigami.Theme.disabledTextColor
             font: Kirigami.Theme.smallFont
@@ -184,8 +185,8 @@ ColumnLayout {
             visible: listView.count === 0
             iconName: modelsTab.api.modelsLoaded ? "view-filter" : "download"
             text: modelsTab.api.modelsLoaded
-                ? i18nc("@info:placeholder", "No model matches")
-                : i18nc("@info:placeholder", "Loading model list…")
+                ? l10n.trc("@info:placeholder", "No model matches")
+                : l10n.trc("@info:placeholder", "Loading model list…")
             explanation: modelsTab.api.modelsError
         }
 
@@ -232,10 +233,10 @@ ColumnLayout {
                                 }
 
                                 PlasmaExtras.DescriptiveLabel {
-                                    text: i18nc("@info %1 is a token count such as 128K",
+                                    text: l10n.trc("@info %1 is a token count such as 128K",
                                                 "%1 context", Utils.tokens(delegate.modelData.context_length))
                                         + (Utils.isFree(delegate.modelData)
-                                           ? "  ·  " + i18nc("@info model costs nothing", "free") : "")
+                                           ? "  ·  " + l10n.trc("@info model costs nothing", "free") : "")
                                     font: Kirigami.Theme.smallFont
                                     elide: Text.ElideRight
                                     Layout.fillWidth: true
@@ -249,14 +250,14 @@ ColumnLayout {
                                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                                 PlasmaComponents3.Label {
-                                    text: i18nc("@info:status input price, %1 is an amount",
+                                    text: l10n.trc("@info:status input price, %1 is an amount",
                                                 "in %1", l10n.price(delegate.inPrice, modelsTab.sym))
                                     horizontalAlignment: Text.AlignRight
                                     font: Kirigami.Theme.smallFont
                                     Layout.alignment: Qt.AlignRight
                                 }
                                 PlasmaComponents3.Label {
-                                    text: i18nc("@info:status output price, %1 is an amount",
+                                    text: l10n.trc("@info:status output price, %1 is an amount",
                                                 "out %1", l10n.price(delegate.outPrice, modelsTab.sym))
                                     horizontalAlignment: Text.AlignRight
                                     font: Kirigami.Theme.smallFont
@@ -293,24 +294,24 @@ ColumnLayout {
                                 }
 
                                 InfoRow {
-                                    label: i18nc("@label", "Model id")
+                                    label: l10n.trc("@label", "Model id")
                                     value: delegate.modelData.id
                                 }
                                 InfoRow {
-                                    label: i18nc("@label", "Context window")
-                                    value: i18nc("@item %1 is a token count",
+                                    label: l10n.trc("@label", "Context window")
+                                    value: l10n.trc("@item %1 is a token count",
                                                  "%1 tokens", Utils.tokens(delegate.modelData.context_length))
                                 }
                                 InfoRow {
                                     visible: delegate.modelData.architecture
                                         && delegate.modelData.architecture.modality
-                                    label: i18nc("@label", "Modalities")
+                                    label: l10n.trc("@label", "Modalities")
                                     value: delegate.modelData.architecture
                                         ? delegate.modelData.architecture.modality : ""
                                 }
 
                                 PlasmaExtras.Heading {
-                                    text: i18nc("@title:group %1 is a token unit such as '1M tokens'",
+                                    text: l10n.trc("@title:group %1 is a token unit such as '1M tokens'",
                                                 "Prices per %1", l10n.unitLabel(modelsTab.unit))
                                     level: 6
                                     Layout.fillWidth: true
@@ -318,47 +319,47 @@ ColumnLayout {
                                 }
 
                                 InfoRow {
-                                    label: i18nc("@label", "Input")
+                                    label: l10n.trc("@label", "Input")
                                     value: l10n.price(delegate.inPrice, modelsTab.sym)
                                 }
                                 InfoRow {
-                                    label: i18nc("@label", "Output")
+                                    label: l10n.trc("@label", "Output")
                                     value: l10n.price(delegate.outPrice, modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.input_cache_read) > 0
-                                    label: i18nc("@label", "Cache read")
+                                    label: l10n.trc("@label", "Cache read")
                                     value: l10n.price(Utils.pricePerUnit(delegate.pricing.input_cache_read, modelsTab.unit), modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.input_cache_write) > 0
-                                    label: i18nc("@label", "Cache write")
+                                    label: l10n.trc("@label", "Cache write")
                                     value: l10n.price(Utils.pricePerUnit(delegate.pricing.input_cache_write, modelsTab.unit), modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.internal_reasoning) > 0
-                                    label: i18nc("@label", "Reasoning")
+                                    label: l10n.trc("@label", "Reasoning")
                                     value: l10n.price(Utils.pricePerUnit(delegate.pricing.internal_reasoning, modelsTab.unit), modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.image) > 0
-                                    label: i18nc("@label", "Per image")
+                                    label: l10n.trc("@label", "Per image")
                                     value: l10n.price(Utils.num(delegate.pricing.image), modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.request) > 0
-                                    label: i18nc("@label", "Per request")
+                                    label: l10n.trc("@label", "Per request")
                                     value: l10n.price(Utils.num(delegate.pricing.request), modelsTab.sym)
                                 }
                                 InfoRow {
                                     visible: Utils.num(delegate.pricing.web_search) > 0
-                                    label: i18nc("@label", "Web search")
+                                    label: l10n.trc("@label", "Web search")
                                     value: l10n.price(Utils.num(delegate.pricing.web_search), modelsTab.sym)
                                 }
 
                                 // -- Cost calculator -----------------------
                                 PlasmaExtras.Heading {
-                                    text: i18nc("@title:group", "Cost calculator")
+                                    text: l10n.trc("@title:group", "Cost calculator")
                                     level: 6
                                     Layout.fillWidth: true
                                     Layout.topMargin: Kirigami.Units.smallSpacing
@@ -379,7 +380,7 @@ ColumnLayout {
                                         }
 
                                         PlasmaComponents3.ToolTip {
-                                            text: i18nc("@info:tooltip", "Input tokens")
+                                            text: l10n.trc("@info:tooltip", "Input tokens")
                                         }
                                     }
 
@@ -398,13 +399,13 @@ ColumnLayout {
                                         }
 
                                         PlasmaComponents3.ToolTip {
-                                            text: i18nc("@info:tooltip", "Output tokens")
+                                            text: l10n.trc("@info:tooltip", "Output tokens")
                                         }
                                     }
                                 }
 
                                 InfoRow {
-                                    label: i18nc("@label", "Estimated cost")
+                                    label: l10n.trc("@label", "Estimated cost")
                                     emphasized: true
                                     valueColor: Kirigami.Theme.highlightColor
                                     value: l10n.price(
@@ -418,8 +419,8 @@ ColumnLayout {
 
                                     PlasmaComponents3.Button {
                                         text: modelsTab.isFavorite(delegate.modelData.id)
-                                            ? i18nc("@action:button", "Remove favourite")
-                                            : i18nc("@action:button", "Add to favourites")
+                                            ? l10n.trc("@action:button", "Remove favourite")
+                                            : l10n.trc("@action:button", "Add to favourites")
                                         icon.name: "emblem-favorite"
                                         onClicked: modelsTab.toggleFavorite(delegate.modelData.id)
                                     }
@@ -429,7 +430,7 @@ ColumnLayout {
                                     }
 
                                     PlasmaComponents3.Button {
-                                        text: i18nc("@action:button", "Details")
+                                        text: l10n.trc("@action:button", "Details")
                                         icon.name: "internet-services"
                                         onClicked: Qt.openUrlExternally(
                                             "https://openrouter.ai/" + delegate.modelData.id)
