@@ -16,6 +16,11 @@
 
 ![The three tabs: overview, model catalogue and usage history](docs/tabs.png)
 
+<p>
+  <b>You like this project?</b><br>
+  <a href="https://ko-fi.com/teodorgross"><img src="https://img.shields.io/badge/Ko--fi-teodorgross-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white&labelColor=000000" height="44" alt="Support me on Ko-fi"></a>
+</p>
+
 ---
 
 ## What it does
