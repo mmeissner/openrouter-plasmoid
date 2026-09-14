@@ -128,6 +128,10 @@ msgctxt "@action:button"
 msgid "All 30 days"
 msgstr "30 日すべて"
 
+msgctxt "@info"
+msgid "An unticked part keeps the theme colour, and ticked parts also\noverride the warning colours. Useful on transparent panels."
+msgstr ""
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "外観"
@@ -211,6 +215,10 @@ msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
 msgstr "警告しきい値に応じてクレジットを色分けする"
 
+msgctxt "@title:group"
+msgid "Colours"
+msgstr ""
+
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "設定"
@@ -226,6 +234,10 @@ msgstr "コンテキストウィンドウ"
 msgctxt "@title:group"
 msgid "Cost calculator"
 msgstr "コスト計算機"
+
+msgctxt "@info:status %1 is a file path"
+msgid "Could not read a key from %1."
+msgstr ""
 
 msgctxt "@info"
 msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
@@ -477,6 +489,18 @@ msgstr "出力トークン:"
 msgctxt "@title:tab"
 msgid "Overview"
 msgstr "概要"
+
+msgctxt "@option:check"
+msgid "Own colour for the short captions"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Own colour for the text in front"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Own colour for the values"
+msgstr ""
 
 msgctxt "@label:spinbox"
 msgid "Panel font size:"

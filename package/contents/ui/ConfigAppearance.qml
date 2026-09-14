@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import org.kde.plasma.components as PlasmaComponents3
+import org.kde.kquickcontrols as KQuickControls
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
@@ -23,6 +24,9 @@ KCM.SimpleKCM {
     property alias cfg_currencySymbol: symbolField.text
     property alias cfg_decimals: decimalsSpin.value
     property alias cfg_fontSize: fontSizeSpin.value
+    property string cfg_prefixColor: ""
+    property string cfg_captionColor: ""
+    property string cfg_valueColor: ""
 
     // Multiple choice, stored as a comma separated list
     property string cfg_compactItems: "balance"
@@ -227,6 +231,66 @@ KCM.SimpleKCM {
         PlasmaComponents3.Label {
             text: l10n.trc("@info",
                 "Zero follows the theme font. The popup always uses the theme fonts.")
+            font: Kirigami.Theme.smallFont
+            opacity: 0.7
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: l10n.trc("@title:group", "Colours")
+        }
+
+        RowLayout {
+            PlasmaComponents3.CheckBox {
+                id: prefixColorBox
+                text: l10n.trc("@option:check", "Own colour for the text in front")
+                checked: page.cfg_prefixColor.length > 0
+                onToggled: page.cfg_prefixColor = checked ? String(prefixColorButton.color) : ""
+            }
+
+            KQuickControls.ColorButton {
+                id: prefixColorButton
+                enabled: prefixColorBox.checked
+                color: page.cfg_prefixColor.length > 0 ? page.cfg_prefixColor : Kirigami.Theme.textColor
+                onColorChanged: if (prefixColorBox.checked) page.cfg_prefixColor = String(color)
+            }
+        }
+
+        RowLayout {
+            PlasmaComponents3.CheckBox {
+                id: captionColorBox
+                text: l10n.trc("@option:check", "Own colour for the short captions")
+                checked: page.cfg_captionColor.length > 0
+                onToggled: page.cfg_captionColor = checked ? String(captionColorButton.color) : ""
+            }
+
+            KQuickControls.ColorButton {
+                id: captionColorButton
+                enabled: captionColorBox.checked
+                color: page.cfg_captionColor.length > 0 ? page.cfg_captionColor : Kirigami.Theme.textColor
+                onColorChanged: if (captionColorBox.checked) page.cfg_captionColor = String(color)
+            }
+        }
+
+        RowLayout {
+            PlasmaComponents3.CheckBox {
+                id: valueColorBox
+                text: l10n.trc("@option:check", "Own colour for the values")
+                checked: page.cfg_valueColor.length > 0
+                onToggled: page.cfg_valueColor = checked ? String(valueColorButton.color) : ""
+            }
+
+            KQuickControls.ColorButton {
+                id: valueColorButton
+                enabled: valueColorBox.checked
+                color: page.cfg_valueColor.length > 0 ? page.cfg_valueColor : Kirigami.Theme.textColor
+                onColorChanged: if (valueColorBox.checked) page.cfg_valueColor = String(color)
+            }
+        }
+
+        PlasmaComponents3.Label {
+            text: l10n.trc("@info",
+                "An unticked part keeps the theme colour, and ticked parts also\noverride the warning colours. Useful on transparent panels.")
             font: Kirigami.Theme.smallFont
             opacity: 0.7
         }

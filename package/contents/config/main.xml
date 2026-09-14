@@ -100,6 +100,18 @@
             <min>0</min>
             <max>24</max>
         </entry>
+        <entry name="prefixColor" type="String">
+            <label>Custom panel colour for the text in front; empty keeps the theme colour</label>
+            <default></default>
+        </entry>
+        <entry name="captionColor" type="String">
+            <label>Custom panel colour for the short captions; empty keeps the theme or warning colour</label>
+            <default></default>
+        </entry>
+        <entry name="valueColor" type="String">
+            <label>Custom panel colour for the values; empty keeps the theme or warning colour</label>
+            <default></default>
+        </entry>
     </group>
 
     <group name="Models">

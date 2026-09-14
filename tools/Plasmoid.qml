@@ -24,6 +24,9 @@ QtObject {
         property int decimals: 2
         property bool colorize: true
         property int fontSize: 0
+        property string prefixColor: ""
+        property string captionColor: ""
+        property string valueColor: ""
         property string favoriteModels: "anthropic/claude-sonnet-4.5,openai/gpt-4o-mini"
         property int pricingUnit: 1000000
         property int calcInputTokens: 1000000

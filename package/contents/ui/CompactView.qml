@@ -40,6 +40,11 @@ MouseArea {
         return f;
     }
 
+    /* A configured part colour wins, otherwise the fallback applies. */
+    function pickColor(custom, fallback) {
+        return String(custom).length > 0 ? custom : fallback;
+    }
+
     L10n {
         id: l10n
         language: compact.cfg.language
@@ -187,6 +192,7 @@ MouseArea {
             PlasmaComponents3.Label {
                 visible: compact.cfg.compactPrefix.length > 0
                 text: compact.cfg.compactPrefix
+                color: compact.pickColor(compact.cfg.prefixColor, Kirigami.Theme.textColor)
                 font: compact.sizedFont(Kirigami.Theme.smallFont)
                 opacity: 0.75
                 verticalAlignment: Text.AlignVCenter
@@ -196,23 +202,57 @@ MouseArea {
             Repeater {
                 model: compact.entries
 
-                PlasmaComponents3.Label {
+                /* One cell per metric: separator, caption and value can each
+                 * carry their own colour. */
+                Row {
+                    id: entryRow
                     required property var modelData
                     required property int index
 
-                    text: (index > 0 && !compact.stacked ? compact.cfg.compactSeparator + " " : "")
-                        + (compact.cfg.compactLabels ? modelData.caption + " " : "")
-                        + modelData.text
-                    color: modelData.color
-                    font: compact.sizedFont((compact.stacked || compact.entries.length > 2)
-                        ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont)
-                    horizontalAlignment: compact.stacked ? Text.AlignRight : Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    elide: Text.ElideRight
+                    spacing: 0
                     Layout.fillWidth: compact.stacked
                     Layout.alignment: compact.stacked
                         ? (Qt.AlignRight | Qt.AlignVCenter) : Qt.AlignCenter
                     Layout.maximumWidth: compact.vertical ? compact.width : implicitWidth
+
+                    PlasmaComponents3.Label {
+                        id: separatorLabel
+
+                        visible: entryRow.index > 0 && !compact.stacked
+                        text: compact.cfg.compactSeparator + " "
+                        color: compact.pickColor(compact.cfg.captionColor, entryRow.modelData.color)
+                        font: compact.sizedFont((compact.stacked || compact.entries.length > 2)
+                            ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont)
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    PlasmaComponents3.Label {
+                        id: captionLabel
+
+                        visible: compact.cfg.compactLabels
+                        text: entryRow.modelData.caption + " "
+                        color: compact.pickColor(compact.cfg.captionColor, entryRow.modelData.color)
+                        font: compact.sizedFont((compact.stacked || compact.entries.length > 2)
+                            ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont)
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    PlasmaComponents3.Label {
+                        text: entryRow.modelData.text
+                        color: compact.pickColor(compact.cfg.valueColor, entryRow.modelData.color)
+                        font: compact.sizedFont((compact.stacked || compact.entries.length > 2)
+                            ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont)
+                        elide: Text.ElideRight
+                        horizontalAlignment: compact.stacked ? Text.AlignRight : Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        // Shrink only in a vertical panel, where the width is capped
+                        width: compact.vertical
+                            ? Math.max(0, Math.min(implicitWidth,
+                                compact.width
+                                  - (separatorLabel.visible ? separatorLabel.implicitWidth : 0)
+                                  - (captionLabel.visible ? captionLabel.implicitWidth : 0)))
+                            : implicitWidth
+                    }
                 }
             }
         }

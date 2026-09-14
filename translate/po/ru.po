@@ -134,6 +134,10 @@ msgctxt "@action:button"
 msgid "All 30 days"
 msgstr "Все 30 дней"
 
+msgctxt "@info"
+msgid "An unticked part keeps the theme colour, and ticked parts also\noverride the warning colours. Useful on transparent panels."
+msgstr ""
+
 msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr "Внешний вид"
@@ -217,6 +221,10 @@ msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
 msgstr "Окрашивать баланс по порогам предупреждения"
 
+msgctxt "@title:group"
+msgid "Colours"
+msgstr ""
+
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Настроить"
@@ -232,6 +240,10 @@ msgstr "Окно контекста"
 msgctxt "@title:group"
 msgid "Cost calculator"
 msgstr "Калькулятор стоимости"
+
+msgctxt "@info:status %1 is a file path"
+msgid "Could not read a key from %1."
+msgstr ""
 
 msgctxt "@info"
 msgid "Create management keys at openrouter.ai/settings/provisioning-keys.\nSome accounts need one for /credits (balance) and /activity (history)."
@@ -483,6 +495,18 @@ msgstr "Выходные токены:"
 msgctxt "@title:tab"
 msgid "Overview"
 msgstr "Обзор"
+
+msgctxt "@option:check"
+msgid "Own colour for the short captions"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Own colour for the text in front"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Own colour for the values"
+msgstr ""
 
 msgctxt "@label:spinbox"
 msgid "Panel font size:"
