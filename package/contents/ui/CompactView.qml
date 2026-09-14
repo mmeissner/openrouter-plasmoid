@@ -24,6 +24,22 @@ MouseArea {
     // Stack as soon as the panel is vertical, or when the user asks for it
     readonly property bool stacked: vertical || cfg.compactStacked
 
+    // 0 keeps the theme's own font, any other value is a pixel size
+    readonly property bool customFont: cfg.fontSize > 0
+
+    /*
+     * The base font with the configured pixel size applied. The family is kept
+     * from the theme so only the size moves.
+     */
+    function sizedFont(base) {
+        if (!customFont) {
+            return base;
+        }
+        var f = Qt.font({ pixelSize: cfg.fontSize });
+        f.family = base.family;
+        return f;
+    }
+
     L10n {
         id: l10n
         language: compact.cfg.language
@@ -171,7 +187,7 @@ MouseArea {
             PlasmaComponents3.Label {
                 visible: compact.cfg.compactPrefix.length > 0
                 text: compact.cfg.compactPrefix
-                font: Kirigami.Theme.smallFont
+                font: compact.sizedFont(Kirigami.Theme.smallFont)
                 opacity: 0.75
                 verticalAlignment: Text.AlignVCenter
                 Layout.alignment: Qt.AlignCenter
@@ -188,8 +204,8 @@ MouseArea {
                         + (compact.cfg.compactLabels ? modelData.caption + " " : "")
                         + modelData.text
                     color: modelData.color
-                    font: (compact.stacked || compact.entries.length > 2)
-                        ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont
+                    font: compact.sizedFont((compact.stacked || compact.entries.length > 2)
+                        ? Kirigami.Theme.smallFont : Kirigami.Theme.defaultFont)
                     horizontalAlignment: compact.stacked ? Text.AlignRight : Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     elide: Text.ElideRight

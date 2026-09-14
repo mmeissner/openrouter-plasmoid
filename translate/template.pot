@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openrouter-plasmoid\n"
 "Report-Msgid-Bugs-To: https://github.com/teodorgross/openrouter-plasmoid/issues\n"
-"POT-Creation-Date: 2026-08-06 15:19+0000\n"
+"POT-Creation-Date: 2026-09-14 09:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,13 +27,13 @@ msgctxt "@info %1 is a token count such as 128K"
 msgid "%1 context"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:289
+#: package/contents/ui/L10n.qml:303
 msgid "%1 day ago"
 msgid_plural "%1 days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:287
+#: package/contents/ui/L10n.qml:301
 msgid "%1 hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] ""
@@ -51,7 +51,7 @@ msgid_plural "%1 minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:283
+#: package/contents/ui/L10n.qml:297
 msgid "%1 minute ago"
 msgid_plural "%1 minutes ago"
 msgstr[0] ""
@@ -79,7 +79,7 @@ msgid_plural "%1 seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: package/contents/ui/L10n.qml:279
+#: package/contents/ui/L10n.qml:293
 msgid "%1 second ago"
 msgid_plural "%1 seconds ago"
 msgstr[0] ""
@@ -90,7 +90,7 @@ msgctxt "@item %1 is a token count"
 msgid "%1 tokens"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:133
+#: package/contents/ui/ConfigAppearance.qml:134
 msgctxt "@info nothing but the icon is shown"
 msgid "(icon only)"
 msgstr ""
@@ -105,12 +105,12 @@ msgctxt "@item:inlistbox pricing unit"
 msgid "1000 tokens"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:175
+#: package/contents/ui/L10n.qml:189
 msgctxt "@label token pricing unit"
 msgid "1K tokens"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:174
+#: package/contents/ui/L10n.qml:188
 msgctxt "@label token pricing unit"
 msgid "1M tokens"
 msgstr ""
@@ -130,7 +130,7 @@ msgctxt "@title:group"
 msgid "API key"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:251
+#: package/contents/ui/L10n.qml:265
 msgid "API key is missing or invalid"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgctxt "@label:textbox"
 msgid "API key:"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:256
+#: package/contents/ui/L10n.qml:270
 msgid "Access denied - this endpoint needs a management key"
 msgstr ""
 
@@ -163,12 +163,12 @@ msgctxt "@title:tab settings page"
 msgid "Appearance"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:95
+#: package/contents/ui/ConfigAppearance.qml:96
 msgctxt "@info"
 msgid "Applies to this widget only and takes effect immediately.\nThe rest of Plasma keeps its own language."
 msgstr ""
 
-#: package/contents/ui/L10n.qml:186
+#: package/contents/ui/L10n.qml:200
 msgctxt "@item:inlistbox panel metric"
 msgid "Available credit"
 msgstr ""
@@ -183,7 +183,7 @@ msgctxt "@label bring-your-own-key usage"
 msgid "BYOK total"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:223
+#: package/contents/ui/L10n.qml:237
 msgctxt "@label very short panel caption for purchased credit"
 msgid "Bought"
 msgstr ""
@@ -219,7 +219,7 @@ msgctxt "@label"
 msgid "Cache write"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:248
+#: package/contents/ui/L10n.qml:262
 msgid "Cannot reach openrouter.ai"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgctxt "@info:usagetip"
 msgid "Click a bar to see that day on its own."
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:176
+#: package/contents/ui/ConfigAppearance.qml:177
 msgctxt "@option:check"
 msgid "Colour credit by the warning thresholds"
 msgstr ""
@@ -294,7 +294,7 @@ msgctxt "@title:group"
 msgid "Credentials"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:222
+#: package/contents/ui/L10n.qml:236
 msgctxt "@item:inlistbox panel metric"
 msgid "Credit purchased"
 msgstr ""
@@ -304,7 +304,7 @@ msgctxt "@label:spinbox"
 msgid "Critical below:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:198
+#: package/contents/ui/ConfigAppearance.qml:199
 msgctxt "@label:textbox"
 msgid "Currency symbol:"
 msgstr ""
@@ -314,7 +314,7 @@ msgctxt "@title:group"
 msgid "Daily spending"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:204
+#: package/contents/ui/ConfigAppearance.qml:205
 msgctxt "@label:spinbox"
 msgid "Decimal places:"
 msgstr ""
@@ -324,7 +324,7 @@ msgctxt "@action:button"
 msgid "Details"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:259
+#: package/contents/ui/L10n.qml:273
 msgid "Endpoint not found"
 msgstr ""
 
@@ -338,7 +338,7 @@ msgctxt "@info:placeholder"
 msgid "Enter your OpenRouter key in the settings to see credit and usage."
 msgstr ""
 
-#: package/contents/ui/L10n.qml:269
+#: package/contents/ui/L10n.qml:283
 msgid "Error %1"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgctxt "@info:status %1 is an HTTP status"
 msgid "Error %1"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:268
+#: package/contents/ui/L10n.qml:282
 msgid "Error %1: %2"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgctxt "@action:button"
 msgid "Favourites only"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:187
+#: package/contents/ui/L10n.qml:201
 msgctxt "@label very short panel caption for available credit"
 msgid "Free"
 msgstr ""
@@ -411,7 +411,7 @@ msgctxt "@label:spinbox"
 msgid "Input tokens:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:73
+#: package/contents/ui/ConfigAppearance.qml:74
 msgctxt "@label:listbox"
 msgid "Interface language:"
 msgstr ""
@@ -421,7 +421,7 @@ msgctxt "@label:spinbox"
 msgid "Interval:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:67
+#: package/contents/ui/ConfigAppearance.qml:68
 msgctxt "@title:group"
 msgid "Language"
 msgstr ""
@@ -436,7 +436,7 @@ msgctxt "@label"
 msgid "Left of that"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:193
+#: package/contents/ui/L10n.qml:207
 msgctxt "@label very short panel caption for the key limit"
 msgid "Limit"
 msgstr ""
@@ -456,7 +456,7 @@ msgctxt "@label:textbox"
 msgid "Management key:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:113
+#: package/contents/ui/ConfigAppearance.qml:114
 msgctxt "@label"
 msgid "Metrics:"
 msgstr ""
@@ -486,12 +486,12 @@ msgctxt "@title:tab settings page"
 msgid "Models"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:211
+#: package/contents/ui/L10n.qml:225
 msgctxt "@label very short panel caption for this month"
 msgid "Month"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:121
+#: package/contents/ui/ConfigAppearance.qml:122
 msgctxt "@info"
 msgid "Multiple choice - everything ticked appears side by side in the bar.\nWith nothing ticked only the icon is left."
 msgstr ""
@@ -577,7 +577,7 @@ msgctxt "@title:window notification"
 msgid "OpenRouter credit is low"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:265
+#: package/contents/ui/L10n.qml:279
 msgid "OpenRouter reported a server error (%1)"
 msgstr ""
 
@@ -601,6 +601,11 @@ msgctxt "@title:tab"
 msgid "Overview"
 msgstr ""
 
+#: package/contents/ui/ConfigAppearance.qml:212
+msgctxt "@label:spinbox"
+msgid "Panel font size:"
+msgstr ""
+
 #: package/contents/ui/ModelsTab.qml:346
 msgctxt "@label"
 msgid "Per image"
@@ -611,12 +616,12 @@ msgctxt "@label"
 msgid "Per request"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:156
+#: package/contents/ui/ConfigAppearance.qml:157
 msgctxt "@title:group"
 msgid "Presentation"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:129
+#: package/contents/ui/ConfigAppearance.qml:130
 msgctxt "@label"
 msgid "Preview:"
 msgstr ""
@@ -636,7 +641,7 @@ msgctxt "@label"
 msgid "Rate limit"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:262
+#: package/contents/ui/L10n.qml:276
 msgid "Rate limit reached - try again later"
 msgstr ""
 
@@ -665,7 +670,7 @@ msgctxt "@title:group"
 msgid "Refreshing"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:192
+#: package/contents/ui/L10n.qml:206
 msgctxt "@item:inlistbox panel metric"
 msgid "Remaining key limit"
 msgstr ""
@@ -680,7 +685,7 @@ msgctxt "@action:button"
 msgid "Remove favourite"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:229
+#: package/contents/ui/L10n.qml:243
 msgctxt "@label very short panel caption for the request count"
 msgid "Req."
 msgstr ""
@@ -690,7 +695,7 @@ msgctxt "@label"
 msgid "Requests"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:228
+#: package/contents/ui/L10n.qml:242
 msgctxt "@item:inlistbox panel metric"
 msgid "Requests (30 days)"
 msgstr ""
@@ -710,22 +715,22 @@ msgctxt "@info"
 msgid "Separated by commas or line breaks. The star in the widget's model\nlist is the more convenient way."
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:192
+#: package/contents/ui/ConfigAppearance.qml:193
 msgctxt "@label:textbox"
 msgid "Separator:"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:166
+#: package/contents/ui/ConfigAppearance.qml:167
 msgctxt "@option:check"
 msgid "Short caption before each value (Today, Month …)"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:161
+#: package/contents/ui/ConfigAppearance.qml:162
 msgctxt "@option:check"
 msgid "Show icon"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:103
+#: package/contents/ui/ConfigAppearance.qml:104
 msgctxt "@title:group"
 msgid "Show in the panel"
 msgstr ""
@@ -740,7 +745,7 @@ msgctxt "@label"
 msgid "Spending limit"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:216
+#: package/contents/ui/L10n.qml:230
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent in total"
 msgstr ""
@@ -750,27 +755,27 @@ msgctxt "@label spending period"
 msgid "Spent in total"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:210
+#: package/contents/ui/L10n.qml:224
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent this month"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:204
+#: package/contents/ui/L10n.qml:218
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent this week"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:198
+#: package/contents/ui/L10n.qml:212
 msgctxt "@item:inlistbox panel metric"
 msgid "Spent today"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:171
+#: package/contents/ui/ConfigAppearance.qml:172
 msgctxt "@option:check"
 msgid "Stack values instead of placing them side by side"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:139
+#: package/contents/ui/L10n.qml:153
 msgctxt "@item:inlistbox"
 msgid "System language"
 msgstr ""
@@ -780,7 +785,7 @@ msgctxt "@action:button"
 msgid "Test connection"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:185
+#: package/contents/ui/ConfigAppearance.qml:186
 msgctxt "@label:textbox"
 msgid "Text in front:"
 msgstr ""
@@ -815,7 +820,7 @@ msgctxt "@label spending period"
 msgid "Today"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:199
+#: package/contents/ui/L10n.qml:213
 msgctxt "@label very short panel caption for today"
 msgid "Today"
 msgstr ""
@@ -825,7 +830,7 @@ msgctxt "@info:tooltip spending summary, %1/%2/%3 are amounts"
 msgid "Today: %1   Week: %2   Month: %3"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:217
+#: package/contents/ui/L10n.qml:231
 msgctxt "@label very short panel caption for the total"
 msgid "Total"
 msgstr ""
@@ -855,12 +860,17 @@ msgctxt "@label"
 msgid "Web search"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:205
+#: package/contents/ui/L10n.qml:219
 msgctxt "@label very short panel caption for this week"
 msgid "Week"
 msgstr ""
 
-#: package/contents/ui/ConfigAppearance.qml:186
+#: package/contents/ui/ConfigAppearance.qml:228
+msgctxt "@info"
+msgid "Zero follows the theme font. The popup always uses the theme fonts."
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:187
 msgctxt "@info:placeholder example prefix"
 msgid "e.g. OR"
 msgstr ""
@@ -870,7 +880,7 @@ msgctxt "@info model costs nothing"
 msgid "free"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:169
+#: package/contents/ui/L10n.qml:183
 msgctxt "@item price of a free model"
 msgid "free"
 msgstr ""
@@ -885,7 +895,7 @@ msgctxt "@info:status input price, %1 is an amount"
 msgid "in %1"
 msgstr ""
 
-#: package/contents/ui/L10n.qml:276
+#: package/contents/ui/L10n.qml:290
 msgid "just now"
 msgstr ""
 
@@ -902,6 +912,11 @@ msgstr ""
 #: package/contents/ui/OverviewTab.qml:245
 msgctxt "@item account tier"
 msgid "paid"
+msgstr ""
+
+#: package/contents/ui/ConfigAppearance.qml:218
+msgctxt "@item:valuesuffix"
+msgid "theme default"
 msgstr ""
 
 #: package/contents/ui/OverviewTab.qml:175

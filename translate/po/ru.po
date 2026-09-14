@@ -484,6 +484,10 @@ msgctxt "@title:tab"
 msgid "Overview"
 msgstr "Обзор"
 
+msgctxt "@label:spinbox"
+msgid "Panel font size:"
+msgstr ""
+
 msgctxt "@label"
 msgid "Per image"
 msgstr "За изображение"
@@ -691,6 +695,10 @@ msgctxt "@label very short panel caption for this week"
 msgid "Week"
 msgstr "Нед."
 
+msgctxt "@info"
+msgid "Zero follows the theme font. The popup always uses the theme fonts."
+msgstr ""
+
 msgctxt "@info:placeholder example prefix"
 msgid "e.g. OR"
 msgstr "напр. OR"
@@ -725,6 +733,10 @@ msgstr "исх. %1"
 msgctxt "@item account tier"
 msgid "paid"
 msgstr "платный"
+
+msgctxt "@item:valuesuffix"
+msgid "theme default"
+msgstr ""
 
 msgctxt "@info:whatsthis data scope"
 msgid "this key only"

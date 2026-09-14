@@ -22,6 +22,7 @@ KCM.SimpleKCM {
     property alias cfg_compactSeparator: separatorField.text
     property alias cfg_currencySymbol: symbolField.text
     property alias cfg_decimals: decimalsSpin.value
+    property alias cfg_fontSize: fontSizeSpin.value
 
     // Multiple choice, stored as a comma separated list
     property string cfg_compactItems: "balance"
@@ -204,6 +205,30 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: l10n.trc("@label:spinbox", "Decimal places:")
             from: 0
             to: 6
+        }
+
+        PlasmaComponents3.SpinBox {
+            id: fontSizeSpin
+            Kirigami.FormData.label: l10n.trc("@label:spinbox", "Panel font size:")
+            from: 0
+            to: 24
+            stepSize: 1
+            textFromValue: function (value, locale) {
+                return value === 0
+                    ? l10n.trc("@item:valuesuffix", "theme default")
+                    : value + " px";
+            }
+            valueFromText: function (text, locale) {
+                var n = parseInt(String(text).replace(/[^0-9]/g, ""), 10);
+                return isNaN(n) ? 0 : Math.min(n, 24);
+            }
+        }
+
+        PlasmaComponents3.Label {
+            text: l10n.trc("@info",
+                "Zero follows the theme font. The popup always uses the theme fonts.")
+            font: Kirigami.Theme.smallFont
+            opacity: 0.7
         }
     }
 }

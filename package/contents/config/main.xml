@@ -94,6 +94,12 @@
             <label>Colour the panel value according to the thresholds</label>
             <default>true</default>
         </entry>
+        <entry name="fontSize" type="Int">
+            <label>Panel font size in pixels; 0 means follow the theme</label>
+            <default>0</default>
+            <min>0</min>
+            <max>24</max>
+        </entry>
     </group>
 
     <group name="Models">
