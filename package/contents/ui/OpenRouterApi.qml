@@ -137,10 +137,10 @@ Item {
         ? activityToday
         : (isFinite(creditsToday) ? Math.max(creditsToday, usageDaily) : usageDaily)
     readonly property real usageWeekEff: activityLoaded
-        ? activityWeek + (activityHasToday ? 0 : usageDaily)
+        ? activityWeek + (activityHasToday ? 0 : usageTodayEff)
         : usageWeekly
     readonly property real usageMonthEff: activityLoaded
-        ? activityMonth + (activityHasToday ? 0 : usageDaily)
+        ? activityMonth + (activityHasToday ? 0 : usageTodayEff)
         : usageMonthly
     readonly property real usageTotalEff: creditsValid ? totalUsage : usageAll
 
