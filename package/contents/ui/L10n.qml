@@ -54,27 +54,41 @@ QtObject {
     // ------------------------------------------------------------------
     // Translation wrappers
     // ------------------------------------------------------------------
+    /*
+     * The KI18n fallbacks are handed every wrapper argument so KLocalizedContext
+     * can substitute %1…%9 itself. Calling i18n/i18nc without the trailing
+     * values converted the message with unfilled placeholders, and KI18n then
+     * rendered "(I18N_ARGUMENT_MISSING)" wherever "System language" was picked.
+     */
     function tr(msgid) {
-        var text = useSource ? msgid : (lookup(null, msgid, null, 1) || i18n(msgid));
+        var text = useSource
+            ? msgid
+            : (lookup(null, msgid, null, 1)
+                || i18n.apply(null, Array.prototype.slice.call(arguments)));
         return format(text, arguments, 1);
     }
 
     function trc(context, msgid) {
-        var text = useSource ? msgid : (lookup(context, msgid, null, 1) || i18nc(context, msgid));
+        var text = useSource
+            ? msgid
+            : (lookup(context, msgid, null, 1)
+                || i18nc.apply(null, Array.prototype.slice.call(arguments)));
         return format(text, arguments, 2);
     }
 
     function trp(singular, plural, n) {
         var text = useSource
             ? (Number(n) === 1 ? singular : plural)
-            : (lookup(null, singular, plural, n) || i18np(singular, plural, n));
+            : (lookup(null, singular, plural, n)
+                || i18np.apply(null, Array.prototype.slice.call(arguments)));
         return format(text, arguments, 2);
     }
 
     function trcp(context, singular, plural, n) {
         var text = useSource
             ? (Number(n) === 1 ? singular : plural)
-            : (lookup(context, singular, plural, n) || i18ncp(context, singular, plural, n));
+            : (lookup(context, singular, plural, n)
+                || i18ncp.apply(null, Array.prototype.slice.call(arguments)));
         return format(text, arguments, 3);
     }
 
