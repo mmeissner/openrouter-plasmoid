@@ -4,10 +4,12 @@
  */
 import QtQuick
 import QtQuick.Layouts
+import QtCore
 import QtQuick.Dialogs as QtDialogs
 
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.plasma5support as P5Support
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
@@ -50,6 +52,7 @@ KCM.SimpleKCM {
 
     property string testResult: ""
     property bool testOk: false
+    property bool probingFile: false
 
     /* Self-contained probe - the settings page has no access to the widget. */
     function testConnection() {
@@ -59,6 +62,21 @@ KCM.SimpleKCM {
             page.testResult = l10n.trc("@info:status", "Enter an API key first.");
             return;
         }
+        if (key.length === 0) {
+            // A key file wins inside the widget, so probe the same way it does
+            if (page.probingFile) {
+                return;
+            }
+            page.probingFile = true;
+            fileProbeTimer.restart();
+            page.testResult = l10n.trc("@info:status", "Checking…");
+            keyFileReader.connectSource(catCommand(apiKeyFileField.text));
+            return;
+        }
+        runTest(key);
+    }
+
+    function runTest(key) {
         page.testResult = l10n.trc("@info:status", "Checking…");
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -92,6 +110,71 @@ KCM.SimpleKCM {
         xhr.open("GET", "https://openrouter.ai/api/v1/key");
         xhr.setRequestHeader("Authorization", "Bearer " + key);
         xhr.send();
+    }
+
+    readonly property string homeDir: {
+        var u = String(StandardPaths.writableLocation(StandardPaths.HomeLocation));
+        return u.indexOf("file://") === 0 ? u.substring(7) : u;
+    }
+
+    /* Expand a leading ~ and wrap the path so the shell cannot reinterpret it */
+    function catCommand(path) {
+        var p = String(path || "").trim();
+        if (p.length === 0) {
+            return "";
+        }
+        if (p.indexOf("~/") === 0) {
+            p = homeDir + p.substring(1);
+        }
+        return "cat -- '" + p.split("'").join("'\\''") + "'";
+    }
+
+    /* First non-empty, non-comment line wins - the widget parses it the same way */
+    function firstKeyLine(text) {
+        var lines = String(text || "").split("\n");
+        for (var i = 0; i < lines.length; ++i) {
+            var l = lines[i].trim();
+            if (l.length > 0 && l.indexOf("#") !== 0) {
+                return l;
+            }
+        }
+        return "";
+    }
+
+    P5Support.DataSource {
+        id: keyFileReader
+        engine: "executable"
+
+        onNewData: (source, data) => {
+            disconnectSource(source);
+            fileProbeTimer.stop();
+            page.probingFile = false;
+            var key = page.firstKeyLine(data["stdout"]);
+            if (key.length === 0) {
+                page.testOk = false;
+                page.testResult = l10n.trc("@info:status %1 is a file path",
+                                        "Could not read a key from %1.",
+                                        apiKeyFileField.text.trim());
+                return;
+            }
+            page.runTest(key);
+        }
+    }
+
+    /*
+     * The executable engine stays silent when cat fails, e.g. on a missing
+     * file - without this the button would wait forever on "Checking…".
+     */
+    Timer {
+        id: fileProbeTimer
+        interval: 5000
+        onTriggered: {
+            page.probingFile = false;
+            page.testOk = false;
+            page.testResult = l10n.trc("@info:status %1 is a file path",
+                                    "Could not read a key from %1.",
+                                    apiKeyFileField.text.trim());
+        }
     }
 
     Kirigami.FormLayout {
